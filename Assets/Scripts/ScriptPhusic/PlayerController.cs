@@ -33,18 +33,15 @@ public class PlayerController : MonoBehaviour
     private GameObject BulletPlayer;
     private bool Rotation;
     private bool movingUp;
-    private bool movingDown;
-    private bool movingLeft;
-    private bool movingRight;
-    private float dirX;
-    private float dirY;
+    private Vector2 _direction = Vector2.zero;
     public GameObject GunPlayerOne;
     public GameObject GunPlayerTwo;
     public GameObject GunPlayerTree;
     public GameObject player;
     public GameObject ExplosionPlayer;
     public GameObject shildPlayer;
-    public Joystick joystic;
+    [SerializeField]
+    private Joystick _joystic;
     private Rigidbody2D rb;
 
     //звук
@@ -117,81 +114,16 @@ public class PlayerController : MonoBehaviour
             return;
         }
 
-        GetInput();
-        //faceMouse();
-        //CalculateDirection();
-        Animate();
         Move();
         Shoot();
-        //cursoremouse();
+    }
 
-    }
-    //поворот за мышкой (рабочий)
-    void faceMouse()
-    {
-        Vector3 mousePosition = Input.mousePosition;
-        mousePosition = Camera.main.ScreenToWorldPoint(mousePosition);
-        Vector2 Direction = new Vector2(mousePosition.x - transform.position.x, mousePosition.y - transform.position.y);
-        transform.up = Direction * Time.deltaTime;
-    }
-    //присваивание ввода по кнопкам
-    void GetInput()
-    {
-/*        KeyLeft = Input.GetKey(KeyCode.LeftArrow);
-        KeyRight = Input.GetKey(KeyCode.RightArrow);
-        KeyUp = Input.GetKey(KeyCode.UpArrow);
-        KeyDown = Input.GetKey(KeyCode.DownArrow);*/
-    }
     //движение
     void Move()
     {
-        dirX = joystic.Horizontal * MoveSpeed;
-        dirY = joystic.Vertical * MoveSpeed;
-        rb.velocity = new Vector2(dirX, dirY);
-    }
-    //направление
-    void CalculateDirection()
-    {
-        if (KeyUp && !KeyRight && !KeyLeft && !KeyDown && transform.localScale.y > 0)
-        {
-            direction = 8; movingUp = true;
-        }
-        else if (KeyDown && !KeyRight && !KeyLeft && !KeyUp && transform.localScale.y < 0) { direction = 2; movingDown = true; }
-        else if (transform.localScale.x > 0)
-        {
-            if (KeyUp && KeyRight) direction = 9;
-            else if (KeyDown && KeyRight) direction = 3;
-            else if (KeyRight) { direction = 6; movingRight = true; }
-
-        }
-        else if (transform.localScale.x < 0)
-        {
-            if (KeyUp && KeyLeft) direction = 7;
-            else if (KeyDown && KeyLeft) direction = 1;
-            else if (KeyLeft && !KeyRight) { direction = 4; movingLeft = true; }
-
-        }
-
-        if (!KeyRight && !KeyLeft && !KeyDown && !KeyUp)
-        {
-            movingUp = false;
-            movingLeft = false;
-            movingDown = false;
-            movingRight = false;
-        }
-    }
-
-    //Анимация
-    private void Animate()
-    {
-        for (int i = 0; i < animators.Length; i++)
-        {
-            animators[i].SetBool("movingUp", movingUp);
-            //animators[i].SetBool("movingDown", movingDown);
-            //animators[i].SetBool("movingLeft", movingLeft);
-            //animators[i].SetBool("movingRight", movingRight);
-            //animators[i].SetInteger("direction", direction);
-        }
+        _direction.x = _joystic.Horizontal * MoveSpeed;
+        _direction.y = _joystic.Vertical * MoveSpeed;
+        rb.velocity = new Vector2(_direction.x, _direction.y);
     }
 
     private IEnumerator WaitToDestroyShildPlayer(float waitTime)

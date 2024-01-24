@@ -5,7 +5,9 @@ using UnityEngine;
 public class NewBackgroundMovie : MonoBehaviour
 {
     [SerializeField]
-    float speed;
+    private float speed;
+    [SerializeField]
+    private Joystick joystick;
     public string backgroundName;
     private Transform backgroundTransform;
     private float backgroundSize;
@@ -23,34 +25,34 @@ public class NewBackgroundMovie : MonoBehaviour
         switch (backgroundName)
         {
             case "Nebula":
-                if (Input.GetKey(KeyCode.UpArrow))
+                if (joystick.Vertical > 0)
                 {
                     speed = -0.4f;
                 }
 
-                if (Input.GetKey(KeyCode.DownArrow))
+                if (joystick.Vertical < 0)
                 {
                     speed = -0.2f;
                 }
                 break;
             case "SmallStar":
-                if (Input.GetKey(KeyCode.UpArrow))
+                if (joystick.Vertical > 0)
                 {
                     speed = -0.6f;
                 }
 
-                if (Input.GetKey(KeyCode.DownArrow))
+                if (joystick.Vertical < 0)
                 {
                     speed = -0.4f;
                 }
                 break;
             case "BigStar":
-                if (Input.GetKey(KeyCode.UpArrow))
+                if (joystick.Vertical > 0)
                 {
                     speed = -0.8f;
                 }
 
-                if (Input.GetKey(KeyCode.DownArrow))
+                if (joystick.Vertical < 0)
                 {
                     speed = -0.6f;
                 }
