@@ -41,7 +41,7 @@ public class Game : MonoBehaviour {
     private IEnumerator WaitAndThenDoSomething(float waitTime)
     {
         yield return new WaitForSeconds(waitTime);
-        FindObjectOfType<PauseGame>().PauseGameFunction(true, pause);
+        FindObjectOfType<PauseGame>().PauseAndSetActivePanelFunction(true, pause);
     }
 
 }

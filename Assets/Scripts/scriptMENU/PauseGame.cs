@@ -23,17 +23,15 @@ public class PauseGame : MonoBehaviour {
 		if (Input.GetKeyDown(pauseButton))
         {
             isPaused = !isPaused;
-            PauseGameFunction(isPaused, panelPause);
+            PauseAndSetActivePanelFunction(isPaused, panelPause);
         }
 	}
 
-    public void PauseGameFunction(bool isPaused, GameObject panel)
+    public void PauseAndSetActivePanelFunction(bool isPaused, GameObject panel)
     {
         if (isPaused)
         {
             panel.SetActive(true);
-            //cursor.visible = true;
-            //cursor.lockstate = cursorLockMode.none;
             Time.timeScale = 0;
             if (controller)
             {

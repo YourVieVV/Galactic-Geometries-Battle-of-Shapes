@@ -9,7 +9,7 @@ public class ButtonManagerM : MonoBehaviour {
 
     public void PlayGame()
     {
-        FindObjectOfType<PauseGame>().PauseGameFunction(false, pause);
+        FindObjectOfType<PauseGame>().PauseAndSetActivePanelFunction(false, pause);
     }
     
     public void ExitGame()
