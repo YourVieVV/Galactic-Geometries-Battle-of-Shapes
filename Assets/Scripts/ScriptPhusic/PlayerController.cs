@@ -13,6 +13,7 @@ public class PlayerController : MonoBehaviour
     public float Gravity;
     public bool isGunTwo = false;
     public bool isGunTree = false;
+    public bool isPalyerRotate = false;
     private float playerScale = 0.6f;
 
     public int direction;//направление
@@ -23,16 +24,7 @@ public class PlayerController : MonoBehaviour
 
     //кнопки
     private float shootDelayCouter;
-    private bool KeyLeft;
-    private bool KeyRight;
-    private bool KeyUp;
-    private bool KeyDown;
-    private float KeyAction;
-    private bool KeyStamina;
-    private bool KeyShoot;
     private GameObject BulletPlayer;
-    private bool Rotation;
-    private bool movingUp;
     private Vector2 _direction = Vector2.zero;
     public GameObject GunPlayerOne;
     public GameObject GunPlayerTwo;
@@ -41,7 +33,8 @@ public class PlayerController : MonoBehaviour
     public GameObject ExplosionPlayer;
     public GameObject shildPlayer;
     [SerializeField]
-    private Joystick _joystic;
+    private Joystick _joystickMoving,
+        _joystickRotation;
     private Rigidbody2D rb;
 
     //звук
@@ -77,7 +70,6 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    //выстрел
     private void Shoot()
     {
         if (shootDelayCouter <= 0)
@@ -101,6 +93,37 @@ public class PlayerController : MonoBehaviour
         shootDelayCouter -= Time.deltaTime;
     }
 
+    private void Move()
+    {
+        _direction.x = _joystickMoving.Horizontal * MoveSpeed;
+        _direction.y = _joystickMoving.Vertical * MoveSpeed;
+
+        if (isPalyerRotate)
+        {
+            // Если джостиком управляют
+            if (_joystickRotation.Vertical > 0.3f || _joystickRotation.Vertical < 0.3f && _joystickRotation.Horizontal > 0.3f || _joystickRotation.Horizontal < -0.3f)
+            {
+                float angle = Mathf.Atan2(_joystickRotation.Vertical, _joystickRotation.Horizontal) * Mathf.Rad2Deg;
+                transform.rotation = Quaternion.Euler(new Vector3(0, 0, angle - 90f));
+            }
+        }
+
+        rb.velocity = new Vector2(_direction.x, _direction.y);
+    }
+
+
+    private void Rotarion()
+    {
+
+    }
+
+    private IEnumerator WaitToDestroyShildPlayer(float waitTime)
+    {
+        yield return new WaitForSeconds(waitTime);
+        shildPlayer.SetActive(false);
+        FindObjectOfType<HittingAPlayer>().isShildActive = false;
+    }
+
     void Update()
     {
 
@@ -118,19 +141,5 @@ public class PlayerController : MonoBehaviour
         Shoot();
     }
 
-    //движение
-    void Move()
-    {
-        _direction.x = _joystic.Horizontal * MoveSpeed;
-        _direction.y = _joystic.Vertical * MoveSpeed;
-        rb.velocity = new Vector2(_direction.x, _direction.y);
-    }
-
-    private IEnumerator WaitToDestroyShildPlayer(float waitTime)
-    {
-        yield return new WaitForSeconds(waitTime);
-        shildPlayer.SetActive(false);
-        FindObjectOfType<HittingAPlayer>().isShildActive = false;
-    }
 }
 

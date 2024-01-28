@@ -4,39 +4,53 @@ using UnityEngine;
 
 public class UpgradeChosen : MonoBehaviour
 {
-    private UpgradesForPlayer _NameUpgradesPlayer;
-
-    private void Awake()
-    {
-        _NameUpgradesPlayer = GetComponent<UpgradesForPlayer>();
-    }
+    [SerializeField]
+    private UpgradesForPlayer _NameUpgradesPlayerScript;
 
     public void UpChosen(string Upgrade_chosen)
     {   
         switch (Upgrade_chosen)
         {
             case NamesUpgradePlayer.AddHP:
-                _NameUpgradesPlayer.AddHP();
+                _NameUpgradesPlayerScript.AddHP();
                 break;
             case NamesUpgradePlayer.AddMoveSpeed:
-                _NameUpgradesPlayer.AddMoveSpeed();
+                _NameUpgradesPlayerScript.AddMoveSpeed();
                 break;
             case NamesUpgradePlayer.AddRateOfFire:
-                _NameUpgradesPlayer.AddRateOfFire();
+                _NameUpgradesPlayerScript.AddRateOfFire();
                 break;
             case NamesUpgradePlayer.AddGunTwo:
-                _NameUpgradesPlayer.AddGunTwo();
+                _NameUpgradesPlayerScript.AddGunTwo();
                 break;
             case NamesUpgradePlayer.AddGunTree:
-                _NameUpgradesPlayer.AddGunTree();
+                _NameUpgradesPlayerScript.AddGunTree();
                 break;
             case NamesUpgradePlayer.OpenPortal:
-                _NameUpgradesPlayer.OpenPortal();
+                _NameUpgradesPlayerScript.OpenPortal();
                 break;
             case NamesUpgradePlayer.AddRotation:
-                //_NameUpgradesPlayer.AddHP();
+                _NameUpgradesPlayerScript.AddRotation();
                 break;
             case NamesUpgradePlayer.AddFlot:
+                //_NameUpgradesPlayer.AddHP();
+                break;
+            case NamesUpgradePlayer.ActivateShid:
+                //_NameUpgradesPlayer.AddHP();
+                break;
+            case NamesUpgradePlayer.AddDamage:
+                //_NameUpgradesPlayer.AddHP();
+                break;
+            case NamesUpgradePlayer.AddLaser:
+                //_NameUpgradesPlayer.AddHP();
+                break;
+            case NamesUpgradePlayer.AddLaserRateOfFire:
+                //_NameUpgradesPlayer.AddHP();
+                break;
+            case NamesUpgradePlayer.AddRocket:
+                //_NameUpgradesPlayer.AddHP();
+                break;
+            case NamesUpgradePlayer.AddRocketRateOfFire:
                 //_NameUpgradesPlayer.AddHP();
                 break;
             default: break;

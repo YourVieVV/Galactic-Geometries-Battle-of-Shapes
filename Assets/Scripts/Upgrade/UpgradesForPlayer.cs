@@ -11,6 +11,7 @@ public class UpgradesForPlayer : MonoBehaviour
     [SerializeField] private PlayerController getPlayerControllerScript;
     [SerializeField] private PortalForPlayer leftPanelScript;
     [SerializeField] private PortalForPlayer rightPanelScript;
+    [SerializeField] private Joystick joysticRotate;
 
     public void AddRateOfFire()
     {
@@ -47,6 +48,13 @@ public class UpgradesForPlayer : MonoBehaviour
     {
         leftPanelScript.isOpenPortal = true;
         rightPanelScript.isOpenPortal = true;
+        getPauseGameScript.PauseAndSetActivePanelFunction(false, upgradePanel);
+    }
+
+    public void AddRotation()
+    {
+        joysticRotate.gameObject.SetActive(true);
+        getPlayerControllerScript.isPalyerRotate = true;
         getPauseGameScript.PauseAndSetActivePanelFunction(false, upgradePanel);
     }
 }

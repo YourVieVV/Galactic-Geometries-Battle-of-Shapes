@@ -11,15 +11,13 @@ public class PauseGame : MonoBehaviour {
     [SerializeField]
     private GameObject panelPause;
     [SerializeField]
-    private GameObject player;
-    PlayerController controller;
+    private PlayerController playerControllerScript;
+    [SerializeField]
+    private Joystick joystickMove, 
+        joystickRotate;
 
-    void Start () {
-        controller = player.GetComponent<PlayerController>();
-	}
-	
-	// Update is called once per frame
-	void Update () {
+
+    void Update () {
 		if (Input.GetKeyDown(pauseButton))
         {
             isPaused = !isPaused;
@@ -32,19 +30,23 @@ public class PauseGame : MonoBehaviour {
         if (isPaused)
         {
             panel.SetActive(true);
+            joystickMove.gameObject.SetActive(false);
+            joystickRotate.gameObject.SetActive(false);
             Time.timeScale = 0;
-            if (controller)
+            if (playerControllerScript)
             {
-                controller.enabled = false;
+                playerControllerScript.enabled = false;
             }
         }
         else
         {
             panel.SetActive(false);
+            joystickMove.gameObject.SetActive(true);
+            joystickRotate.gameObject.SetActive(true);
             Time.timeScale = 1;
-            if (controller)
+            if (playerControllerScript)
             {
-                controller.enabled = true;
+                playerControllerScript.enabled = true;
             }
         }
     }
