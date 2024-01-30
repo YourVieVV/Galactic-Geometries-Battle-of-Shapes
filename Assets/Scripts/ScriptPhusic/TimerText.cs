@@ -28,7 +28,7 @@ public class TimerText : MonoBehaviour
 
         startingTimer += Time.deltaTime;
 
-        if (startingTimer > 59)
+        if (startingTimer > 3)
         {
             timerMin += 1;
             startingTimer = 0;

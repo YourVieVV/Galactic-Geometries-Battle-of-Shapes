@@ -12,6 +12,8 @@ TagManager:
   - BorderLeft
   - BorderRight
   - PlayerBullet
+  - MiniPlayerOne
+  - MiniPlayerTwo
   layers:
   - Default
   - TransparentFX

@@ -7,14 +7,14 @@ public class PlayerHP : MonoBehaviour {
 
     [SerializeField]
     private Slider slider;
-    public float currentHealth = 100;
-    private float upgradeHealth = 100;
+    public float currentHealth;
     private float maxHealth = 100;
     private float minHealth = 0;
     public GameObject player;
     public GameObject ExplosionPlayer;
 
     void Start () {
+        currentHealth = PlayerPrefs.GetFloat(PlayerStats.hpPlayer);
         slider.minValue = minHealth;
         slider.maxValue = maxHealth;
         slider.value = currentHealth;
@@ -22,8 +22,7 @@ public class PlayerHP : MonoBehaviour {
 
     public void UpgradeAddHP(float Hp)
     {
-        upgradeHealth += Hp;
-        currentHealth = upgradeHealth;
+        currentHealth += Hp;
         slider.maxValue = currentHealth;
         slider.value = currentHealth;
     }

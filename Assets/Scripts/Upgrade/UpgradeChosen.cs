@@ -33,7 +33,10 @@ public class UpgradeChosen : MonoBehaviour
                 _NameUpgradesPlayerScript.AddRotation();
                 break;
             case NamesUpgradePlayer.AddFlot:
-                //_NameUpgradesPlayer.AddHP();
+                _NameUpgradesPlayerScript.AddFlot();
+                break;
+            case NamesUpgradePlayer.AddSecondShipFlot:
+                _NameUpgradesPlayerScript.AddSecondShipFlot();
                 break;
             case NamesUpgradePlayer.ActivateShid:
                 //_NameUpgradesPlayer.AddHP();

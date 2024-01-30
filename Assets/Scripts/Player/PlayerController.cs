@@ -1,14 +1,14 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-
     //переменные
     public GameObject currentProjecktile;
-    public float shootDelay = 1.2f;
-    public float MoveSpeed;
+    public float shootDelayGun;
+    public float shootDelayLaser;
+    public float shootDelayRocket;
+    public float moveSpeed;
     public float Stamina;
     public float Gravity;
     public bool isGunTwo = false;
@@ -18,10 +18,6 @@ public class PlayerController : MonoBehaviour
 
     public int direction;//направление
 
-    //направление движения вверх и вниз
-    private float hsp;
-    private float vsp;
-
     //кнопки
     private float shootDelayCouter;
     private GameObject BulletPlayer;
@@ -30,7 +26,6 @@ public class PlayerController : MonoBehaviour
     public GameObject GunPlayerTwo;
     public GameObject GunPlayerTree;
     public GameObject player;
-    public GameObject ExplosionPlayer;
     public GameObject shildPlayer;
     [SerializeField]
     private Joystick _joystickMoving,
@@ -39,9 +34,6 @@ public class PlayerController : MonoBehaviour
 
     //звук
     private AudioSource AudioShut;
-
-    //animation
-    private Animator[] animators;
 
     //смерть
     private bool isActive;
@@ -54,7 +46,6 @@ public class PlayerController : MonoBehaviour
 
     void Start()
     {
-        animators = GetComponentsInChildren<Animator>();
         shootDelayCouter = 0;
         BulletPlayer = currentProjecktile;
         AudioShut = GetComponent<AudioSource>();
@@ -80,13 +71,13 @@ public class PlayerController : MonoBehaviour
             {
                 Instantiate(currentProjecktile, GunPlayerTwo.transform.position, transform.rotation);
             }
-            
+
             if (isGunTree)
             {
                 Instantiate(currentProjecktile, GunPlayerTree.transform.position, transform.rotation);
             }
 
-            shootDelayCouter = shootDelay;
+            shootDelayCouter = shootDelayGun;
             AudioShut.Play();
         }
 
@@ -95,8 +86,8 @@ public class PlayerController : MonoBehaviour
 
     private void Move()
     {
-        _direction.x = _joystickMoving.Horizontal * MoveSpeed;
-        _direction.y = _joystickMoving.Vertical * MoveSpeed;
+        _direction.x = _joystickMoving.Horizontal * moveSpeed;
+        _direction.y = _joystickMoving.Vertical * moveSpeed;
 
         if (isPalyerRotate)
         {
@@ -111,10 +102,16 @@ public class PlayerController : MonoBehaviour
         rb.velocity = new Vector2(_direction.x, _direction.y);
     }
 
-
-    private void Rotarion()
+    public void StartStats()
     {
+        moveSpeed = PlayerPrefs.GetFloat(PlayerStats.moveSpeed);
+        shootDelayGun = PlayerPrefs.GetFloat(PlayerStats.shootDelayGun);
+        shootDelayLaser = PlayerPrefs.GetFloat(PlayerStats.shootDelayLaser);
+        shootDelayRocket = PlayerPrefs.GetFloat(PlayerStats.shootDelayRocket);
 
+        isGunTwo = PlayerPrefs.GetInt(PlayerStats.isGunTwo) == 0 ? false : true;
+        isGunTree = PlayerPrefs.GetInt(PlayerStats.isGunTree) == 0 ? false : true;
+        isPalyerRotate = PlayerPrefs.GetInt(PlayerStats.isPalyerRotate) == 0 ? false : true;
     }
 
     private IEnumerator WaitToDestroyShildPlayer(float waitTime)
@@ -138,6 +135,7 @@ public class PlayerController : MonoBehaviour
         }
 
         Move();
+        StartStats();
         Shoot();
     }
 

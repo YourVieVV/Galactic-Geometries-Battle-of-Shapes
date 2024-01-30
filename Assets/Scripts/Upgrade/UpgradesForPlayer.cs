@@ -12,35 +12,44 @@ public class UpgradesForPlayer : MonoBehaviour
     [SerializeField] private PortalForPlayer leftPanelScript;
     [SerializeField] private PortalForPlayer rightPanelScript;
     [SerializeField] private Joystick joysticRotate;
+    [SerializeField] private GameObject firstShip;
+    [SerializeField] private GameObject secondShip;
+    private float currentHpPlayer;
 
     public void AddRateOfFire()
     {
-        currentShutDelay = getPlayerControllerScript.shootDelay;
-        getPlayerControllerScript.shootDelay = currentShutDelay - 0.2f;
+        currentShutDelay = getPlayerControllerScript.shootDelayGun;
+        getPlayerControllerScript.shootDelayGun = currentShutDelay - PlayerStats.incShootDelayGun;
+        PlayerPrefs.SetFloat(PlayerStats.shootDelayGun, currentShutDelay - PlayerStats.incShootDelayGun);
         getPauseGameScript.PauseAndSetActivePanelFunction(false, upgradePanel);
     }
 
     public void AddHP()
     {
         FindObjectOfType<PlayerHP>().UpgradeAddHP(20);
+        currentHpPlayer = PlayerPrefs.GetFloat(PlayerStats.hpPlayer);
+        PlayerPrefs.SetFloat(PlayerStats.hpPlayer, currentHpPlayer + 20f);
         getPauseGameScript.PauseAndSetActivePanelFunction(false, upgradePanel);
     }
 
     public void AddGunTwo()
     {
         getPlayerControllerScript.isGunTwo = true;
+        PlayerPrefs.SetInt(PlayerStats.isGunTwo, 1);
         getPauseGameScript.PauseAndSetActivePanelFunction(false, upgradePanel);
     }
 
     public void AddGunTree()
     {
         getPlayerControllerScript.isGunTree = true;
+        PlayerPrefs.SetInt(PlayerStats.isGunTree, 1);
         getPauseGameScript.PauseAndSetActivePanelFunction(false, upgradePanel);
     }
 
     public void AddMoveSpeed()
     {
-        getPlayerControllerScript.MoveSpeed += 0.2f;
+        getPlayerControllerScript.moveSpeed += PlayerStats.incMoveSpeed;
+        PlayerPrefs.SetFloat(PlayerStats.moveSpeed, getPlayerControllerScript.moveSpeed);
         getPauseGameScript.PauseAndSetActivePanelFunction(false, upgradePanel);
     }
 
@@ -48,6 +57,7 @@ public class UpgradesForPlayer : MonoBehaviour
     {
         leftPanelScript.isOpenPortal = true;
         rightPanelScript.isOpenPortal = true;
+        PlayerPrefs.SetInt(PlayerStats.isOpenPortal, 1);
         getPauseGameScript.PauseAndSetActivePanelFunction(false, upgradePanel);
     }
 
@@ -55,6 +65,21 @@ public class UpgradesForPlayer : MonoBehaviour
     {
         joysticRotate.gameObject.SetActive(true);
         getPlayerControllerScript.isPalyerRotate = true;
+        PlayerPrefs.SetInt(PlayerStats.isPalyerRotate, 1);
+        getPauseGameScript.PauseAndSetActivePanelFunction(false, upgradePanel);
+    }
+
+    public void AddFlot()
+    {
+        firstShip.SetActive(true);
+        PlayerPrefs.SetInt(PlayerStats.isFirstShipFlot, 1);
+        getPauseGameScript.PauseAndSetActivePanelFunction(false, upgradePanel);
+    }
+
+    public void AddSecondShipFlot()
+    {
+        secondShip.SetActive(true);
+        PlayerPrefs.SetInt(PlayerStats.isSecondShipFlot, 1);
         getPauseGameScript.PauseAndSetActivePanelFunction(false, upgradePanel);
     }
 }

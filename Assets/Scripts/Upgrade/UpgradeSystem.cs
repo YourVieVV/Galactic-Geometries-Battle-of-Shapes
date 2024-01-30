@@ -18,7 +18,7 @@ public class UpgradeSystem : MonoBehaviour
         new Upgrade { Name = NamesUpgradePlayer.AddDamage },
         new Upgrade { Name = NamesUpgradePlayer.AddDamage },
         new Upgrade { Name = NamesUpgradePlayer.AddFlot },
-        new Upgrade { Name = NamesUpgradePlayer.AddFlot },
+        new Upgrade { Name = NamesUpgradePlayer.AddSecondShipFlot },
         new Upgrade { Name = NamesUpgradePlayer.AddGunTwo },
         new Upgrade { Name = NamesUpgradePlayer.AddGunTree },
         new Upgrade { Name = NamesUpgradePlayer.AddRotation },

@@ -1,16 +1,14 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class dontMoveBehiendCamera : MonoBehaviour
 {
 
-Vector3 min, max;
+    Vector3 min, max;
 
     void Start()
     {
-        min = Camera.main.ViewportToWorldPoint (new Vector2 (0, 0));
-        max = Camera.main.ViewportToWorldPoint (new Vector2 (1, 1));
+        min = Camera.main.ViewportToWorldPoint(new Vector2(0, 0));
+        max = Camera.main.ViewportToWorldPoint(new Vector2(1, 1));
     }
 
 
@@ -25,13 +23,13 @@ Vector3 min, max;
         // }
         if (this.transform.position.x > max.x)
             this.transform.position = new Vector3(max.x, this.transform.position.y, this.transform.position.z);
- 
+
         if (this.transform.position.x < min.x)
             this.transform.position = new Vector3(min.x, this.transform.position.y, this.transform.position.z);
- 
+
         if (this.transform.position.y > max.y)
             this.transform.position = new Vector3(this.transform.position.x, max.y, this.transform.position.z);
- 
+
         if (this.transform.position.y < min.y)
             this.transform.position = new Vector3(this.transform.position.x, min.y, this.transform.position.z);
     }
