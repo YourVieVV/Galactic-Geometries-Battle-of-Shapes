@@ -15,8 +15,8 @@ public class NamesUpgradePlayer : MonoBehaviour
         AddFlot = "Add a ship for the flotilla",
         AddSecondShipFlot = "Add a new ship to the flotilla",
         ActivateShid = "Activate protective force field",
-        AddLaser = "Replace the current weapon with a laser one",
-        AddLaserRateOfFire = "Increase laser firing speed by 0.2",
+        //AddLaser = "Replace the current weapon with a laser one",
+        //AddLaserRateOfFire = "Increase laser firing speed by 0.2",
         AddRocket = "Replace the current weapon with a rocket launcher",
         AddRocketRateOfFire = "Increase the firing speed of the rocket launcher by 0.2",
         AddRotation = "Add ship rotation";

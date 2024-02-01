@@ -14,11 +14,12 @@ public class SetInitialPlayerStats : MonoBehaviour
             PlayerPrefs.SetFloat(PlayerStats.shootDelayGun, PlayerStats.initShootDelayGun);
             PlayerPrefs.SetFloat(PlayerStats.moveSpeed, PlayerStats.initMoveSpeed);
             PlayerPrefs.SetFloat(PlayerStats.hpPlayer, PlayerStats.initHpPlayer);
-            PlayerPrefs.SetFloat(PlayerStats.shootDelayLaser, PlayerStats.initShootDelayLaser);
+            //PlayerPrefs.SetFloat(PlayerStats.shootDelayLaser, PlayerStats.initShootDelayLaser);
             PlayerPrefs.SetFloat(PlayerStats.shootDelayRocket, PlayerStats.initShootDelayRocket);
 
             PlayerPrefs.SetInt(PlayerStats.isGunTwo, PlayerStats.initIsGunTwo);
             PlayerPrefs.SetInt(PlayerStats.isGunTree, PlayerStats.initIsGunTree);
+            PlayerPrefs.SetInt(PlayerStats.isRocket, PlayerStats.initIsRocket);
             PlayerPrefs.SetInt(PlayerStats.isPalyerRotate, PlayerStats.initIsPalyerRotate);
             PlayerPrefs.SetInt(PlayerStats.isShild, PlayerStats.initIsShild);
             PlayerPrefs.SetInt(PlayerStats.isOpenPortal, PlayerStats.initIsOpenPortal);

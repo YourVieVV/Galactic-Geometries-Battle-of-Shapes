@@ -9,17 +9,14 @@ public class newEnemyMovie : MonoBehaviour
     public bool isCircleEnemy = false;
     private bool isLeft = false;
     private Rigidbody2D myBody;
-    // Start is called before the first frame update
+
     void Start()
     {
         myBody = GetComponent<Rigidbody2D>();
     }
 
-    // Update is called once per frame
     void Update()
     {
-        // transform.position = new Vector2(transform.position.x, transform.position.y - movementSpeed);
-
         if (isCircleEnemy)
         {
             CircleEnemyMovement(isLeft);

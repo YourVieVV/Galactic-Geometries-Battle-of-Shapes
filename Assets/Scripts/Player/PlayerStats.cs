@@ -8,10 +8,11 @@ public class PlayerStats : MonoBehaviour
         shootDelayGun = "shootDelayGun",
         moveSpeed = "moveSpeed",
         hpPlayer = "hpPlayer",
-        shootDelayLaser = "shootDelayLaser",
+        //shootDelayLaser = "shootDelayLaser",
         shootDelayRocket = "shootDelayRocket",
         isGunTwo = "isGunTwo",
         isGunTree = "isGunTree",
+        isRocket="isRocket",
         isPalyerRotate = "isPalyerRotate",
         isFirstShipFlot = "isFirstShipFlot",
         isSecondShipFlot = "isSecondShipFlot",
@@ -19,14 +20,15 @@ public class PlayerStats : MonoBehaviour
         isShild = "isShild";
 
     public const float
-        initShootDelayGun = 0.8f,
+        initShootDelayGun = 1f,
         initMoveSpeed = 1.8f,
         initHpPlayer = 100f,
-        initShootDelayLaser = 0.6f,
-        initShootDelayRocket = 0.6f;
+        //initShootDelayLaser = 0.6f,
+        initShootDelayRocket = 2f;
 
     public const int initIsGunTwo = 0,
         initIsGunTree = 0,
+        initIsRocket = 0,
         initIsPalyerRotate = 0,
         initIsShild = 0,
         initIsFirstShipFlot = 0,
@@ -38,6 +40,6 @@ public class PlayerStats : MonoBehaviour
         incShootDelayGun = 0.2f,
         incMoveSpeed = 0.2f,
         incHpPlayer = 20f,
-        incShootDelayLaser = 0.2f,
+        //incShootDelayLaser = 0.2f,
         incShootDelayRocket = 0.2f;        
 }

@@ -1,35 +1,42 @@
-﻿using System.Collections;
+﻿using DigitalRuby.LightningBolt;
+using System.Collections;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    //переменные
-    public GameObject currentProjecktile;
+    //public float shootDelayLaser;
+    //[SerializeField]
+    //private GameObject lightningLaser;
+
     public float shootDelayGun;
-    public float shootDelayLaser;
     public float shootDelayRocket;
+    public float shootDelayCouter;
     public float moveSpeed;
-    public float Stamina;
-    public float Gravity;
-    public bool isGunTwo = false;
-    public bool isGunTree = false;
-    public bool isPalyerRotate = false;
-    private float playerScale = 0.6f;
 
-    public int direction;//направление
+    public bool isRocket;
+    public bool isGunTwo;
+    public bool isGunTree;
+    public bool isPalyerRotate;
 
-    //кнопки
-    private float shootDelayCouter;
-    private GameObject BulletPlayer;
-    private Vector2 _direction = Vector2.zero;
     public GameObject GunPlayerOne;
     public GameObject GunPlayerTwo;
     public GameObject GunPlayerTree;
     public GameObject player;
     public GameObject shildPlayer;
+
+    [SerializeField]
+    private GameObject playerBullet;
+    [SerializeField]
+    private GameObject playerRocket;
+
+    [SerializeField]
+    private LightningBoltScript _LightningBoltScript;
     [SerializeField]
     private Joystick _joystickMoving,
-        _joystickRotation;
+    _joystickRotation;
+
+    private Vector2 _direction = Vector2.zero;
+
     private Rigidbody2D rb;
 
     //звук
@@ -37,19 +44,15 @@ public class PlayerController : MonoBehaviour
 
     //смерть
     private bool isActive;
-    private bool isDead;
-    public float invincibilityTime;
-    public float inactivityTime;
-    private float invincCounter;
     private float inactCounter;
 
 
     void Start()
     {
         shootDelayCouter = 0;
-        BulletPlayer = currentProjecktile;
         AudioShut = GetComponent<AudioSource>();
         rb = GetComponent<Rigidbody2D>();
+        StartStats();
     }
     void OnTriggerEnter2D(Collider2D collider)
     {
@@ -63,22 +66,35 @@ public class PlayerController : MonoBehaviour
 
     private void Shoot()
     {
+        //lightningLaser.SetActive(true);
+        //_LightningBoltScript.StartObject.transform.position = new Vector3(GunPlayerOne.transform.position.x, GunPlayerOne.transform.position.y, 1f);
+        //_LightningBoltScript.EndObject.transform.position = new Vector3(GunPlayerOne.transform.position.x, GunPlayerOne.transform.position.y + 4f, 1f);
+
+
         if (shootDelayCouter <= 0)
         {
-            Instantiate(currentProjecktile, GunPlayerOne.transform.position, transform.rotation);
-
-            if (isGunTwo)
+            if (isRocket)
             {
-                Instantiate(currentProjecktile, GunPlayerTwo.transform.position, transform.rotation);
+                Instantiate(playerRocket, GunPlayerOne.transform.position, transform.rotation);
+                shootDelayCouter = shootDelayRocket;
+            } else
+            {
+                Instantiate(playerBullet, GunPlayerOne.transform.position, transform.rotation);
+
+                if (isGunTwo)
+                {
+                    Instantiate(playerBullet, GunPlayerTwo.transform.position, transform.rotation);
+                }
+
+                if (isGunTree)
+                {
+                    Instantiate(playerBullet, GunPlayerTree.transform.position, transform.rotation);
+                }
+
+                shootDelayCouter = shootDelayGun;
+                AudioShut.Play();
             }
 
-            if (isGunTree)
-            {
-                Instantiate(currentProjecktile, GunPlayerTree.transform.position, transform.rotation);
-            }
-
-            shootDelayCouter = shootDelayGun;
-            AudioShut.Play();
         }
 
         shootDelayCouter -= Time.deltaTime;
@@ -106,9 +122,10 @@ public class PlayerController : MonoBehaviour
     {
         moveSpeed = PlayerPrefs.GetFloat(PlayerStats.moveSpeed);
         shootDelayGun = PlayerPrefs.GetFloat(PlayerStats.shootDelayGun);
-        shootDelayLaser = PlayerPrefs.GetFloat(PlayerStats.shootDelayLaser);
+        //shootDelayLaser = PlayerPrefs.GetFloat(PlayerStats.shootDelayLaser);
         shootDelayRocket = PlayerPrefs.GetFloat(PlayerStats.shootDelayRocket);
 
+        isRocket = PlayerPrefs.GetInt(PlayerStats.isRocket) != PlayerStats.initIsRocket ? true : false;
         isGunTwo = PlayerPrefs.GetInt(PlayerStats.isGunTwo) == 0 ? false : true;
         isGunTree = PlayerPrefs.GetInt(PlayerStats.isGunTree) == 0 ? false : true;
         isPalyerRotate = PlayerPrefs.GetInt(PlayerStats.isPalyerRotate) == 0 ? false : true;
@@ -135,7 +152,6 @@ public class PlayerController : MonoBehaviour
         }
 
         Move();
-        StartStats();
         Shoot();
     }
 

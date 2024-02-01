@@ -5,7 +5,6 @@ using UnityEngine;
 public class UpgradesForPlayer : MonoBehaviour
 {
     public GameObject upgradePanel;
-    private float currentShutDelay;
 
     [SerializeField] private PauseGame getPauseGameScript;
     [SerializeField] private PlayerController getPlayerControllerScript;
@@ -14,7 +13,10 @@ public class UpgradesForPlayer : MonoBehaviour
     [SerializeField] private Joystick joysticRotate;
     [SerializeField] private GameObject firstShip;
     [SerializeField] private GameObject secondShip;
+
     private float currentHpPlayer;
+    private float currentShutDelay;
+    private float currentShutDelayRocket;
 
     public void AddRateOfFire()
     {
@@ -80,6 +82,21 @@ public class UpgradesForPlayer : MonoBehaviour
     {
         secondShip.SetActive(true);
         PlayerPrefs.SetInt(PlayerStats.isSecondShipFlot, 1);
+        getPauseGameScript.PauseAndSetActivePanelFunction(false, upgradePanel);
+    }
+
+    public void AddRocket()
+    {
+        getPlayerControllerScript.isRocket = true;
+        PlayerPrefs.SetInt(PlayerStats.isRocket, 1);
+        getPauseGameScript.PauseAndSetActivePanelFunction(false, upgradePanel);
+    }
+
+    public void AddRocketRateOfFire()
+    {
+        currentShutDelayRocket = getPlayerControllerScript.shootDelayRocket;
+        getPlayerControllerScript.shootDelayRocket = currentShutDelayRocket - PlayerStats.incShootDelayRocket;
+        PlayerPrefs.SetFloat(PlayerStats.shootDelayRocket, currentShutDelayRocket - PlayerStats.incShootDelayRocket);
         getPauseGameScript.PauseAndSetActivePanelFunction(false, upgradePanel);
     }
 }

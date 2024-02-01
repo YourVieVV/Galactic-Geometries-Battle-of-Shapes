@@ -4,19 +4,19 @@ using UnityEngine;
 
 public class EnemyHP : MonoBehaviour
 {
-    // Start is called before the first frame update
     public GameObject ExplotionEnemyDestroy;
     public float enemyHP = 100;
-    public float damageByEnemy = 50;
 
-    public void TakeHPEnemy()
+    public void TakeHPEnemy(int damage)
     {
-        enemyHP -= damageByEnemy;
+        enemyHP -= damage;
         if (enemyHP <= 0)
         {
             DestroyEnemy();
             FindObjectOfType<Score>().CounterScope(10);
+            return;
         }
+        Instantiate(ExplotionEnemyDestroy, transform.position, Quaternion.identity);
     }
 
     public void HittingEnemyByPlayer()

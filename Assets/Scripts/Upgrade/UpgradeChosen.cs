@@ -41,23 +41,22 @@ public class UpgradeChosen : MonoBehaviour
             case NamesUpgradePlayer.ActivateShid:
                 //_NameUpgradesPlayer.AddHP();
                 break;
-            case NamesUpgradePlayer.AddDamage:
-                //_NameUpgradesPlayer.AddHP();
-                break;
-            case NamesUpgradePlayer.AddLaser:
-                //_NameUpgradesPlayer.AddHP();
-                break;
-            case NamesUpgradePlayer.AddLaserRateOfFire:
-                //_NameUpgradesPlayer.AddHP();
-                break;
             case NamesUpgradePlayer.AddRocket:
-                //_NameUpgradesPlayer.AddHP();
+                _NameUpgradesPlayerScript.AddRocket();
                 break;
             case NamesUpgradePlayer.AddRocketRateOfFire:
-                //_NameUpgradesPlayer.AddHP();
+                _NameUpgradesPlayerScript.AddRocketRateOfFire();
                 break;
+            //case NamesUpgradePlayer.AddDamage:
+            //_NameUpgradesPlayer.AddHP();
+            //break;
+            //case NamesUpgradePlayer.AddLaser:
+            //_NameUpgradesPlayer.AddHP();
+            //break;
+            //case NamesUpgradePlayer.AddLaserRateOfFire:
+            //_NameUpgradesPlayer.AddHP();
+            //break;
             default: break;
-
         }
        
     }

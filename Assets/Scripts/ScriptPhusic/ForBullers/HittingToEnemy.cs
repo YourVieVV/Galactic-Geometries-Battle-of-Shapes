@@ -3,13 +3,21 @@ using UnityEngine;
 public class HittingToEnemy : MonoBehaviour
 {
     public GameObject ExplotionHitEnemy;
+    
+    // На будущее увеличение урона
+    //private int damagePlayer;
+
+    //private void Start()
+    //{
+      //  damagePlayer = PlayerPrefs.GetInt
+    //}
+
     private void OnTriggerEnter2D(Collider2D collider)
     {
         if (collider.tag == "Enemy" || collider.tag == "EnemySquare")
         {
-            Instantiate(ExplotionHitEnemy, transform.position, Quaternion.identity);
             // collision.GetComponent для того, что бы движок понимал у какого enemy отнимать хп при попадании
-            collider.GetComponent<EnemyHP>().TakeHPEnemy();
+            collider.GetComponent<EnemyHP>().TakeHPEnemy(100);
             DestroyPlayerBullet();
         }
         if (collider.tag == "EnemyBullet")
