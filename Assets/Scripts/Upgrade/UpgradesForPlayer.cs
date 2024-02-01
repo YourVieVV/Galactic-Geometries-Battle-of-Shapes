@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class UpgradesForPlayer : MonoBehaviour
 {
@@ -13,6 +14,8 @@ public class UpgradesForPlayer : MonoBehaviour
     [SerializeField] private Joystick joysticRotate;
     [SerializeField] private GameObject firstShip;
     [SerializeField] private GameObject secondShip;
+    [SerializeField] private Slider sliderShieldHP;
+    [SerializeField] private GameObject ShieldPlayer;
 
     private float currentHpPlayer;
     private float currentShutDelay;
@@ -97,6 +100,14 @@ public class UpgradesForPlayer : MonoBehaviour
         currentShutDelayRocket = getPlayerControllerScript.shootDelayRocket;
         getPlayerControllerScript.shootDelayRocket = currentShutDelayRocket - PlayerStats.incShootDelayRocket;
         PlayerPrefs.SetFloat(PlayerStats.shootDelayRocket, currentShutDelayRocket - PlayerStats.incShootDelayRocket);
+        getPauseGameScript.PauseAndSetActivePanelFunction(false, upgradePanel);
+    }
+
+    public void ActivateShield()
+    {
+        sliderShieldHP.gameObject.SetActive(true);
+        ShieldPlayer.SetActive(true);
+        PlayerPrefs.SetInt(PlayerStats.isShield, 1);
         getPauseGameScript.PauseAndSetActivePanelFunction(false, upgradePanel);
     }
 }

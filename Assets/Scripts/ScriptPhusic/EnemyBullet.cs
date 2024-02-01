@@ -9,6 +9,7 @@ public class EnemyBullet : MonoBehaviour
     public float moveSpeed;
     public GameObject ExplosionBullet;
     public GameObject ExplosionHitPlayer;
+    public GameObject ExplosionHitPlayerShield;
 
     void Start()
     {
@@ -23,6 +24,16 @@ public class EnemyBullet : MonoBehaviour
             myrigitbody.AddRelativeForce(Vector2.down * moveSpeed, ForceMode2D.Impulse);
         }
         
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.tag == "ShieldPlayer")
+        {
+            Instantiate(ExplosionHitPlayerShield, transform.position, Quaternion.identity);
+            FindObjectOfType<ShieldHP>().Damage(35);
+            Destroy(gameObject);
+        }
     }
 
     public void BulletHitPlayer()

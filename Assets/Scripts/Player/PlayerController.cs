@@ -59,7 +59,7 @@ public class PlayerController : MonoBehaviour
         if (collider.tag == "DropShild")
         {
             shildPlayer.SetActive(true);
-            FindObjectOfType<HittingAPlayer>().isShildActive = true;
+            FindObjectOfType<HittingAPlayer>().isShieldActive = true;
             StartCoroutine(WaitToDestroyShildPlayer(10));
         }
     }
@@ -135,7 +135,7 @@ public class PlayerController : MonoBehaviour
     {
         yield return new WaitForSeconds(waitTime);
         shildPlayer.SetActive(false);
-        FindObjectOfType<HittingAPlayer>().isShildActive = false;
+        FindObjectOfType<HittingAPlayer>().isShieldActive = false;
     }
 
     void Update()

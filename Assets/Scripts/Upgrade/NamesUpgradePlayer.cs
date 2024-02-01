@@ -14,7 +14,7 @@ public class NamesUpgradePlayer : MonoBehaviour
         OpenPortal = "Moving the player across the sides of the screen",
         AddFlot = "Add a ship for the flotilla",
         AddSecondShipFlot = "Add a new ship to the flotilla",
-        ActivateShid = "Activate protective force field",
+        ActivateShield = "Activate protective force field",
         //AddLaser = "Replace the current weapon with a laser one",
         //AddLaserRateOfFire = "Increase laser firing speed by 0.2",
         AddRocket = "Replace the current weapon with a rocket launcher",

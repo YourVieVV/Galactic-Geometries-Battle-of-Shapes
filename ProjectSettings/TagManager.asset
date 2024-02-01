@@ -14,6 +14,7 @@ TagManager:
   - PlayerBullet
   - MiniPlayerOne
   - MiniPlayerTwo
+  - ShieldPlayer
   layers:
   - Default
   - TransparentFX

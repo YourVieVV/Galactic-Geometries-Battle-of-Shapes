@@ -3,11 +3,11 @@
 public class HittingAPlayer : MonoBehaviour
 {
 
-    public bool isShildActive = false;
+    public bool isShieldActive = false;
 
     void OnTriggerEnter2D(Collider2D collider)
     {
-        if (isShildActive)
+        if (isShieldActive)
         {
 
         }

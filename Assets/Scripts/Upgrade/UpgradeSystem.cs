@@ -23,7 +23,7 @@ public class UpgradeSystem : MonoBehaviour
         new Upgrade { Name = NamesUpgradePlayer.AddGunTwo },
         new Upgrade { Name = NamesUpgradePlayer.AddGunTree },
         new Upgrade { Name = NamesUpgradePlayer.AddRotation },
-        new Upgrade { Name = NamesUpgradePlayer.ActivateShid },
+        new Upgrade { Name = NamesUpgradePlayer.ActivateShield },
         //new Upgrade { Name = NamesUpgradePlayer.AddLaser },
         //new Upgrade { Name = NamesUpgradePlayer.AddLaserRateOfFire },
         //new Upgrade { Name = NamesUpgradePlayer.AddLaserRateOfFire },

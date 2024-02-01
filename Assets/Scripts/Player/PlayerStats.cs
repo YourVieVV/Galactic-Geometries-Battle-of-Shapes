@@ -17,7 +17,7 @@ public class PlayerStats : MonoBehaviour
         isFirstShipFlot = "isFirstShipFlot",
         isSecondShipFlot = "isSecondShipFlot",
         isOpenPortal = "isOpenPortal",
-        isShild = "isShild";
+        isShield = "isShield";
 
     public const float
         initShootDelayGun = 1f,
@@ -30,7 +30,7 @@ public class PlayerStats : MonoBehaviour
         initIsGunTree = 0,
         initIsRocket = 0,
         initIsPalyerRotate = 0,
-        initIsShild = 0,
+        initIsShield = 0,
         initIsFirstShipFlot = 0,
         initIsSecondShipFlot = 0,
         initIsOpenPortal = 0,

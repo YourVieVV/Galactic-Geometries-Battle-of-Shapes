@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.UI;
 
 public class SetInitialPlayerStats : MonoBehaviour
 {
@@ -7,6 +8,8 @@ public class SetInitialPlayerStats : MonoBehaviour
     [SerializeField] private PortalForPlayer leftPanelScript;
     [SerializeField] private PortalForPlayer rightPanelScript;
     [SerializeField] private PlayerHP playerHPScript;
+    [SerializeField] private Slider sliderShieldHP;
+    [SerializeField] private GameObject ShieldPlayer;
     public void SetInitialValuesPalyer()
     {
         if (PlayerPrefs.HasKey("isSetStartValuesPlayer") == false)
@@ -21,7 +24,7 @@ public class SetInitialPlayerStats : MonoBehaviour
             PlayerPrefs.SetInt(PlayerStats.isGunTree, PlayerStats.initIsGunTree);
             PlayerPrefs.SetInt(PlayerStats.isRocket, PlayerStats.initIsRocket);
             PlayerPrefs.SetInt(PlayerStats.isPalyerRotate, PlayerStats.initIsPalyerRotate);
-            PlayerPrefs.SetInt(PlayerStats.isShild, PlayerStats.initIsShild);
+            PlayerPrefs.SetInt(PlayerStats.isShield, PlayerStats.initIsShield);
             PlayerPrefs.SetInt(PlayerStats.isOpenPortal, PlayerStats.initIsOpenPortal);
             PlayerPrefs.SetInt(PlayerStats.isFirstShipFlot, PlayerStats.initIsFirstShipFlot);
             PlayerPrefs.SetInt(PlayerStats.isSecondShipFlot, PlayerStats.initIsSecondShipFlot);
@@ -45,11 +48,15 @@ public class SetInitialPlayerStats : MonoBehaviour
                 leftPanelScript.isOpenPortal = true;
                 rightPanelScript.isOpenPortal = true;
             }
+            if (PlayerPrefs.GetInt(PlayerStats.isShield) != PlayerStats.initIsShield)
+            {
+                sliderShieldHP.gameObject.SetActive(true);
+                ShieldPlayer.SetActive(true);
+            }
             if (PlayerPrefs.GetFloat(PlayerStats.hpPlayer) != PlayerStats.initHpPlayer)
             {
                 playerHPScript.UpgradeAddHP(PlayerPrefs.GetFloat(PlayerStats.hpPlayer) - PlayerStats.initHpPlayer);
             }
-
         }
     }
 
