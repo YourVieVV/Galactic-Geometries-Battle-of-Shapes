@@ -31,7 +31,6 @@ public class UpgradeSystem : MonoBehaviour
         new Upgrade { Name = NamesUpgradePlayer.AddRocketRateOfFire },
         new Upgrade { Name = NamesUpgradePlayer.AddRocketRateOfFire },
         new Upgrade { Name = NamesUpgradePlayer.AddRocketRateOfFire },
-        new Upgrade { Name = NamesUpgradePlayer.AddRocketRateOfFire },
         new Upgrade { Name = NamesUpgradePlayer.OpenPortal }
     };
 

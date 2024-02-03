@@ -8,7 +8,7 @@ public class Meteorite : MonoBehaviour
     public GameObject PlusHP;
     public GameObject shildPlayer;
     private float _movementSpeed = 1.5f;
-    public float rotateZ = 0f;
+    public float rotateZ = 20f;
     public bool onGround;
     private Rigidbody2D myBody;
     void Start()

@@ -22,12 +22,12 @@ public class SpawnMeteor : MonoBehaviour {
     {
         while (timerText.timerMin < 8)
         {
-            if (timerText.timerMin == 3 && isTimeHasCome3)
+            if (timerText.timerMin == 2 && isTimeHasCome3)
             {
                 spawnDelay -= 1;
                 isTimeHasCome3 = false;
             }
-            if (timerText.timerMin == 6 && isTimeHasCome6)
+            if (timerText.timerMin == 4 && isTimeHasCome6)
             {
                 spawnDelay -= 1;
                 isTimeHasCome6 = false;
