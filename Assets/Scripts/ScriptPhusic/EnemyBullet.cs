@@ -26,16 +26,6 @@ public class EnemyBullet : MonoBehaviour
         
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.tag == "ShieldPlayer")
-        {
-            Instantiate(ExplosionHitPlayerShield, transform.position, Quaternion.identity);
-            FindObjectOfType<ShieldHP>().Damage(35);
-            Destroy(gameObject);
-        }
-    }
-
     public void BulletHitPlayer()
     {
         Instantiate(ExplosionHitPlayer, transform.position, Quaternion.identity);
@@ -44,6 +34,11 @@ public class EnemyBullet : MonoBehaviour
     public void BulletHitPlayerBullet()
     {
         Instantiate(ExplosionBullet, transform.position, Quaternion.identity);
+        Destroy(gameObject);
+    }
+    public void BulletHitPlayerShield()
+    {
+        Instantiate(ExplosionHitPlayerShield, transform.position, Quaternion.identity);
         Destroy(gameObject);
     }
     private void OnBecameInvisible()

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class DropShild : MonoBehaviour
 {
-    public GameObject shildPlayer;
+    public GameObject test;
     private void Start()
     {
         StartCoroutine(WaitToDestroyDropShild(5));

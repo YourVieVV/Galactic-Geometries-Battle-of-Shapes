@@ -15,7 +15,7 @@ public class UpgradesForPlayer : MonoBehaviour
     [SerializeField] private GameObject firstShip;
     [SerializeField] private GameObject secondShip;
     [SerializeField] private Slider sliderShieldHP;
-    [SerializeField] private GameObject ShieldPlayer;
+    [SerializeField] private ShieldHP shieldScript;
 
     private float currentHpPlayer;
     private float currentShutDelay;
@@ -105,8 +105,8 @@ public class UpgradesForPlayer : MonoBehaviour
 
     public void ActivateShield()
     {
+        shieldScript.ReactivateShield();
         sliderShieldHP.gameObject.SetActive(true);
-        ShieldPlayer.SetActive(true);
         PlayerPrefs.SetInt(PlayerStats.isShield, 1);
         getPauseGameScript.PauseAndSetActivePanelFunction(false, upgradePanel);
     }

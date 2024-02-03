@@ -12,7 +12,7 @@ public class PlayerStats : MonoBehaviour
         shootDelayRocket = "shootDelayRocket",
         isGunTwo = "isGunTwo",
         isGunTree = "isGunTree",
-        isRocket="isRocket",
+        isRocket = "isRocket",
         isPalyerRotate = "isPalyerRotate",
         isFirstShipFlot = "isFirstShipFlot",
         isSecondShipFlot = "isSecondShipFlot",

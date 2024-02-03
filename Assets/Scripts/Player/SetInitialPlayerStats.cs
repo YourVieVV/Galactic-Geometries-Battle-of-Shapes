@@ -9,7 +9,8 @@ public class SetInitialPlayerStats : MonoBehaviour
     [SerializeField] private PortalForPlayer rightPanelScript;
     [SerializeField] private PlayerHP playerHPScript;
     [SerializeField] private Slider sliderShieldHP;
-    [SerializeField] private GameObject ShieldPlayer;
+    [SerializeField] private ShieldHP shieldScript;
+    [SerializeField] private PlayerController test;
     public void SetInitialValuesPalyer()
     {
         if (PlayerPrefs.HasKey("isSetStartValuesPlayer") == false)
@@ -51,7 +52,7 @@ public class SetInitialPlayerStats : MonoBehaviour
             if (PlayerPrefs.GetInt(PlayerStats.isShield) != PlayerStats.initIsShield)
             {
                 sliderShieldHP.gameObject.SetActive(true);
-                ShieldPlayer.SetActive(true);
+                shieldScript.ReactivateShield();
             }
             if (PlayerPrefs.GetFloat(PlayerStats.hpPlayer) != PlayerStats.initHpPlayer)
             {

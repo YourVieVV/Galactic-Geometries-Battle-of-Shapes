@@ -27,10 +27,12 @@ public class Meteorite : MonoBehaviour
     {
         Instantiate(ExplotionMeteoriteDestroy, transform.position, Quaternion.identity);
         Destroy(gameObject);
-        if (Random.Range(5, -5) >= 0)
+        int random = Random.Range(0, 2);
+        if (random == 0)
         {
             Instantiate(PlusHP, transform.position, Quaternion.identity);
-        } else
+        }
+        if (random == 1 && PlayerPrefs.GetInt(PlayerStats.isShield) != PlayerStats.initIsShield)
         {
             Instantiate(shildPlayer, transform.position, Quaternion.identity);
         }

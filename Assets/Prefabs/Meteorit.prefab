@@ -127,11 +127,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5fdd6319aa3bc00429905988cffe0a66, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ExplotionMeteoriteDestroy: {fileID: 5927800019614593835, guid: c7b7cf9b4761ee043b19ea74a2e2d845,
-    type: 3}
+  ExplotionMeteoriteDestroy: {fileID: 5927800019614593835, guid: c7b7cf9b4761ee043b19ea74a2e2d845, type: 3}
   PlusHP: {fileID: 7761238825478539804, guid: f74fcf7bf8078734c867ffb686ff5a79, type: 3}
-  shildPlayer: {fileID: 1934313589797313733, guid: 587b21ff3b5ee8f4b86b796814c9c288,
-    type: 3}
+  shildPlayer: {fileID: 3747415522586999381, guid: 8fcc3efc3393ece46af56755bbc4ace8, type: 3}
   rotateZ: -0.5
   onGround: 0
 --- !u!61 &7787842628400861066

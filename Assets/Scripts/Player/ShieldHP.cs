@@ -23,7 +23,6 @@ public class ShieldHP : MonoBehaviour
     public void Damage(float damageValue)
     {
         currentHealth -= damageValue;
-
         slider.value = currentHealth;
 
         //FindObjectOfType<CameraSnake>().Shake();
@@ -31,17 +30,20 @@ public class ShieldHP : MonoBehaviour
         if (currentHealth <= 0)
         {
             currentHealth = minHealth;
-            //Instantiate(ExplosionPlayer, transform.position, Quaternion.identity);  
-            gameObject.SetActive(false);
+            //Instantiate(ExplosionPlayer, transform.position, Quaternion.identity);
+            ShowShield(false);
         }
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    public void ReactivateShield()
     {
-        if (collision.tag == "Enemy" || collision.tag == "EnemySquare")
-        {
-            collision.GetComponent<EnemyHP>().HittingEnemyByPlayer();
-            Damage(65);
-        }
+        ShowShield(true);
+        currentHealth = 99;
+        slider.value = currentHealth;
+    }
+
+    private void ShowShield(bool isShow)
+    {
+        gameObject.SetActive(isShow);
     }
 }

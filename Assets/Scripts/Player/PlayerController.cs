@@ -28,6 +28,8 @@ public class PlayerController : MonoBehaviour
     private GameObject playerBullet;
     [SerializeField]
     private GameObject playerRocket;
+    //[SerializeField]
+    //private ShieldHP shieldHPScript;
 
     [SerializeField]
     private LightningBoltScript _LightningBoltScript;
@@ -53,15 +55,6 @@ public class PlayerController : MonoBehaviour
         AudioShut = GetComponent<AudioSource>();
         rb = GetComponent<Rigidbody2D>();
         StartStats();
-    }
-    void OnTriggerEnter2D(Collider2D collider)
-    {
-        if (collider.tag == "DropShild")
-        {
-            shildPlayer.SetActive(true);
-            FindObjectOfType<HittingAPlayer>().isShieldActive = true;
-            StartCoroutine(WaitToDestroyShildPlayer(10));
-        }
     }
 
     private void Shoot()
@@ -131,16 +124,12 @@ public class PlayerController : MonoBehaviour
         isPalyerRotate = PlayerPrefs.GetInt(PlayerStats.isPalyerRotate) == 0 ? false : true;
     }
 
-    private IEnumerator WaitToDestroyShildPlayer(float waitTime)
-    {
-        yield return new WaitForSeconds(waitTime);
-        shildPlayer.SetActive(false);
-        FindObjectOfType<HittingAPlayer>().isShieldActive = false;
-    }
-
     void Update()
     {
-
+        if (shildPlayer.activeSelf)
+        {
+            shildPlayer.gameObject.transform.position = gameObject.transform.position;
+        }
         if (!isActive)
         {
             inactCounter -= Time.deltaTime;
