@@ -24,7 +24,7 @@ public class Game : MonoBehaviour {
             {
                 LevelManager.countUnlockedLevel++;
             }
-            Debug.Log("win");
+            //Debug.Log("win");
             //SceneManager.LoadScene(12);
         }
         #endregion

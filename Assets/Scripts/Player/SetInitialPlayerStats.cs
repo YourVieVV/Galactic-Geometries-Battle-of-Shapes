@@ -11,10 +11,14 @@ public class SetInitialPlayerStats : MonoBehaviour
     [SerializeField] private Slider sliderShieldHP;
     [SerializeField] private ShieldHP shieldScript;
     [SerializeField] private PlayerController test;
+    [SerializeField] private UpgradeSystem upgradeSystemScript;
+
     public void SetInitialValuesPalyer()
     {
         if (PlayerPrefs.HasKey("isSetStartValuesPlayer") == false)
         {
+            UpgradeList upgradeList = new();
+
             PlayerPrefs.SetFloat(PlayerStats.shootDelayGun, PlayerStats.initShootDelayGun);
             PlayerPrefs.SetFloat(PlayerStats.moveSpeed, PlayerStats.initMoveSpeed);
             PlayerPrefs.SetFloat(PlayerStats.hpPlayer, PlayerStats.initHpPlayer);
@@ -29,6 +33,9 @@ public class SetInitialPlayerStats : MonoBehaviour
             PlayerPrefs.SetInt(PlayerStats.isOpenPortal, PlayerStats.initIsOpenPortal);
             PlayerPrefs.SetInt(PlayerStats.isFirstShipFlot, PlayerStats.initIsFirstShipFlot);
             PlayerPrefs.SetInt(PlayerStats.isSecondShipFlot, PlayerStats.initIsSecondShipFlot);
+
+
+            upgradeSystemScript.SetUpgradeList(upgradeList._Upgrades);
 
             PlayerPrefs.SetInt("isSetStartValuesPlayer", 1);
         }

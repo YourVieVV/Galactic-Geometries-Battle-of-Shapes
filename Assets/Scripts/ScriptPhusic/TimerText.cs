@@ -11,6 +11,8 @@ public class TimerText : MonoBehaviour
     private Text theText;
     private PauseGame thePauseMenu;
     private IsVisibleUpgradePanel setIsVisiblePanelUpgrade;
+    [SerializeField]
+    private UpgradeSystem upgradeSystemScript;
 
     private bool isVisiblePanelUpgrade = false;
 
@@ -28,7 +30,7 @@ public class TimerText : MonoBehaviour
 
         startingTimer += Time.deltaTime;
 
-        if (startingTimer > 59)
+        if (startingTimer > 20)
         {
             timerMin += 1;
             startingTimer = 0;
@@ -37,7 +39,7 @@ public class TimerText : MonoBehaviour
 
         if (timerMin == 1 || timerMin == 2 || timerMin == 3 || timerMin == 4 || timerMin == 5 || timerMin == 6 || timerMin == 7 || timerMin == 8 || timerMin == 9)
         {
-            if (isVisiblePanelUpgrade)
+            if (isVisiblePanelUpgrade && upgradeSystemScript.upgradesList.Count > 0)
             {
                 setIsVisiblePanelUpgrade.SetIsVisibleUpgradePlayer();
                 isVisiblePanelUpgrade = false;

@@ -4,43 +4,22 @@ using UnityEngine.UI;
 
 public class UpgradeSystem : MonoBehaviour
 {
-    // DEFINE LIST WITH UPGRADES
-    Upgrade[] _Upgrades = new Upgrade[]
-    {
-        new Upgrade { Name = NamesUpgradePlayer.AddHP },
-        new Upgrade { Name = NamesUpgradePlayer.AddHP },
-        new Upgrade { Name = NamesUpgradePlayer.AddHP },
-        new Upgrade { Name = NamesUpgradePlayer.AddMoveSpeed },
-        new Upgrade { Name = NamesUpgradePlayer.AddMoveSpeed },
-        new Upgrade { Name = NamesUpgradePlayer.AddMoveSpeed },
-        new Upgrade { Name = NamesUpgradePlayer.AddRateOfFire },
-        new Upgrade { Name = NamesUpgradePlayer.AddRateOfFire },
-        new Upgrade { Name = NamesUpgradePlayer.AddRateOfFire },
-        new Upgrade { Name = NamesUpgradePlayer.AddDamage },
-        new Upgrade { Name = NamesUpgradePlayer.AddDamage },
-        new Upgrade { Name = NamesUpgradePlayer.AddFlot },
-        new Upgrade { Name = NamesUpgradePlayer.AddSecondShipFlot },
-        new Upgrade { Name = NamesUpgradePlayer.AddGunTwo },
-        new Upgrade { Name = NamesUpgradePlayer.AddGunTree },
-        new Upgrade { Name = NamesUpgradePlayer.AddRotation },
-        new Upgrade { Name = NamesUpgradePlayer.ActivateShield },
-        //new Upgrade { Name = NamesUpgradePlayer.AddLaser },
-        //new Upgrade { Name = NamesUpgradePlayer.AddLaserRateOfFire },
-        //new Upgrade { Name = NamesUpgradePlayer.AddLaserRateOfFire },
-        new Upgrade { Name = NamesUpgradePlayer.AddRocket },
-        new Upgrade { Name = NamesUpgradePlayer.AddRocketRateOfFire },
-        new Upgrade { Name = NamesUpgradePlayer.AddRocketRateOfFire },
-        new Upgrade { Name = NamesUpgradePlayer.AddRocketRateOfFire },
-        new Upgrade { Name = NamesUpgradePlayer.OpenPortal }
-    };
-
-
     [SerializeField] private Button Upgrade_button1;
     [SerializeField] private Button Upgrade_button2;
     [SerializeField] private Button Upgrade_button3;
+    public List<Upgrade> upgradesList = new();
 
     private void Start()
     {
+        var updateArray = PlayerPrefs.GetString(PlayerStats.upgradeList).Split("|");
+        for (int i = 0; updateArray.Length - 1 > i; i++)
+        {
+            if (updateArray[i] != "" && updateArray[i] != null)
+            {
+                upgradesList.Add(new Upgrade { Name = updateArray[i] });
+            }
+        }
+
         ButtonsSet();
     }
 
@@ -48,20 +27,35 @@ public class UpgradeSystem : MonoBehaviour
     {
         // CHOOSING UPGRADE FROM UPGRADE ARRAY
         List<int> availableUpgrades = new List<int>();
-        for (int i = 0; i < _Upgrades.Length; i++)
+        for (int i = 0; i < upgradesList.Count; i++)
         {
             availableUpgrades.Add(i);
         }
 
-        ShuffleList(availableUpgrades);
-        Upgrade Upgrade_1 = _Upgrades[availableUpgrades[0]];
-        Upgrade Upgrade_2 = _Upgrades[availableUpgrades[1]];
-        Upgrade Upgrade_3 = _Upgrades[availableUpgrades[2]];
+        if (availableUpgrades.Count >= 3)
+            ShuffleList(availableUpgrades);
 
         // Setting text
-        Upgrade_button1.transform.GetChild(0).GetComponent<Text>().text = Upgrade_1.Name;
-        Upgrade_button2.transform.GetChild(0).GetComponent<Text>().text = Upgrade_2.Name;
-        Upgrade_button3.transform.GetChild(0).GetComponent<Text>().text = Upgrade_3.Name;
+        Upgrade Upgrade_1;
+        Upgrade Upgrade_2;
+        Upgrade Upgrade_3;
+        if (availableUpgrades.Count > 0)
+        {
+            Upgrade_1 = upgradesList[availableUpgrades[0]];
+            Upgrade_button1.transform.GetChild(0).GetComponent<Text>().text = Upgrade_1.Name;
+            Upgrade_button2.transform.GetChild(0).GetComponent<Text>().text = "";
+        }
+        if (availableUpgrades.Count > 1)
+        {
+            Upgrade_2 = upgradesList[availableUpgrades[1]];
+            Upgrade_button2.transform.GetChild(0).GetComponent<Text>().text = Upgrade_2.Name;
+            Upgrade_button3.transform.GetChild(0).GetComponent<Text>().text = "";
+        }
+        if (availableUpgrades.Count > 2)
+        {
+            Upgrade_3 = upgradesList[availableUpgrades[2]];
+            Upgrade_button3.transform.GetChild(0).GetComponent<Text>().text = Upgrade_3.Name;
+        }
     }
 
     // SHUFFLE LIST
@@ -74,6 +68,20 @@ public class UpgradeSystem : MonoBehaviour
             list[i] = list[randomIndex];
             list[randomIndex] = temp;
         }
+    }
+
+    public void DeleteSelectedUpgrade(Upgrade upgradeName)
+    {
+        int indx = upgradesList.FindIndex(item => item.Name == upgradeName.Name);
+        upgradesList.RemoveAt(indx);
+        SetUpgradeList(upgradesList);
+    }
+
+    public void SetUpgradeList(List<Upgrade> upgradeList)
+    {
+        string stingUpgrade = "";
+        upgradeList.ForEach(item => stingUpgrade = stingUpgrade + item.Name + "|");
+        PlayerPrefs.SetString(PlayerStats.upgradeList, stingUpgrade);
     }
 
     public class Upgrade
