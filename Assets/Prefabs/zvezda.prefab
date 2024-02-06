@@ -29,8 +29,8 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -3.4, y: -2.36, z: 0}
-  m_LocalScale: {x: 0.3, y: 0.3, z: 0.3}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 0.2, y: 0.2, z: 0.2}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -98,8 +98,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 802ca605aedbc134f8b0f78ea8bec27b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ExplosionStar: {fileID: 1921021085485660, guid: 3a83282141255064f9bb5a4eb39b440a,
-    type: 3}
+  ExplosionStar: {fileID: 1921021085485660, guid: 3a83282141255064f9bb5a4eb39b440a, type: 3}
 --- !u!58 &58585951874167960
 CircleCollider2D:
   m_ObjectHideFlags: 0
