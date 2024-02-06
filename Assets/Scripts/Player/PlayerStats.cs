@@ -9,7 +9,7 @@ public class PlayerStats : MonoBehaviour
         moveSpeed = "moveSpeed",
         hpPlayer = "hpPlayer",
         //shootDelayLaser = "shootDelayLaser",
-        shootDelayRocket = "shootDelayRocket",
+        //shootDelayRocket = "shootDelayRocket",
         isGunTwo = "isGunTwo",
         isGunTree = "isGunTree",
         isRocket = "isRocket",
@@ -23,9 +23,9 @@ public class PlayerStats : MonoBehaviour
     public const float
         initShootDelayGun = 1f,
         initMoveSpeed = 1.8f,
-        initHpPlayer = 100f,
+        initHpPlayer = 100f;
         //initShootDelayLaser = 0.6f,
-        initShootDelayRocket = 2f;
+        //initShootDelayRocket = 2f;
 
     public const int initIsGunTwo = 0,
         initIsGunTree = 0,
@@ -40,7 +40,7 @@ public class PlayerStats : MonoBehaviour
     public const float
         incShootDelayGun = 0.2f,
         incMoveSpeed = 0.2f,
-        incHpPlayer = 20f,
+        incHpPlayer = 20f;
         //incShootDelayLaser = 0.2f,
-        incShootDelayRocket = 0.2f;   
+        //incShootDelayRocket = 0.2f;   
 }

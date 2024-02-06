@@ -95,13 +95,13 @@ public class UpgradesForPlayer : MonoBehaviour
         getPauseGameScript.PauseAndSetActivePanelFunction(false, upgradePanel);
     }
 
-    public void AddRocketRateOfFire()
+    /*public void AddRocketRateOfFire()
     {
         currentShutDelayRocket = getPlayerControllerScript.shootDelayRocket;
         getPlayerControllerScript.shootDelayRocket = currentShutDelayRocket - PlayerStats.incShootDelayRocket;
         PlayerPrefs.SetFloat(PlayerStats.shootDelayRocket, currentShutDelayRocket - PlayerStats.incShootDelayRocket);
         getPauseGameScript.PauseAndSetActivePanelFunction(false, upgradePanel);
-    }
+    }*/
 
     public void ActivateShield()
     {

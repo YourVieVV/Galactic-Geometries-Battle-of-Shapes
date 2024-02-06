@@ -4,9 +4,15 @@ using UnityEngine;
 
 public class newEnemyMovie : MonoBehaviour
 {
-    public float movementSpeed = -0.5f;
-    public float movementSpeedHorizontal = -3f;
-    public bool isCircleEnemy = false;
+    [SerializeField]
+    private bool isCircleEnemy = false;
+    [SerializeField]
+    private bool isRotate;
+    [SerializeField]
+    private float movementSpeed = -0.5f;
+    [SerializeField]
+    private float movementSpeedHorizontal = -3f;
+
     private bool isLeft = false;
     private Rigidbody2D myBody;
 
@@ -22,6 +28,10 @@ public class newEnemyMovie : MonoBehaviour
             CircleEnemyMovement(isLeft);
         } else {
             EnemyMovement();
+            if (isRotate)
+            {
+                transform.Rotate(0, 0, 2.2f);
+            }
         }
     }
 

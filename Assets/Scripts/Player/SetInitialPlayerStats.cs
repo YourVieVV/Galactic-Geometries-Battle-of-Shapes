@@ -10,7 +10,6 @@ public class SetInitialPlayerStats : MonoBehaviour
     [SerializeField] private PlayerHP playerHPScript;
     [SerializeField] private Slider sliderShieldHP;
     [SerializeField] private ShieldHP shieldScript;
-    [SerializeField] private PlayerController test;
     [SerializeField] private UpgradeSystem upgradeSystemScript;
 
     public void SetInitialValuesPalyer()
@@ -23,7 +22,7 @@ public class SetInitialPlayerStats : MonoBehaviour
             PlayerPrefs.SetFloat(PlayerStats.moveSpeed, PlayerStats.initMoveSpeed);
             PlayerPrefs.SetFloat(PlayerStats.hpPlayer, PlayerStats.initHpPlayer);
             //PlayerPrefs.SetFloat(PlayerStats.shootDelayLaser, PlayerStats.initShootDelayLaser);
-            PlayerPrefs.SetFloat(PlayerStats.shootDelayRocket, PlayerStats.initShootDelayRocket);
+            //PlayerPrefs.SetFloat(PlayerStats.shootDelayRocket, PlayerStats.initShootDelayRocket);
 
             PlayerPrefs.SetInt(PlayerStats.isGunTwo, PlayerStats.initIsGunTwo);
             PlayerPrefs.SetInt(PlayerStats.isGunTree, PlayerStats.initIsGunTree);

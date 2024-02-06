@@ -49,6 +49,19 @@ public class PlayerController : MonoBehaviour
     private float inactCounter;
 
 
+    public void StartStats()
+    {
+        moveSpeed = PlayerPrefs.GetFloat(PlayerStats.moveSpeed);
+        shootDelayGun = PlayerPrefs.GetFloat(PlayerStats.shootDelayGun);
+        //shootDelayLaser = PlayerPrefs.GetFloat(PlayerStats.shootDelayLaser);
+        //shootDelayRocket = PlayerPrefs.GetFloat(PlayerStats.shootDelayRocket);
+
+        isRocket = PlayerPrefs.GetInt(PlayerStats.isRocket) != PlayerStats.initIsRocket ? true : false;
+        isGunTwo = PlayerPrefs.GetInt(PlayerStats.isGunTwo) == 0 ? false : true;
+        isGunTree = PlayerPrefs.GetInt(PlayerStats.isGunTree) == 0 ? false : true;
+        isPalyerRotate = PlayerPrefs.GetInt(PlayerStats.isPalyerRotate) == 0 ? false : true;
+    }
+
     void Start()
     {
         shootDelayCouter = 0;
@@ -68,21 +81,12 @@ public class PlayerController : MonoBehaviour
         {
             if (isRocket)
             {
-                Instantiate(playerRocket, GunPlayerOne.transform.position, transform.rotation);
+                InstantiateBullet(playerRocket);
+
                 shootDelayCouter = shootDelayRocket;
             } else
             {
-                Instantiate(playerBullet, GunPlayerOne.transform.position, transform.rotation);
-
-                if (isGunTwo)
-                {
-                    Instantiate(playerBullet, GunPlayerTwo.transform.position, transform.rotation);
-                }
-
-                if (isGunTree)
-                {
-                    Instantiate(playerBullet, GunPlayerTree.transform.position, transform.rotation);
-                }
+                InstantiateBullet(playerBullet);
 
                 shootDelayCouter = shootDelayGun;
                 AudioShut.Play();
@@ -91,6 +95,22 @@ public class PlayerController : MonoBehaviour
         }
 
         shootDelayCouter -= Time.deltaTime;
+    }
+
+    private void InstantiateBullet(GameObject pref)
+    {
+        Instantiate(pref, GunPlayerOne.transform.position, transform.rotation);
+
+        if (isGunTwo)
+        {
+            Instantiate(pref, GunPlayerTwo.transform.position, transform.rotation);
+        }
+
+        if (isGunTree)
+        {
+            Instantiate(pref, GunPlayerTree.transform.position, transform.rotation);
+        }
+        
     }
 
     private void Move()
@@ -109,19 +129,6 @@ public class PlayerController : MonoBehaviour
         }
 
         rb.velocity = new Vector2(_direction.x, _direction.y);
-    }
-
-    public void StartStats()
-    {
-        moveSpeed = PlayerPrefs.GetFloat(PlayerStats.moveSpeed);
-        shootDelayGun = PlayerPrefs.GetFloat(PlayerStats.shootDelayGun);
-        //shootDelayLaser = PlayerPrefs.GetFloat(PlayerStats.shootDelayLaser);
-        shootDelayRocket = PlayerPrefs.GetFloat(PlayerStats.shootDelayRocket);
-
-        isRocket = PlayerPrefs.GetInt(PlayerStats.isRocket) != PlayerStats.initIsRocket ? true : false;
-        isGunTwo = PlayerPrefs.GetInt(PlayerStats.isGunTwo) == 0 ? false : true;
-        isGunTree = PlayerPrefs.GetInt(PlayerStats.isGunTree) == 0 ? false : true;
-        isPalyerRotate = PlayerPrefs.GetInt(PlayerStats.isPalyerRotate) == 0 ? false : true;
     }
 
     void Update()

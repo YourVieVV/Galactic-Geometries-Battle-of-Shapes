@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 114586128757850222}
   - component: {fileID: 58283000524142608}
   m_Layer: 0
-  m_Name: DiamondBullet
+  m_Name: OvalBullet
   m_TagString: EnemyBullet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -76,8 +76,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 690b208dd0babf441a0b967fa4ff3926, type: 3}
-  m_Color: {r: 1, g: 0.5707547, b: 0.5707547, a: 1}
+  m_Sprite: {fileID: 21300000, guid: 952bdcda8e170814eafeefc93e1acd05, type: 3}
+  m_Color: {r: 0.9019608, g: 0.63529414, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0

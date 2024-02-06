@@ -18,7 +18,7 @@ public class BulletFly : MonoBehaviour
     private void Update()
     {
         if (isRocket)
-            transform.Rotate(0, 0, 1);
+            transform.Rotate(0, 0, -2);
     }
 
     private void OnBecameInvisible()

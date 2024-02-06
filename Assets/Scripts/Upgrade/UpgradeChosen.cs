@@ -38,15 +38,15 @@ public class UpgradeChosen : MonoBehaviour
             case NamesUpgradePlayer.AddSecondShipFlot:
                 _NameUpgradesPlayerScript.AddSecondShipFlot();
                 break;
-/*            case NamesUpgradePlayer.ActivateShield:
+            case NamesUpgradePlayer.ActivateShield:
                 _NameUpgradesPlayerScript.ActivateShield();
-                break;*/
+                break;
             case NamesUpgradePlayer.AddRocket:
                 _NameUpgradesPlayerScript.AddRocket();
                 break;
-            case NamesUpgradePlayer.AddRocketRateOfFire:
+            /*case NamesUpgradePlayer.AddRocketRateOfFire:
                 _NameUpgradesPlayerScript.AddRocketRateOfFire();
-                break;
+                break;*/
             //case NamesUpgradePlayer.AddDamage:
             //_NameUpgradesPlayer.AddHP();
             //break;

@@ -25,7 +25,7 @@ Transform:
   m_GameObject: {fileID: 7362956176132038124}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0.699601, w: 0.71453375}
-  m_LocalPosition: {x: 0.94, y: -0.014, z: 0}
+  m_LocalPosition: {x: 0.4, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -46,9 +46,11 @@ GameObject:
   - component: {fileID: 6008245782781512854}
   - component: {fileID: 4200031831363267392}
   - component: {fileID: 8511365622745209177}
-  - component: {fileID: 2817386255929185751}
+  - component: {fileID: 3578504967478924602}
+  - component: {fileID: -1943226459334175223}
+  - component: {fileID: -7972915984822617963}
   m_Layer: 0
-  m_Name: CapsuleTargetPlayer
+  m_Name: CircleTargetPlayer
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -64,7 +66,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -7.45, y: 3.67, z: 0}
-  m_LocalScale: {x: 0.75, y: 0.8, z: 0.8}
+  m_LocalScale: {x: 0.6, y: 0.6, z: 0.6}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 4756956200277617487}
@@ -111,7 +113,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 709cb28430711fc498193dab56021323, type: 3}
+  m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
   m_Color: {r: 1, g: 0.7280511, b: 0.6, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -170,8 +172,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   delay: 0.001
   shootDelay: 2
-  projectile: {fileID: 1573111786172914273, guid: 4e3df48959e964d4bae51adbb9698dea,
-    type: 3}
+  projectile: {fileID: 1573111786172914273, guid: 4e3df48959e964d4bae51adbb9698dea, type: 3}
   dulo: {fileID: 7362956176132038124}
 --- !u!82 &4200031831363267392
 AudioSource:
@@ -281,10 +282,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3fc58f11db407dd4fa6f990aa4114056, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxSpeed: 2
-  Explotion: {fileID: 0}
---- !u!70 &2817386255929185751
-CapsuleCollider2D:
+  maxSpeed: 1.5
+  Explotion: {fileID: 6192724089161036641, guid: e17d9a3f04750764c8c0a7a0461e4c3b, type: 3}
+--- !u!58 &3578504967478924602
+CircleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -312,9 +313,55 @@ CapsuleCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.0029834113, y: 0.014355034}
-  m_Size: {x: 0.9026661, y: 1.2943866}
-  m_Direction: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.5
+--- !u!50 &-1943226459334175223
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7507584513248456480}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
+--- !u!114 &-7972915984822617963
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7507584513248456480}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1347d1d0bd5944c478bbb995e9173d06, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ExplotionEnemyDestroy: {fileID: 4794043405585894037, guid: 37138c0c33167b04fa1fb90b7f5a794f, type: 3}
+  isCapsule: 0
+  isCirlce: 1
+  isRectangle: 0
+  isHexagon: 0
+  isOval: 0
+  isIsometric: 0

@@ -30,14 +30,14 @@ public class TimerText : MonoBehaviour
 
         startingTimer += Time.deltaTime;
 
-        if (startingTimer > 20)
+        if (startingTimer > 10)
         {
             timerMin += 1;
             startingTimer = 0;
             isVisiblePanelUpgrade = true;
         };
 
-        if (timerMin == 1 || timerMin == 2 || timerMin == 3 || timerMin == 4 || timerMin == 5 || timerMin == 6 || timerMin == 7 || timerMin == 8 || timerMin == 9)
+        if (timerMin == 1 || timerMin == 2 || timerMin == 3 || timerMin == 4 || timerMin == 5)
         {
             if (isVisiblePanelUpgrade && upgradeSystemScript.upgradesList.Count > 0)
             {

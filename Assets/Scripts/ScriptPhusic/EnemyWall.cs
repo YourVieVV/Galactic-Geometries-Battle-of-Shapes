@@ -22,6 +22,7 @@ public class EnemyWall : MonoBehaviour {
 
     private void Start()
     {
+        shootDelay = PlayerPrefs.GetFloat(EmenyStats.shootDelayCircle);
         player = FindObjectOfType<PlayerController>();
         angler = GetComponent<EnemyController>();
         delayCounter = delay;
