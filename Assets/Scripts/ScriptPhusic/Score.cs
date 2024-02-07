@@ -4,16 +4,16 @@ using UnityEngine.UI;
 public class Score : MonoBehaviour
 {
     private Text textScore;
-    private float scope = 0;
+    public int score = 0;
     // Start is called before the first frame update
     void Start()
     {
         textScore = GetComponent<Text>();
     }
 
-    public void CounterScope(float count)
+    public void CounterScope(int count)
     {
-        scope += count;
-        textScore.text = $"Scope: {scope}";
+        score += count;
+        textScore.text = $"Scope: {score}";
     }
 }

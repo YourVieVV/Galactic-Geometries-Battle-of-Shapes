@@ -14,7 +14,14 @@ public class ButtonManagerM : MonoBehaviour {
     
     public void ExitGame()
     {
+        PlayerPrefs.SetInt("IsQuit", 0);
         SceneManager.LoadScene(0);
         // Application.Quit();
     }
+
+    public void ViewSettings()
+    {
+        FindObjectOfType<PauseGame>().PauseAndSetActivePanelFunction(true, pause);
+    }
+
 }

@@ -14,6 +14,8 @@ public class SetInitialPlayerStats : MonoBehaviour
 
     public void SetInitialValuesPalyer()
     {
+        // Если IsQuit 1, тогда обнуляем данные
+
         if (PlayerPrefs.HasKey("isSetStartValuesPlayer") == false)
         {
             UpgradeList upgradeList = new();
@@ -35,6 +37,14 @@ public class SetInitialPlayerStats : MonoBehaviour
 
 
             upgradeSystemScript.SetUpgradeList(upgradeList._Upgrades);
+            //PlayerPrefs.SetInt("IsQuit", 0);
+
+            if (PlayerPrefs.HasKey(StatisticsPlayer.score) == false)
+            {
+                PlayerPrefs.SetInt(StatisticsPlayer.losses, StatisticsPlayer.initLosses);
+                PlayerPrefs.SetInt(StatisticsPlayer.wins, StatisticsPlayer.initWins);
+                PlayerPrefs.SetInt(StatisticsPlayer.score, StatisticsPlayer.initScore);
+            }
 
             PlayerPrefs.SetInt("isSetStartValuesPlayer", 1);
         }
