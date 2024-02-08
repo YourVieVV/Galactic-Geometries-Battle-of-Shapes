@@ -11,12 +11,11 @@ GameObject:
   - component: {fileID: 4027311560813192}
   - component: {fileID: 212497620631476026}
   - component: {fileID: 50451865963539542}
-  - component: {fileID: 114009985720912216}
-  - component: {fileID: 3390517684377013092}
+  - component: {fileID: 7557804745365377908}
   - component: {fileID: 7732671217340287409}
-  m_Layer: 6
-  m_Name: TriangleBullet
-  m_TagString: PlayerBullet
+  m_Layer: 0
+  m_Name: BossBullet
+  m_TagString: EnemyBullet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -115,7 +114,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &114009985720912216
+--- !u!114 &7557804745365377908
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -124,24 +123,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1227504484522588}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e2779c15a1a5d574b84bfa78aa338e5e, type: 3}
+  m_Script: {fileID: 11500000, guid: 55b74beb9afa32148ac983dfc272670c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 10
-  isRocket: 0
---- !u!114 &3390517684377013092
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1227504484522588}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: de74362dda637ba4d927001aa9d35fb1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ExplotionHitEnemy: {fileID: 4794043405585894037, guid: 37138c0c33167b04fa1fb90b7f5a794f, type: 3}
+  moveSpeed: 5
 --- !u!60 &7732671217340287409
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -171,7 +156,7 @@ PolygonCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}

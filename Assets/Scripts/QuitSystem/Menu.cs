@@ -7,12 +7,14 @@ public class Menu : MonoBehaviour
     private int score;
     private int wins;
     private int loses;
+    private int isFirstStart;
 
     void Start()
     {
         score = PlayerPrefs.GetInt(StatisticsPlayer.score);
         wins = PlayerPrefs.GetInt(StatisticsPlayer.wins);
         loses = PlayerPrefs.GetInt(StatisticsPlayer.losses);
+        isFirstStart = PlayerPrefs.GetInt("FirstStartGame");
     }
 
     private void OnApplicationQuit()
@@ -21,5 +23,6 @@ public class Menu : MonoBehaviour
         PlayerPrefs.SetInt(StatisticsPlayer.score, score);
         PlayerPrefs.SetInt(StatisticsPlayer.wins, wins);
         PlayerPrefs.SetInt(StatisticsPlayer.losses, loses);
+        PlayerPrefs.SetInt("FirstStartGame", isFirstStart);
     }
 }

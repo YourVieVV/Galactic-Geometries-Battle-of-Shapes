@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5988768132302042870}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Muzzle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -46,7 +46,7 @@ GameObject:
   - component: {fileID: 8255161685747271591}
   - component: {fileID: 8957062353400875470}
   - component: {fileID: 5739380036336889233}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: RectangleEnemy
   m_TagString: EnemySquare
   m_Icon: {fileID: 0}
@@ -214,7 +214,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isCapsule: 0
-  isCirlce: 0
   isRectangle: 1
   isHexagon: 0
   isOval: 0

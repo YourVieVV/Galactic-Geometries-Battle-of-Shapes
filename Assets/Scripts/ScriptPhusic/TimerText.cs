@@ -30,7 +30,7 @@ public class TimerText : MonoBehaviour
 
         startingTimer += Time.deltaTime;
 
-        if (startingTimer > 10)
+        /*if (startingTimer > 10)
         {
             timerMin += 1;
             startingTimer = 0;
@@ -44,7 +44,7 @@ public class TimerText : MonoBehaviour
                 setIsVisiblePanelUpgrade.SetIsVisibleUpgradePlayer();
                 isVisiblePanelUpgrade = false;
             }
-        }
+        }*/
 
         theText.text = $"Time lived - {Mathf.Round(timerMin)} : {Mathf.Round(startingTimer)}";
     }

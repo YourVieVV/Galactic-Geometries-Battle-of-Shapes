@@ -12,6 +12,7 @@ public class EnemyHP : MonoBehaviour
     public bool isHexagon = false;
     public bool isOval = false;
     public bool isIsometric = false;
+    public bool isBoss = false;
 
     private float enemyHP;
 
@@ -40,6 +41,10 @@ public class EnemyHP : MonoBehaviour
         if (isCapsule)
         {
             enemyHP = PlayerPrefs.GetFloat(EmenyStats.hpCapsule);
+        }
+        if (isBoss)
+        {
+            enemyHP = 2000f;
         }
     }
 
