@@ -14,7 +14,7 @@ public class EnemyHP : MonoBehaviour
     public bool isIsometric = false;
     public bool isBoss = false;
 
-    private float enemyHP;
+    public float enemyHP;
 
     private void Start()
     {

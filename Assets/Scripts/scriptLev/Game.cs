@@ -10,8 +10,8 @@ public class Game : MonoBehaviour {
     private TimerText timer;
     private PlayerHP hp;
     private int currentScore;
-    private bool isWin = false;
-    private bool isLosse = false;
+    [SerializeField]
+    private EnemyHP enemyHPScript;
 
     private void Start()
     {
@@ -22,25 +22,17 @@ public class Game : MonoBehaviour {
     // Update is called once per frame
     void Update () {
         #region CheckWin
-/*        if (!isWin)
+        if (enemyHPScript.enemyHP <= 0)
         {
-            *//*            if (SceneManager.GetActiveScene().buildIndex == LevelManager.countUnlockedLevel)
-                        {
-                            LevelManager.countUnlockedLevel++;
-                        }*//*
-            //Debug.Log("win");
-            //SceneManager.LoadScene(12);
-
             PlayerPrefs.SetInt(StatisticsPlayer.wins, PlayerPrefs.GetInt(StatisticsPlayer.wins) + 1);
             if (PlayerPrefs.GetInt(StatisticsPlayer.score) < currentScore)
                 PlayerPrefs.SetInt(StatisticsPlayer.score, currentScore);
-
-            isWin = true;
-        }*/
+            SceneManager.LoadScene(2);
+        }
         #endregion
 
         #region CheckLose
-        if(hp.currentHealth <= 0 && !isLosse)
+        if (hp.currentHealth <= 0)
         {
             Debug.Log("lose");
             currentScore = scoreScript.score;
@@ -48,17 +40,9 @@ public class Game : MonoBehaviour {
             PlayerPrefs.SetInt(StatisticsPlayer.losses, PlayerPrefs.GetInt(StatisticsPlayer.losses) + 1);
             if (PlayerPrefs.GetInt(StatisticsPlayer.score) < currentScore)
                 PlayerPrefs.SetInt(StatisticsPlayer.score, currentScore);
-            
-            StartCoroutine(WaitAndThenDoSomething(1));
-            isLosse = true;
+
+            SceneManager.LoadScene(0);
         }
         #endregion
     }
-
-    private IEnumerator WaitAndThenDoSomething(float waitTime)
-    {
-        yield return new WaitForSeconds(waitTime);
-        FindObjectOfType<PauseGame>().PauseAndSetActivePanelFunction(true, pause);
-    }
-
 }
