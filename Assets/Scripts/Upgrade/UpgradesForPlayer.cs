@@ -110,4 +110,10 @@ public class UpgradesForPlayer : MonoBehaviour
         PlayerPrefs.SetInt(PlayerStats.isShield, 1);
         getPauseGameScript.PauseAndSetActivePanelFunction(false, upgradePanel);
     }
+
+    public void Close()
+    {
+        getPauseGameScript.PauseAndSetActivePanelFunction(false, upgradePanel);
+    }
+
 }

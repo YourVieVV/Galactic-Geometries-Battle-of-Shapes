@@ -15,6 +15,19 @@ public class TimerText : MonoBehaviour
     private UpgradeSystem upgradeSystemScript;
 
     private bool isVisiblePanelUpgrade = false;
+    private bool isBoss = false;
+
+    [SerializeField]
+    private GameObject spawnEnemy;
+    [SerializeField]
+    private GameObject spawnMeteorite;
+
+    [SerializeField]
+    private GameObject boss;
+    [SerializeField]
+    private GameObject bossShield;
+    [SerializeField]
+    private GameObject bossDodge;
 
     void Start()
     {
@@ -30,7 +43,7 @@ public class TimerText : MonoBehaviour
 
         startingTimer += Time.deltaTime;
 
-        /*if (startingTimer > 10)
+        if (startingTimer > 7)
         {
             timerMin += 1;
             startingTimer = 0;
@@ -44,7 +57,21 @@ public class TimerText : MonoBehaviour
                 setIsVisiblePanelUpgrade.SetIsVisibleUpgradePlayer();
                 isVisiblePanelUpgrade = false;
             }
-        }*/
+        }
+
+        if (timerMin == 6)
+        {
+            spawnEnemy.SetActive(false);
+            spawnMeteorite.SetActive(false);
+        }
+
+        if (timerMin == 6 && startingTimer > 5 && !isBoss)
+        {
+            isBoss = true;
+            boss.SetActive(true);
+            bossDodge.SetActive(true);
+            bossShield.SetActive(true);
+        }
 
         theText.text = $"Time lived - {Mathf.Round(timerMin)} : {Mathf.Round(startingTimer)}";
     }

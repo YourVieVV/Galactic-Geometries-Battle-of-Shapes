@@ -12,6 +12,8 @@ public class Game : MonoBehaviour {
     private int currentScore;
     [SerializeField]
     private EnemyHP enemyHPScript;
+    [SerializeField]
+    private GameObject boss;
 
     private void Start()
     {
@@ -22,7 +24,7 @@ public class Game : MonoBehaviour {
     // Update is called once per frame
     void Update () {
         #region CheckWin
-        if (enemyHPScript.enemyHP <= 0)
+        if (boss.activeSelf && enemyHPScript.isBossDead)
         {
             PlayerPrefs.SetInt(StatisticsPlayer.wins, PlayerPrefs.GetInt(StatisticsPlayer.wins) + 1);
             if (PlayerPrefs.GetInt(StatisticsPlayer.score) < currentScore)

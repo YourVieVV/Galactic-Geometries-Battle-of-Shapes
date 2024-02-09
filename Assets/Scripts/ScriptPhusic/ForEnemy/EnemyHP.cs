@@ -14,6 +14,8 @@ public class EnemyHP : MonoBehaviour
     public bool isIsometric = false;
     public bool isBoss = false;
 
+    public bool isBossDead = false;
+
     public float enemyHP;
 
     private void Start()
@@ -53,6 +55,10 @@ public class EnemyHP : MonoBehaviour
         enemyHP -= damage;
         if (enemyHP <= 0)
         {
+            if (isBoss)
+            {
+                isBossDead = true;
+            }
             DestroyEnemy();
             FindObjectOfType<Score>().CounterScope(10);
             return;
