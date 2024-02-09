@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 50451865963539542}
   - component: {fileID: 7557804745365377908}
   - component: {fileID: 7732671217340287409}
+  - component: {fileID: 8804607899481099863}
   m_Layer: 0
   m_Name: BossBullet
   m_TagString: EnemyBullet
@@ -127,6 +128,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 5
+  ExplosionHitPlayer: {fileID: 6192724089161036641, guid: e17d9a3f04750764c8c0a7a0461e4c3b, type: 3}
+  ExplosionBullet: {fileID: 1887291998100768, guid: c482918740cf04e449b6415f2691e961, type: 3}
+  ExplosionHitPlayerShield: {fileID: 1152899567547200, guid: 8c1209a205fee874c8c49a594e2af79f, type: 3}
 --- !u!60 &7732671217340287409
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -193,3 +197,21 @@ PolygonCollider2D:
       - {x: 0.825, y: -0.71}
       - {x: 0.825, y: -0.64}
   m_UseDelaunayMesh: 0
+--- !u!114 &8804607899481099863
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1227504484522588}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3c8e581858fdac248a70d2b1dde673be, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isMovieBulletEnemy: 0
+  moveSpeed: 0
+  ExplosionBullet: {fileID: 1887291998100768, guid: c482918740cf04e449b6415f2691e961, type: 3}
+  ExplosionHitPlayer: {fileID: 6192724089161036641, guid: e17d9a3f04750764c8c0a7a0461e4c3b, type: 3}
+  ExplosionHitPlayerShield: {fileID: 1152899567547200, guid: 8c1209a205fee874c8c49a594e2af79f, type: 3}
+  isBossBullet: 1

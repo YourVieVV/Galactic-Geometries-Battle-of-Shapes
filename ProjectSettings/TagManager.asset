@@ -16,6 +16,8 @@ TagManager:
   - MiniPlayerTwo
   - ShieldPlayer
   - BossControl
+  - ShieldBoss
+  - BulletBoss
   layers:
   - Default
   - TransparentFX

@@ -10,19 +10,24 @@ public class EnemyBullet : MonoBehaviour
     public GameObject ExplosionBullet;
     public GameObject ExplosionHitPlayer;
     public GameObject ExplosionHitPlayerShield;
+    public bool isBossBullet = false;
 
     void Start()
     {
-        myrigitbody = GetComponent<Rigidbody2D>();
-        if (isMovieBulletEnemy)
+        if (!isBossBullet)
         {
-            //transform.rotation = Quaternion.Euler(transform.rotation.x + 10, transform.rotation.y -10, transform.rotation.z + 10);
-            //myrigitbody.AddRelativeForce(Vector2.up * moveSpeed, ForceMode2D.Impulse);
-            
-        } else
-        {
-            myrigitbody.AddRelativeForce(Vector2.down * moveSpeed, ForceMode2D.Impulse);
-        }
+            myrigitbody = GetComponent<Rigidbody2D>();
+            if (isMovieBulletEnemy)
+            {
+                //transform.rotation = Quaternion.Euler(transform.rotation.x + 10, transform.rotation.y -10, transform.rotation.z + 10);
+                //myrigitbody.AddRelativeForce(Vector2.up * moveSpeed, ForceMode2D.Impulse);
+
+            }
+            else
+            {
+                myrigitbody.AddRelativeForce(Vector2.down * moveSpeed, ForceMode2D.Impulse);
+            }
+        } 
         
     }
 

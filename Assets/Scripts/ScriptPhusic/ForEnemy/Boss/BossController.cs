@@ -9,6 +9,7 @@ public class BossController : MonoBehaviour
     public GameObject GunBossTwo;
     public GameObject GunBossTree;
     public GameObject ControlDodge;
+    public GameObject ShieldBoss;
     [SerializeField]
     private GameObject enemyBullet;
     private void Shoot()
@@ -30,6 +31,7 @@ public class BossController : MonoBehaviour
     private void Update()
     {
         ControlDodge.transform.position = transform.position;
+        ShieldBoss.transform.position = transform.position;
         Shoot();
     }
 }

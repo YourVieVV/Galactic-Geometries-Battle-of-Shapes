@@ -7,6 +7,7 @@ public class BulletBoss : MonoBehaviour
     Rigidbody2D myrigitbody;
     public float moveSpeed;
 
+
     void Start()
     {
         myrigitbody = GetComponent<Rigidbody2D>();
