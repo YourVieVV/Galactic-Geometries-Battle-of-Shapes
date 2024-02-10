@@ -1,6 +1,5 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class winPanel : MonoBehaviour
 {
@@ -25,11 +24,16 @@ public class winPanel : MonoBehaviour
     [SerializeField]
     private GameObject img;
 
+    [SerializeField]
+    private GameObject fireworckOne;
+    [SerializeField]
+    private GameObject fireworckTwo;
+
 
     private void Start()
     {
-            textOne.SetActive(true);
-            textTwo.SetActive(false);
+        textOne.SetActive(true);
+        textTwo.SetActive(false);
         textTree.SetActive(false);
         buttonTwo.SetActive(false);
         buttonTree.SetActive(false);
@@ -56,10 +60,12 @@ public class winPanel : MonoBehaviour
         buttonTree.SetActive(false);
         img.SetActive(false);
         buttonFore.SetActive(true);
+        fireworckOne.SetActive(true);
+        fireworckTwo.SetActive(true);
     }
 
     public void ForeClick()
     {
-        // perexod v menu
+        SceneManager.LoadScene(0);
     }
 }

@@ -15,7 +15,7 @@ public class ButtonManagerM : MonoBehaviour {
     public void ExitGame()
     {
         //PlayerPrefs.SetInt("IsQuit", 0);
-        SceneManager.LoadScene(0);
+        SceneManager.LoadScene(1);
         // Application.Quit();
     }
 

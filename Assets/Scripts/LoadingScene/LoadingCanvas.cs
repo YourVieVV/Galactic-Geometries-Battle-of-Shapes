@@ -1,7 +1,6 @@
 using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using UnityEngine.UI;
 
 public class LoadingCanvas : MonoBehaviour
 {
@@ -33,5 +32,4 @@ public class LoadingCanvas : MonoBehaviour
             yield return null;
         }
     }
-
 }
