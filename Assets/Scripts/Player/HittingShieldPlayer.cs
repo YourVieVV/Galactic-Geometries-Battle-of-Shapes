@@ -10,11 +10,12 @@ public class HittingShieldPlayer : MonoBehaviour
         {
             case "Meteorite":
                 collider.GetComponent<Meteorite>().HittingMeteorite();
-                //FindObjectOfType<PlayerHP>().Damage(25);
+                FindObjectOfType<ShieldHP>().Damage(65);
                 break;
             case "Enemy":
-                //FindObjectOfType<PlayerHP>().Damage(30);
                 collider.GetComponent<EnemyHP>().HittingEnemyByPlayer();
+                Instantiate(ExplosionHitPlayerShield, transform.position, Quaternion.identity);
+                FindObjectOfType<ShieldHP>().Damage(65);
                 break;
             case "EnemySquare":
                 collider.GetComponent<EnemyHP>().HittingEnemyByPlayer();

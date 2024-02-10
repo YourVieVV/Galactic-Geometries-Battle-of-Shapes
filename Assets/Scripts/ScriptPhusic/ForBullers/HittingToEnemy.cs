@@ -12,7 +12,7 @@ public class HittingToEnemy : MonoBehaviour
         if (collider.tag == "Enemy" || collider.tag == "EnemySquare")
         {
             // collision.GetComponent для того, что бы движок понимал у какого enemy отнимать хп при попадании
-            collider.GetComponent<EnemyHP>().TakeHPEnemy(100);
+            collider.GetComponent<EnemyHP>().TakeHPEnemy(50);
             DestroyPlayerBullet();
         }
         if (collider.tag == "EnemyBullet")

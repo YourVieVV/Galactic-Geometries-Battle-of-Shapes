@@ -4050,6 +4050,10 @@ PrefabInstance:
       propertyPath: enemyHPScript
       value: 
       objectReference: {fileID: 1030601106}
+    - target: {fileID: 3721915285152947517, guid: dc14b2890c12d8247a45f84ae046c3ca, type: 3}
+      propertyPath: loadingCanvasScript
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 4784512735404509281, guid: dc14b2890c12d8247a45f84ae046c3ca, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0

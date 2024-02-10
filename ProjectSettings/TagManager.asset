@@ -18,6 +18,7 @@ TagManager:
   - BossControl
   - ShieldBoss
   - BulletBoss
+  - BG_MUSIC_REATED
   layers:
   - Default
   - TransparentFX

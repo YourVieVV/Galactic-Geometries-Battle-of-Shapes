@@ -136,7 +136,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isCircleEnemy: 0
   isRotate: 0
-  movementSpeed: -0.3
+  movementSpeed: -0.5
   movementSpeedHorizontal: -2
 --- !u!114 &-8424599740129850755
 MonoBehaviour:
@@ -151,7 +151,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isCapsule: 0
-  isCirlce: 0
   isRectangle: 0
   isHexagon: 0
   isOval: 0
@@ -225,6 +224,9 @@ MonoBehaviour:
   isHexagon: 0
   isOval: 0
   isIsometric: 1
+  isBoss: 0
+  isBossDead: 0
+  enemyHP: 0
 --- !u!50 &2119705211020860765
 Rigidbody2D:
   serializedVersion: 4

@@ -9,11 +9,14 @@ public class Menu : MonoBehaviour
     private int loses;
     private int isFirstStart;
 
+    private float musicVolume;
+
     void Start()
     {
         score = PlayerPrefs.GetInt(StatisticsPlayer.score);
         wins = PlayerPrefs.GetInt(StatisticsPlayer.wins);
         loses = PlayerPrefs.GetInt(StatisticsPlayer.losses);
+        musicVolume = PlayerPrefs.GetFloat("musicVolume");
         isFirstStart = PlayerPrefs.GetInt("FirstStartGame");
     }
 
@@ -24,5 +27,6 @@ public class Menu : MonoBehaviour
         PlayerPrefs.SetInt(StatisticsPlayer.wins, wins);
         PlayerPrefs.SetInt(StatisticsPlayer.losses, loses);
         PlayerPrefs.SetInt("FirstStartGame", isFirstStart);
+        PlayerPrefs.SetFloat("musicVolume", musicVolume);
     }
 }
