@@ -29,7 +29,7 @@ public class Game : MonoBehaviour {
             PlayerPrefs.SetInt(StatisticsPlayer.wins, PlayerPrefs.GetInt(StatisticsPlayer.wins) + 1);
             if (PlayerPrefs.GetInt(StatisticsPlayer.score) < currentScore)
                 PlayerPrefs.SetInt(StatisticsPlayer.score, currentScore);
-            SceneManager.LoadScene(2);
+            SceneManager.LoadScene(4);
         }
         #endregion
 

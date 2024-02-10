@@ -56,6 +56,24 @@ public class TimerText : MonoBehaviour
             {
                 setIsVisiblePanelUpgrade.SetIsVisibleUpgradePlayer();
                 isVisiblePanelUpgrade = false;
+                switch (timerMin){
+                    case 1:
+                        PlayerPrefs.SetFloat(EmenyStats.hpRectangle, PlayerPrefs.GetFloat(EmenyStats.hpRectangle) + 100f);
+                        break;
+                    case 2:
+                        PlayerPrefs.SetFloat(EmenyStats.hpIsometric, PlayerPrefs.GetFloat(EmenyStats.hpIsometric) + 100f);
+                        break;
+                    case 3:
+                        PlayerPrefs.SetFloat(EmenyStats.hpOval, PlayerPrefs.GetFloat(EmenyStats.hpOval) + 100f);
+                        break;
+                    case 4:
+                        PlayerPrefs.SetFloat(EmenyStats.hpCapsule, PlayerPrefs.GetFloat(EmenyStats.hpCapsule) + 100f);
+                        break;
+                    case 5:
+                        PlayerPrefs.SetFloat(EmenyStats.hpCircle, PlayerPrefs.GetFloat(EmenyStats.hpCircle) + 100f);
+                        break;
+                }
+
             }
         }
 
@@ -71,6 +89,7 @@ public class TimerText : MonoBehaviour
             boss.SetActive(true);
             bossDodge.SetActive(true);
             bossShield.SetActive(true);
+            PlayerPrefs.SetFloat(EmenyStats.hpHexagon, PlayerPrefs.GetFloat(EmenyStats.hpHexagon) + 100f);
         }
 
         theText.text = $"Time lived - {Mathf.Round(timerMin)} : {Mathf.Round(startingTimer)}";
