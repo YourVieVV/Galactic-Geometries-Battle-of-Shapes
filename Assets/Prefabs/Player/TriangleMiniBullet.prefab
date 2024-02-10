@@ -143,6 +143,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ExplotionHitEnemy: {fileID: 4794043405585894037, guid: 37138c0c33167b04fa1fb90b7f5a794f, type: 3}
   ExplosionShieldBoss: {fileID: 1152899567547200, guid: 8c1209a205fee874c8c49a594e2af79f, type: 3}
+  ExplosionMeteorite: {fileID: 1887291998100768, guid: c482918740cf04e449b6415f2691e961, type: 3}
 --- !u!60 &7732671217340287409
 PolygonCollider2D:
   m_ObjectHideFlags: 0

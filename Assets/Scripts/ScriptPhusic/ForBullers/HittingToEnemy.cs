@@ -4,6 +4,7 @@ public class HittingToEnemy : MonoBehaviour
 {
     public GameObject ExplotionHitEnemy;
     public GameObject ExplosionShieldBoss;
+    public GameObject ExplosionMeteorite;
     // Этот скрипт для пуль игрока
     private void OnTriggerEnter2D(Collider2D collider)
     {
@@ -22,6 +23,11 @@ public class HittingToEnemy : MonoBehaviour
         if (collider.tag == "ShieldBoss")
         {
             Instantiate(ExplosionShieldBoss, transform.position, Quaternion.identity);
+            DestroyPlayerBullet();
+        }
+        if (collider.tag == "Meteorite")
+        {
+            Instantiate(ExplosionMeteorite, transform.position, Quaternion.identity);
             DestroyPlayerBullet();
         }
     }

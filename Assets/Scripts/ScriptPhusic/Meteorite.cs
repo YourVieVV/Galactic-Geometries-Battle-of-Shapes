@@ -25,8 +25,6 @@ public class Meteorite : MonoBehaviour
 
     public void HittingMeteorite()
     {
-        Instantiate(ExplotionMeteoriteDestroy, transform.position, Quaternion.identity);
-        Destroy(gameObject);
         int random = Random.Range(0, 2);
         if (random == 0)
         {
@@ -36,6 +34,8 @@ public class Meteorite : MonoBehaviour
         {
             Instantiate(shildPlayer, transform.position, Quaternion.identity);
         }
+        Instantiate(ExplotionMeteoriteDestroy, transform.position, Quaternion.identity);
+        Destroy(gameObject);
     }
 
     void OnTriggerEnter2D(Collider2D collider)
@@ -43,7 +43,12 @@ public class Meteorite : MonoBehaviour
         if (collider.tag == "EnemySquare")
         {
             collider.GetComponent<EnemyHP>().DestroyEnemy();
-            Instantiate(ExplotionMeteoriteDestroy, transform.position, Quaternion.identity);
+            HittingMeteorite();
+        }
+        if (collider.tag == "Enemy")
+        {
+            collider.GetComponent<EnemyHP>().DestroyEnemy();
+            HittingMeteorite();
         }
         if (collider.tag == "PlayerBullet")
         {
