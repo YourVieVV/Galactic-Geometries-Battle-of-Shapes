@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class NamesUpgradePlayer : MonoBehaviour
@@ -26,7 +24,7 @@ public class NamesUpgradePlayer : MonoBehaviour
         if (PlayerPrefs.GetString("Lang") == "ru")
         {
             AddRateOfFire = "Увеличить скорострельность на 0.2";
-        AddHP = "Увеличить ХП на 20";
+            AddHP = "Увеличить ХП на 20";
             AddGunTwo = "Добавить пушку";
             AddGunTree = "Добавить новую пушку";
             AddMoveSpeed = "Увеличить скорость на 0.2";
@@ -36,7 +34,8 @@ public class NamesUpgradePlayer : MonoBehaviour
             ActivateShield = "Активировать силовой щит";
             AddRotation = "Добавить стик для поворота";
             AddRocket = "Заменить пули на ракеты";
-        } else
+        }
+        else
         {
             AddRateOfFire = "Increase firing speed by 0.2";
             AddHP = "Increase health by 20";
@@ -50,6 +49,6 @@ public class NamesUpgradePlayer : MonoBehaviour
             AddRotation = "Add ship rotation";
             AddRocket = "Replace bullets with rockets";
         }
-            
+
     }
 }
