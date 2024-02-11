@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -12,6 +10,13 @@ public class ViewScore : MonoBehaviour
     {
         textScore = GetComponent<Text>();
         score = PlayerPrefs.GetInt(StatisticsPlayer.score);
-        textScore.text = $"Best score: {score}";
+        if (PlayerPrefs.GetString("Lang") == "ru")
+        {
+            textScore.text = $"Ћучший счЄт: {score}";
+        }
+        else
+        {
+            textScore.text = $"Best score: {score}";
+        }
     }
 }

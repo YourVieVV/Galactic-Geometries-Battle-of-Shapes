@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -12,6 +10,13 @@ public class ViewWins : MonoBehaviour
     {
         textWins = GetComponent<Text>();
         winsCount = PlayerPrefs.GetInt(StatisticsPlayer.wins);
-        textWins.text = $"Victories: {winsCount}";
+        if (PlayerPrefs.GetString("Lang") == "ru")
+        {
+            textWins.text = $"ֲûידנûרוי: {winsCount}";
+        }
+        else
+        {
+            textWins.text = $"Victories: {winsCount}";
+        }
     }
 }

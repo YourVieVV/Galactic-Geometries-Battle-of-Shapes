@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -12,6 +10,13 @@ public class ViewLosses : MonoBehaviour
     {
         textLosses = GetComponent<Text>();
         lossesCount = PlayerPrefs.GetInt(StatisticsPlayer.losses);
-        textLosses.text = $"Unsuccessful attempts: {lossesCount}";
+        if (PlayerPrefs.GetString("Lang") == "ru")
+        {
+            textLosses.text = $"Неудачных попыток: {lossesCount}";
+        }
+        else
+        {
+            textLosses.text = $"Unsuccessful attempts: {lossesCount}";
+        }
     }
 }

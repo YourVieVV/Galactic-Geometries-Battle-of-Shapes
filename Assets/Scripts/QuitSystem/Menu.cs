@@ -11,6 +11,8 @@ public class Menu : MonoBehaviour
 
     private float musicVolume;
 
+    private string lang;
+
     void Start()
     {
         score = PlayerPrefs.GetInt(StatisticsPlayer.score);
@@ -18,6 +20,7 @@ public class Menu : MonoBehaviour
         loses = PlayerPrefs.GetInt(StatisticsPlayer.losses);
         musicVolume = PlayerPrefs.GetFloat("musicVolume");
         isFirstStart = PlayerPrefs.GetInt("FirstStartGame");
+        lang = PlayerPrefs.GetString("Lang");
     }
 
     private void OnApplicationQuit()
@@ -28,5 +31,6 @@ public class Menu : MonoBehaviour
         PlayerPrefs.SetInt(StatisticsPlayer.losses, loses);
         PlayerPrefs.SetInt("FirstStartGame", isFirstStart);
         PlayerPrefs.SetFloat("musicVolume", musicVolume);
+        PlayerPrefs.SetString("Lang", lang);
     }
 }

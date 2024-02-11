@@ -5,12 +5,25 @@ public class CharOutput : MonoBehaviour
 {
     private TMPro.TextMeshProUGUI TextArea;// поле вывода текста
     [SerializeField]
-    private string TextDiolog;// то что будет выводится
+    private string TextEn;// то что будет выводится
+    [SerializeField]
+    private string TextRu;// то что будет выводится
+
+    private string TextDiolog;
+
 
     private void Start()
     {
         TextArea = GetComponent<TMPro.TextMeshProUGUI>();
-        StartCoroutine(TextAnimation());
+        if (PlayerPrefs.GetString("Lang") == "ru")
+        {
+            TextDiolog = TextRu;
+        }
+        else
+        {
+            TextDiolog = TextEn;
+        }
+            StartCoroutine(TextAnimation());
     }
     private IEnumerator TextAnimation()
     {
