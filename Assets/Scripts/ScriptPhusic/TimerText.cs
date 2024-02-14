@@ -79,7 +79,9 @@ public class TimerText : MonoBehaviour
 
         if (timerMin == 6)
         {
+            if (spawnEnemy != null)
             spawnEnemy.SetActive(false);
+            if (spawnMeteorite != null)
             spawnMeteorite.SetActive(false);
         }
 

@@ -121,7 +121,7 @@ public class PlayerController : MonoBehaviour
         if (isPalyerRotate)
         {
             // Если джостиком управляют
-            if (_joystickRotation.Vertical > 0.3f || _joystickRotation.Vertical < 0.3f && _joystickRotation.Horizontal > 0.3f || _joystickRotation.Horizontal < -0.3f)
+            if (_joystickRotation.Vertical > 0.2f || _joystickRotation.Vertical < 0.2f && _joystickRotation.Horizontal > 0.2f || _joystickRotation.Horizontal < -0.2f)
             {
                 float angle = Mathf.Atan2(_joystickRotation.Vertical, _joystickRotation.Horizontal) * Mathf.Rad2Deg;
                 transform.rotation = Quaternion.Euler(new Vector3(0, 0, angle - 90f));

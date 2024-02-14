@@ -35,8 +35,10 @@ public class SetInitialPlayerStats : MonoBehaviour
             PlayerPrefs.SetInt(PlayerStats.isFirstShipFlot, PlayerStats.initIsFirstShipFlot);
             PlayerPrefs.SetInt(PlayerStats.isSecondShipFlot, PlayerStats.initIsSecondShipFlot);
 
-
-            upgradeSystemScript.SetUpgradeList(upgradeList._Upgrades);
+            if (PlayerPrefs.GetString("Lang") == "ru")
+                upgradeSystemScript.SetUpgradeList(upgradeList._RusUpgrades);
+            else
+                upgradeSystemScript.SetUpgradeList(upgradeList._Upgrades);
             //PlayerPrefs.SetInt("IsQuit", 0);
 
             if (PlayerPrefs.HasKey(StatisticsPlayer.score) == false)

@@ -367,7 +367,7 @@ MonoBehaviour:
   ExplotionMeteoriteDestroy: {fileID: 5927800019614593835, guid: c7b7cf9b4761ee043b19ea74a2e2d845, type: 3}
   PlusHP: {fileID: 8705225044765858687, guid: b3d4f87c43e2f574ebb1b0214c38b423, type: 3}
   shildPlayer: {fileID: 3747415522586999381, guid: 8fcc3efc3393ece46af56755bbc4ace8, type: 3}
-  rotateZ: -0.5
+  rotateZ: -1
   onGround: 0
 --- !u!1 &8848438814293116232
 GameObject:

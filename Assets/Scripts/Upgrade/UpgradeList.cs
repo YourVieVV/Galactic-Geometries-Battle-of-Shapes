@@ -33,4 +33,25 @@ public class UpgradeList : MonoBehaviour
         //new Upgrade { Name = NamesUpgradePlayer.AddLaserRateOfFire },
         //new Upgrade { Name = NamesUpgradePlayer.AddLaserRateOfFire }
     };
+
+    public List<Upgrade> _RusUpgrades = new()
+    {
+        new Upgrade { Name = RusNameUpgrades.AddHP },
+        new Upgrade { Name = RusNameUpgrades.AddHP },
+        new Upgrade { Name = RusNameUpgrades.AddHP },
+        new Upgrade { Name = RusNameUpgrades.AddMoveSpeed },
+        new Upgrade { Name = RusNameUpgrades.AddMoveSpeed },
+        new Upgrade { Name = RusNameUpgrades.AddMoveSpeed },
+        new Upgrade { Name = RusNameUpgrades.AddRateOfFire },
+        new Upgrade { Name = RusNameUpgrades.AddRateOfFire },
+        new Upgrade { Name = RusNameUpgrades.AddRateOfFire },
+        new Upgrade { Name = RusNameUpgrades.AddFlot },
+        new Upgrade { Name = RusNameUpgrades.AddSecondShipFlot },
+        new Upgrade { Name = RusNameUpgrades.AddGunTwo },
+        new Upgrade { Name = RusNameUpgrades.AddGunTree },
+        new Upgrade { Name = RusNameUpgrades.AddRotation },
+        new Upgrade { Name = RusNameUpgrades.ActivateShield },
+        new Upgrade { Name = RusNameUpgrades.AddRocket },
+        new Upgrade { Name = RusNameUpgrades.OpenPortal }
+    };
 }
