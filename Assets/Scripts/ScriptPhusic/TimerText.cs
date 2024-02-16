@@ -11,16 +11,14 @@ public class TimerText : MonoBehaviour
     private Text theText;
     private PauseGame thePauseMenu;
     private IsVisibleUpgradePanel setIsVisiblePanelUpgrade;
+    private NewEnemySpawner spawnEnemy;
+    private SpawnMeteor spawnMeteorite;
+
     [SerializeField]
     private UpgradeSystem upgradeSystemScript;
 
     private bool isVisiblePanelUpgrade = false;
     private bool isBoss = false;
-
-    [SerializeField]
-    private GameObject spawnEnemy;
-    [SerializeField]
-    private GameObject spawnMeteorite;
 
     [SerializeField]
     private GameObject boss;
@@ -34,6 +32,8 @@ public class TimerText : MonoBehaviour
         theText = GetComponent<Text>();
         thePauseMenu = FindObjectOfType<PauseGame>();
         setIsVisiblePanelUpgrade = FindObjectOfType<IsVisibleUpgradePanel>();
+        spawnEnemy = FindObjectOfType<NewEnemySpawner>();
+        spawnMeteorite = FindObjectOfType<SpawnMeteor>();
     }
 
     void Update()
@@ -80,9 +80,9 @@ public class TimerText : MonoBehaviour
         if (timerMin == 6)
         {
             if (spawnEnemy != null)
-            spawnEnemy.SetActive(false);
+            spawnEnemy.gameObject.SetActive(false);
             if (spawnMeteorite != null)
-            spawnMeteorite.SetActive(false);
+            spawnMeteorite.gameObject.SetActive(false);
         }
 
         if (timerMin == 6 && startingTimer > 5 && !isBoss)

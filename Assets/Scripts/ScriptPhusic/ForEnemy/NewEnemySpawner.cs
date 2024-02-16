@@ -166,7 +166,15 @@ public class NewEnemySpawner : MonoBehaviour
         }
         else
         {
-            randomPosition -= Random.Range(-0.5f, 0.5f);
+            randomPosition -= Random.Range(-1f, 1f);
+            if (randomPosition < -2.6)
+            {
+                randomPosition += 1.5f;
+            }
+            if (randomPosition > 2.6)
+            {
+                randomPosition -= 1.5f;
+            }
             positionsArray.Add(randomPosition);
             pos = new Vector3(randomPosition, transform.position.y, transform.position.z);
         }

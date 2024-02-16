@@ -14,7 +14,7 @@ public class PlusHP : MonoBehaviour
     {
         if (collider.tag == "Player")
         {
-            FindObjectOfType<PlayerHP>().AddHP(10);
+            FindObjectOfType<PlayerHP>().AddHP(60);
             Destroy(gameObject);
         }
     }
