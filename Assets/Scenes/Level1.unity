@@ -805,8 +805,6 @@ MonoBehaviour:
   startingTimer: 0
   timerMin: 0
   upgradeSystemScript: {fileID: 1627315309}
-  spawnEnemy: {fileID: 0}
-  spawnMeteorite: {fileID: 0}
   boss: {fileID: 1030601104}
   bossShield: {fileID: 1073164147}
   bossDodge: {fileID: 1316287553}
@@ -3968,6 +3966,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 3225309822085823675, guid: 6a00328a4c8acd649ba4515b8a054d1e, type: 3}
+      propertyPath: m_Icon
+      value: 
+      objectReference: {fileID: -5442936267250999957, guid: 0000000000000000d000000000000000, type: 0}
+    - target: {fileID: 3225309822085823675, guid: 6a00328a4c8acd649ba4515b8a054d1e, type: 3}
       propertyPath: m_Name
       value: MeteoriteSpawner
       objectReference: {fileID: 0}
@@ -3981,7 +3983,7 @@ PrefabInstance:
       objectReference: {fileID: 7519394787566821550, guid: 1b9e78b5f3109014c8907a82127bd1a8, type: 3}
     - target: {fileID: 7788749310888374587, guid: 6a00328a4c8acd649ba4515b8a054d1e, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -3.68
+      value: -3
       objectReference: {fileID: 0}
     - target: {fileID: 7788749310888374587, guid: 6a00328a4c8acd649ba4515b8a054d1e, type: 3}
       propertyPath: m_LocalPosition.y
@@ -4725,6 +4727,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 451950928495882261, guid: 2d96405e0d7be514fa9d03a61e57c354, type: 3}
+      propertyPath: m_Icon
+      value: 
+      objectReference: {fileID: 7866945982896999795, guid: 0000000000000000d000000000000000, type: 0}
+    - target: {fileID: 451950928495882261, guid: 2d96405e0d7be514fa9d03a61e57c354, type: 3}
       propertyPath: m_Name
       value: EnemySpawner
       objectReference: {fileID: 0}
@@ -4734,7 +4740,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5191876788609646381, guid: 2d96405e0d7be514fa9d03a61e57c354, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.16724339
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5191876788609646381, guid: 2d96405e0d7be514fa9d03a61e57c354, type: 3}
       propertyPath: m_LocalPosition.y
