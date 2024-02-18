@@ -24,7 +24,7 @@ public class HittingShieldPlayer : MonoBehaviour
                 break;
             case "EnemyBullet":
                 collider.GetComponent<EnemyBullet>().BulletHitPlayerShield();
-                FindObjectOfType<ShieldHP>().Damage(35);
+                FindObjectOfType<ShieldHP>().Damage(25);
                 break;
             default:
                 break;
