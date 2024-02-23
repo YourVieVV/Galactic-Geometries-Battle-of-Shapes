@@ -1,5 +1,4 @@
 ﻿using DigitalRuby.LightningBolt;
-using System.Collections;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour
@@ -60,6 +59,8 @@ public class PlayerController : MonoBehaviour
         isGunTwo = PlayerPrefs.GetInt(PlayerStats.isGunTwo) == 0 ? false : true;
         isGunTree = PlayerPrefs.GetInt(PlayerStats.isGunTree) == 0 ? false : true;
         isPalyerRotate = PlayerPrefs.GetInt(PlayerStats.isPalyerRotate) == 0 ? false : true;
+        if (isPalyerRotate)
+            _joystickRotation.gameObject.SetActive(true);
     }
 
     void Start()
@@ -84,7 +85,8 @@ public class PlayerController : MonoBehaviour
                 InstantiateBullet(playerRocket);
 
                 shootDelayCouter = shootDelayRocket;
-            } else
+            }
+            else
             {
                 InstantiateBullet(playerBullet);
 
@@ -110,7 +112,7 @@ public class PlayerController : MonoBehaviour
         {
             Instantiate(pref, GunPlayerTree.transform.position, transform.rotation);
         }
-        
+
     }
 
     private void Move()
@@ -118,10 +120,10 @@ public class PlayerController : MonoBehaviour
         _direction.x = _joystickMoving.Horizontal * moveSpeed;
         _direction.y = _joystickMoving.Vertical * moveSpeed;
 
+        // Поворот вокруг
         if (isPalyerRotate)
         {
-            // Если джостиком управляют
-            if (_joystickRotation.Vertical > 0.2f || _joystickRotation.Vertical < 0.2f && _joystickRotation.Horizontal > 0.2f || _joystickRotation.Horizontal < -0.2f)
+            if (_joystickRotation.Vertical > 0.3f || _joystickRotation.Vertical < -0.3f && _joystickRotation.Horizontal > 0.3f || _joystickRotation.Horizontal < -0.3f)
             {
                 float angle = Mathf.Atan2(_joystickRotation.Vertical, _joystickRotation.Horizontal) * Mathf.Rad2Deg;
                 transform.rotation = Quaternion.Euler(new Vector3(0, 0, angle - 90f));
