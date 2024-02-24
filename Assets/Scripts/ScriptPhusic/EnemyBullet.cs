@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class EnemyBullet : MonoBehaviour
 {
@@ -27,23 +25,25 @@ public class EnemyBullet : MonoBehaviour
             {
                 myrigitbody.AddRelativeForce(Vector2.down * moveSpeed, ForceMode2D.Impulse);
             }
-        } 
-        
+        }
     }
 
     public void BulletHitPlayer()
     {
-        Instantiate(ExplosionHitPlayer, transform.position, Quaternion.identity);
+        if (ExplosionHitPlayer != null)
+            Instantiate(ExplosionHitPlayer, transform.position, Quaternion.identity);
         Destroy(gameObject);
     }
     public void BulletHitPlayerBullet()
     {
-        Instantiate(ExplosionBullet, transform.position, Quaternion.identity);
+        if (ExplosionHitPlayer != null)
+            Instantiate(ExplosionBullet, transform.position, Quaternion.identity);
         Destroy(gameObject);
     }
     public void BulletHitPlayerShield()
     {
-        Instantiate(ExplosionHitPlayerShield, transform.position, Quaternion.identity);
+        if (ExplosionHitPlayer != null)
+            Instantiate(ExplosionHitPlayerShield, transform.position, Quaternion.identity);
         Destroy(gameObject);
     }
     private void OnBecameInvisible()

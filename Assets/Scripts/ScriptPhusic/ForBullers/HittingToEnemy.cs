@@ -27,7 +27,8 @@ public class HittingToEnemy : MonoBehaviour
         }
         if (collider.tag == "Meteorite")
         {
-            Instantiate(ExplosionMeteorite, transform.position, Quaternion.identity);
+            if (ExplosionMeteorite != null)
+                Instantiate(ExplosionMeteorite, transform.position, Quaternion.identity);
             DestroyPlayerBullet();
         }
     }

@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class EnemyHP : MonoBehaviour
@@ -63,7 +61,8 @@ public class EnemyHP : MonoBehaviour
             FindObjectOfType<Score>().CounterScope(10);
             return;
         }
-        Instantiate(ExplotionEnemyDestroy, transform.position, Quaternion.identity);
+        if (ExplotionEnemyDestroy != null)
+            Instantiate(ExplotionEnemyDestroy, transform.position, Quaternion.identity);
     }
 
     public void HittingEnemyByPlayer()
@@ -74,7 +73,8 @@ public class EnemyHP : MonoBehaviour
 
     public void DestroyEnemy()
     {
-        Instantiate(ExplotionEnemyDestroy, transform.position, Quaternion.identity);
+        if (ExplotionEnemyDestroy != null)
+            Instantiate(ExplotionEnemyDestroy, transform.position, Quaternion.identity);
         Destroy(gameObject);
     }
 
