@@ -117,8 +117,9 @@ public class PlayerController : MonoBehaviour
 
     private void Move()
     {
-        _direction.x = _joystickMoving.Horizontal * moveSpeed;
-        _direction.y = _joystickMoving.Vertical * moveSpeed;
+        //_direction.x = _joystickMoving.Horizontal * moveSpeed;
+        _direction.x = _joystickMoving.Horizontal;
+        _direction.y = _joystickMoving.Vertical;
 
         // Поворот вокруг
         if (isPalyerRotate)
@@ -130,7 +131,8 @@ public class PlayerController : MonoBehaviour
             }
         }
 
-        rb.velocity = new Vector2(_direction.x, _direction.y);
+        //rb.velocity = new Vector2(_direction.x, _direction.y);
+        rb.MovePosition(rb.position + _direction * moveSpeed * Time.deltaTime);
     }
 
     void Update()
