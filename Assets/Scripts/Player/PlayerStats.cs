@@ -23,7 +23,7 @@ public class PlayerStats : MonoBehaviour
     public const float
         initShootDelayGun = 1f,
         //1.8
-        initMoveSpeed = 8f,
+        initMoveSpeed = 2f,
         initHpPlayer = 100f;
         //initShootDelayLaser = 0.6f,
         //initShootDelayRocket = 2f;

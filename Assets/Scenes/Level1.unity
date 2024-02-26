@@ -3489,7 +3489,6 @@ MonoBehaviour:
   panelPause: {fileID: 657189488}
   playerControllerScript: {fileID: 7107154108063647174}
   joystickMove: {fileID: 463053227}
-  joystickRotate: {fileID: 0}
 --- !u!222 &1865127325
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -5020,15 +5019,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3364412298176313593, guid: c0fa5f0f093a3d145b9f929f60886e54, type: 3}
       propertyPath: m_Color.b
-      value: 0.8396226
+      value: 0.7169812
       objectReference: {fileID: 0}
     - target: {fileID: 3364412298176313593, guid: c0fa5f0f093a3d145b9f929f60886e54, type: 3}
       propertyPath: m_Color.g
-      value: 0.51486295
+      value: 0.47347814
       objectReference: {fileID: 0}
     - target: {fileID: 3364412298176313593, guid: c0fa5f0f093a3d145b9f929f60886e54, type: 3}
       propertyPath: m_Color.r
-      value: 0.58952034
+      value: 0.5271313
       objectReference: {fileID: 0}
     - target: {fileID: 5006808706331865618, guid: c0fa5f0f093a3d145b9f929f60886e54, type: 3}
       propertyPath: m_LocalPosition.x
@@ -5093,6 +5092,18 @@ PrefabInstance:
     - target: {fileID: 8925943097040991617, guid: c0fa5f0f093a3d145b9f929f60886e54, type: 3}
       propertyPath: m_Color.a
       value: 0.8627451
+      objectReference: {fileID: 0}
+    - target: {fileID: 8925943097040991617, guid: c0fa5f0f093a3d145b9f929f60886e54, type: 3}
+      propertyPath: m_Color.b
+      value: 0.8160377
+      objectReference: {fileID: 0}
+    - target: {fileID: 8925943097040991617, guid: c0fa5f0f093a3d145b9f929f60886e54, type: 3}
+      propertyPath: m_Color.g
+      value: 0.8160377
+      objectReference: {fileID: 0}
+    - target: {fileID: 8925943097040991617, guid: c0fa5f0f093a3d145b9f929f60886e54, type: 3}
+      propertyPath: m_Color.r
+      value: 0.8160377
       objectReference: {fileID: 0}
     - target: {fileID: 9119618776781476056, guid: c0fa5f0f093a3d145b9f929f60886e54, type: 3}
       propertyPath: m_Layer

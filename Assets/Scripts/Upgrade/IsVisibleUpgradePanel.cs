@@ -1,12 +1,9 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class IsVisibleUpgradePanel : MonoBehaviour
 {
     public GameObject upgrades;
     private PauseGame getPauseGame;
-
 
     private void Awake()
     {

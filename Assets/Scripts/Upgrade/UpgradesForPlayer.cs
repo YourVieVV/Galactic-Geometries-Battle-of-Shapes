@@ -68,6 +68,7 @@ public class UpgradesForPlayer : MonoBehaviour
 
     public void AddRotation()
     {
+        Debug.Log("asdasda");
         joysticRotate.gameObject.SetActive(true);
         getPlayerControllerScript.isPalyerRotate = true;
         PlayerPrefs.SetInt(PlayerStats.isPalyerRotate, 1);

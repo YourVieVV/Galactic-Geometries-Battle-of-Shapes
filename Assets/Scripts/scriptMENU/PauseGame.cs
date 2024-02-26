@@ -1,9 +1,7 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using UnityEngine.UI;
+﻿using UnityEngine;
 
-public class PauseGame : MonoBehaviour {
+public class PauseGame : MonoBehaviour
+{
     [HideInInspector]
     public bool isPaused;
     [SerializeField]
@@ -13,25 +11,25 @@ public class PauseGame : MonoBehaviour {
     [SerializeField]
     private PlayerController playerControllerScript;
     [SerializeField]
-    private Joystick joystickMove, 
-        joystickRotate;
+    private Joystick joystickMove;
 
 
-    void Update () {
-		if (Input.GetKeyDown(pauseButton))
+    void Update()
+    {
+        if (Input.GetKeyDown(pauseButton))
         {
             isPaused = !isPaused;
             PauseAndSetActivePanelFunction(isPaused, panelPause);
         }
-	}
+    }
 
     public void PauseAndSetActivePanelFunction(bool isPaused, GameObject panel)
     {
         if (isPaused)
         {
             panel.SetActive(true);
-            joystickMove.gameObject.SetActive(false);
-            joystickRotate.gameObject.SetActive(false);
+            if (joystickMove.gameObject)
+                joystickMove.gameObject.SetActive(false);
             Time.timeScale = 0;
             if (playerControllerScript)
             {
@@ -41,8 +39,8 @@ public class PauseGame : MonoBehaviour {
         else
         {
             panel.SetActive(false);
-            joystickMove.gameObject.SetActive(true);
-            joystickRotate.gameObject.SetActive(true);
+            if (joystickMove.gameObject)
+                joystickMove.gameObject.SetActive(true);
             Time.timeScale = 1;
             if (playerControllerScript)
             {
@@ -50,5 +48,5 @@ public class PauseGame : MonoBehaviour {
             }
         }
     }
-     
+
 }

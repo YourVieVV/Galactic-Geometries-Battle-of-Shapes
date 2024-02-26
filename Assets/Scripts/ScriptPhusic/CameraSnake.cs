@@ -3,7 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class CameraSnake : MonoBehaviour
-{public float _duration = .8f;
+{
+    [SerializeField]
+    private float _duration = .8f;
     private Transform _cameraTransform;
     private Vector3 _originalPosition;
  
