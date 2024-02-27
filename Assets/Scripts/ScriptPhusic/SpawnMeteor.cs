@@ -1,8 +1,8 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class SpawnMeteor : MonoBehaviour {
+public class SpawnMeteor : MonoBehaviour
+{
 
     public GameObject Meteorit;
     private float spawnDelay = 5f;
@@ -32,7 +32,7 @@ public class SpawnMeteor : MonoBehaviour {
                 spawnDelay -= 1;
                 isTimeHasCome6 = false;
             }
-            Vector2 pos = new Vector2(transform.position.x, Random.Range(4.5f,-4.5f));
+            Vector2 pos = new Vector2(transform.position.x, Random.Range(4.2f, -4.2f));
             Instantiate(Meteorit, pos, Quaternion.identity);
             yield return new WaitForSeconds(spawnDelay);
         }

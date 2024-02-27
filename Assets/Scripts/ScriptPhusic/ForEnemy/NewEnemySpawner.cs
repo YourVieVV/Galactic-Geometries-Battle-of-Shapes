@@ -26,6 +26,8 @@ public class NewEnemySpawner : MonoBehaviour
     private GameObject EnemyCircle;
     [SerializeField]
     private GameObject EnemyCapsule;
+    [SerializeField]
+    private Camera CameraGame;
 
     private float randomPosition = 1;
     private bool startCoroutineSquare = true;
@@ -99,7 +101,7 @@ public class NewEnemySpawner : MonoBehaviour
         {
             Vector3 position = CalcPosInstans();
             Instantiate(EnemyOval, position, Quaternion.identity);
-            yield return new WaitForSeconds(2f);
+            yield return new WaitForSeconds(1.8f);
         }
     }
 
@@ -130,7 +132,7 @@ public class NewEnemySpawner : MonoBehaviour
         {
             Vector3 position = CalcPosInstans();
             Instantiate(EnemyCapsule, position, Quaternion.identity);
-            yield return new WaitForSeconds(1.6f);
+            yield return new WaitForSeconds(2f);
         }
     }
 
@@ -140,7 +142,7 @@ public class NewEnemySpawner : MonoBehaviour
         {
             Vector3 position = CalcPosInstans();
             Instantiate(EnemySquare, position, Quaternion.identity);
-            yield return new WaitForSeconds(1.2f);
+            yield return new WaitForSeconds(1.4f);
         }
     }
 
@@ -156,7 +158,11 @@ public class NewEnemySpawner : MonoBehaviour
 
     private Vector3 CalcPosInstans()
     {
-        randomPosition = Random.Range(-2.7f, 2.7f);
+        //Vector3 bottomLeftWorld = camera.ViewportToWorldPoint(new Vector3(0, 0, camera.nearClipPlane));
+        Vector3 topRightWorld = CameraGame.ViewportToWorldPoint(new Vector3(1, 1, CameraGame.nearClipPlane));
+        float instansPos = topRightWorld.x - 0.5f;
+
+        randomPosition = Random.Range(-instansPos, instansPos);
 
         Vector3 pos;
         if (!positionsArray.Any(pos => pos >= randomPosition - 1 && pos <= randomPosition + 1))
@@ -167,11 +173,11 @@ public class NewEnemySpawner : MonoBehaviour
         else
         {
             randomPosition -= Random.Range(-1f, 1f);
-            if (randomPosition < -2.6)
+            if (randomPosition < instansPos)
             {
                 randomPosition += 1.5f;
             }
-            if (randomPosition > 2.6)
+            if (randomPosition > instansPos)
             {
                 randomPosition -= 1.5f;
             }

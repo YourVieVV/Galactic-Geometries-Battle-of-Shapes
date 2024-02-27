@@ -56,7 +56,8 @@ public class TimerText : MonoBehaviour
             {
                 setIsVisiblePanelUpgrade.SetIsVisibleUpgradePlayer();
                 isVisiblePanelUpgrade = false;
-                switch (timerMin){
+                switch (timerMin)
+                {
                     case 1:
                         PlayerPrefs.SetFloat(EmenyStats.hpRectangle, PlayerPrefs.GetFloat(EmenyStats.hpRectangle) + 100f);
                         break;
@@ -80,9 +81,9 @@ public class TimerText : MonoBehaviour
         if (timerMin == 6)
         {
             if (spawnEnemy != null)
-            spawnEnemy.gameObject.SetActive(false);
+                spawnEnemy.gameObject.SetActive(false);
             if (spawnMeteorite != null)
-            spawnMeteorite.gameObject.SetActive(false);
+                spawnMeteorite.gameObject.SetActive(false);
         }
 
         if (timerMin == 6 && startingTimer > 5 && !isBoss)

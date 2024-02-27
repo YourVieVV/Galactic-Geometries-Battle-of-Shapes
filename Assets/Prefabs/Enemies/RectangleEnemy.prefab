@@ -185,6 +185,9 @@ MonoBehaviour:
   isHexagon: 0
   isOval: 0
   isIsometric: 0
+  isBoss: 0
+  isBossDead: 0
+  enemyHP: 0
 --- !u!114 &8255161685747271591
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -222,7 +225,7 @@ MonoBehaviour:
   bulletPrefab: {fileID: 1636134359647972, guid: f4320b53d4137eb49b8845099dde3997, type: 3}
   dulo1: {fileID: 1069095875202307018}
   dulo2: {fileID: 0}
-  fireDelay: 1
+  fireDelay: 1.2
 --- !u!50 &5739380036336889233
 Rigidbody2D:
   serializedVersion: 4

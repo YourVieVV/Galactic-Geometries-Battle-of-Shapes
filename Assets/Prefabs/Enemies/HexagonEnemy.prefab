@@ -191,7 +191,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isCapsule: 0
-  isCirlce: 0
   isRectangle: 0
   isHexagon: 1
   isOval: 0
@@ -200,7 +199,7 @@ MonoBehaviour:
   bulletPrefab: {fileID: 2873951361585137116, guid: 0dc50b39ac6648f40b51c9589b3ea4b6, type: 3}
   dulo1: {fileID: 2653535580050767756}
   dulo2: {fileID: 0}
-  fireDelay: 0.3
+  fireDelay: 0.5
 --- !u!114 &-2272804153998324344
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -220,6 +219,9 @@ MonoBehaviour:
   isHexagon: 1
   isOval: 0
   isIsometric: 0
+  isBoss: 0
+  isBossDead: 0
+  enemyHP: 0
 --- !u!1 &2653535580050767756
 GameObject:
   m_ObjectHideFlags: 0

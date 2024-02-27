@@ -132,7 +132,7 @@ public class PlayerController : MonoBehaviour
         }
 
         //rb.velocity = new Vector2(_direction.x, _direction.y);
-        rb.MovePosition(rb.position + _direction * moveSpeed * Time.deltaTime);
+        rb.MovePosition(rb.position + _direction * moveSpeed * Time.fixedDeltaTime);
     }
 
     void Update()
@@ -151,8 +151,12 @@ public class PlayerController : MonoBehaviour
             return;
         }
 
-        Move();
+        // Move();
         Shoot();
+    }
+    private void FixedUpdate()
+    {
+        Move();
     }
 
 }
