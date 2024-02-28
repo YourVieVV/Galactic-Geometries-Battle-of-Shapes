@@ -121,7 +121,7 @@ public class NewEnemySpawner : MonoBehaviour
         {
             Vector3 position = CalcPosInstans();
             Instantiate(EnemyCircle, position, Quaternion.identity);
-            yield return new WaitForSeconds(2.4f);
+            yield return new WaitForSeconds(2.2f);
         }
     }
 
