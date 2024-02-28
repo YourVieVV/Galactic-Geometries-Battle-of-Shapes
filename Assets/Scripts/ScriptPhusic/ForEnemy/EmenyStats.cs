@@ -18,15 +18,15 @@ public class EmenyStats : MonoBehaviour
 
     public const float
         initHpRectangle = 50f,
-        initShootDelayRectangle = 1f,
+        initShootDelayRectangle = 1.4f,
         initHpCircle = 100f,
         initShootDelayCircle = 2f,
         initHpCapsule = 50f,
         initShootDelayCapsule = 3f,
         initHpHexagon = 100f,
-        initShootDelayHexagon = 0.3f,
+        initShootDelayHexagon = 0.4f,
         initHpIsometric = 50f,
-        initShootDelayIsometric = 1.3f,
+        initShootDelayIsometric = 1.4f,
         initHpOval = 100f,
         initShootDelayOval = 2f;
 }

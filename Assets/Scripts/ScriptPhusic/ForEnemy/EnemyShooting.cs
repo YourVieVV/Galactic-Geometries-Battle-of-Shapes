@@ -13,7 +13,7 @@ public class EnemyShooting : MonoBehaviour {
     public GameObject bulletPrefab;
     public GameObject dulo1;
     public GameObject dulo2;
-    public float fireDelay;
+    private float fireDelay;
     float cooldownTimer = 0;
 
     private AudioSource AudioShutEn;
