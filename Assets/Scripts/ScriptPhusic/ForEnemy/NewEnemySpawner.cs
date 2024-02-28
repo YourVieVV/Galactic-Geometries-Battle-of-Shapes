@@ -152,7 +152,7 @@ public class NewEnemySpawner : MonoBehaviour
         {
             Vector3 position = CalcPosInstans();
             Instantiate(EnemyHexagon, position, Quaternion.identity);
-            yield return new WaitForSeconds(1.6f);
+            yield return new WaitForSeconds(2f);
         }
     }
 

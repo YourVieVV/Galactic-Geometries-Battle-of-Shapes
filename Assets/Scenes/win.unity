@@ -1373,8 +1373,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9dd28569c750f4d47a64867d3e2d3288, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  TextEn: 
-  TextRu: 
+  TextEn: you
+  TextRu: "\u0441\u0430\u043B\u044E\u0442 \u0432 \u0447\u0435\u0441\u0442\u044C \u043F\u043E\u0431\u0435\u0434\u044B"
 --- !u!114 &1484905315
 MonoBehaviour:
   m_ObjectHideFlags: 0

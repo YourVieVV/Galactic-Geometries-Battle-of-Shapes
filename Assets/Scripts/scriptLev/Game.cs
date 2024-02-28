@@ -24,7 +24,7 @@ public class Game : MonoBehaviour {
     // Update is called once per frame
     void Update () {
         #region CheckWin
-        if (boss.activeSelf && enemyHPScript.isBossDead)
+        if (!boss && enemyHPScript.isBossDead)
         {
             PlayerPrefs.SetInt(StatisticsPlayer.wins, PlayerPrefs.GetInt(StatisticsPlayer.wins) + 1);
             if (PlayerPrefs.GetInt(StatisticsPlayer.score) < currentScore)

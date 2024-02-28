@@ -18,7 +18,7 @@ public class HittingAMiniPlayers : MonoBehaviour
                 case "EnemyBullet":
                     // collider.GetComponent для того, что бы взять функцию из скрипта того объекта,
                     // который ударил игрок
-                    FindObjectOfType<MiniPlayerHP>().Damage(35);
+                    FindObjectOfType<MiniPlayerHP>().Damage(25);
                     collider.GetComponent<EnemyBullet>().BulletHitPlayer();
                     break;
                 case "Meteorite":
@@ -26,11 +26,11 @@ public class HittingAMiniPlayers : MonoBehaviour
                     FindObjectOfType<MiniPlayerHP>().Damage(60);
                     break;
                 case "Enemy":
-                    FindObjectOfType<MiniPlayerHP>().Damage(100);
+                    FindObjectOfType<MiniPlayerHP>().Damage(60);
                     collider.GetComponent<EnemyHP>().HittingEnemyByPlayer();
                     break;
                 case "EnemySquare":
-                    FindObjectOfType<MiniPlayerHP>().Damage(100);
+                    FindObjectOfType<MiniPlayerHP>().Damage(60);
                     collider.GetComponent<EnemyHP>().HittingEnemyByPlayer();
                     break;
                 default:
@@ -45,7 +45,7 @@ public class HittingAMiniPlayers : MonoBehaviour
                 case "EnemyBullet":
                     // collider.GetComponent для того, что бы взять функцию из скрипта того объекта,
                     // который ударил игрок
-                    FindObjectOfType<MiniPlayerHPTwo>().Damage(35);
+                    FindObjectOfType<MiniPlayerHPTwo>().Damage(25);
                     collider.GetComponent<EnemyBullet>().BulletHitPlayer();
                     break;
                 case "Meteorite":
@@ -53,11 +53,11 @@ public class HittingAMiniPlayers : MonoBehaviour
                     FindObjectOfType<MiniPlayerHPTwo>().Damage(60);
                     break;
                 case "Enemy":
-                    FindObjectOfType<MiniPlayerHPTwo>().Damage(100);
+                    FindObjectOfType<MiniPlayerHPTwo>().Damage(60);
                     collider.GetComponent<EnemyHP>().HittingEnemyByPlayer();
                     break;
                 case "EnemySquare":
-                    FindObjectOfType<MiniPlayerHPTwo>().Damage(100);
+                    FindObjectOfType<MiniPlayerHPTwo>().Damage(60);
                     collider.GetComponent<EnemyHP>().HittingEnemyByPlayer();
                     break;
                 default:
