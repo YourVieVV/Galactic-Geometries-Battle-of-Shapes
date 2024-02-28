@@ -152,11 +152,12 @@ public class PlayerController : MonoBehaviour
         }
 
         // Move();
-        Shoot();
+        //Shoot();
     }
     private void FixedUpdate()
     {
         Move();
+        Shoot();
     }
 
 }

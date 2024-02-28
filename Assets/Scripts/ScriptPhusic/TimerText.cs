@@ -43,7 +43,7 @@ public class TimerText : MonoBehaviour
 
         startingTimer += Time.deltaTime;
 
-        if (startingTimer > 10)
+        if (startingTimer > 59)
         {
             timerMin += 1;
             startingTimer = 0;

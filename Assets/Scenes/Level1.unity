@@ -134,7 +134,7 @@ GameObject:
   - component: {fileID: 3218970}
   - component: {fileID: 3218972}
   - component: {fileID: 3218971}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Background
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -256,7 +256,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8170153791668043268, guid: 0d230cc8be529a542a08cb878ab14b18, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 2
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8170153791668043268, guid: 0d230cc8be529a542a08cb878ab14b18, type: 3}
       propertyPath: m_LocalRotation.w
@@ -297,6 +297,10 @@ PrefabInstance:
     - target: {fileID: 8170153791668043269, guid: 0d230cc8be529a542a08cb878ab14b18, type: 3}
       propertyPath: m_Name
       value: CustomJoustick
+      objectReference: {fileID: 0}
+    - target: {fileID: 8170153791668043269, guid: 0d230cc8be529a542a08cb878ab14b18, type: 3}
+      propertyPath: m_Layer
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 8170153791668043269, guid: 0d230cc8be529a542a08cb878ab14b18, type: 3}
       propertyPath: m_IsActive
@@ -342,7 +346,7 @@ GameObject:
   - component: {fileID: 19866048}
   - component: {fileID: 19866050}
   - component: {fileID: 19866049}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -444,7 +448,7 @@ GameObject:
   - component: {fileID: 65201935}
   - component: {fileID: 65201937}
   - component: {fileID: 65201936}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Background
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -632,7 +636,7 @@ GameObject:
   - component: {fileID: 308688044}
   - component: {fileID: 308688046}
   - component: {fileID: 308688045}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Fill
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -719,7 +723,7 @@ GameObject:
   - component: {fileID: 357837431}
   - component: {fileID: 357837430}
   - component: {fileID: 357837429}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Score
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -811,7 +815,7 @@ GameObject:
   - component: {fileID: 426640146}
   - component: {fileID: 426640148}
   - component: {fileID: 426640147}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Text (Legacy)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -888,7 +892,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 454419897}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Handle Slide Area
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -926,7 +930,7 @@ GameObject:
   - component: {fileID: 461578683}
   - component: {fileID: 461578682}
   - component: {fileID: 461578681}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Timer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1034,7 +1038,7 @@ GameObject:
   - component: {fileID: 481133483}
   - component: {fileID: 481133485}
   - component: {fileID: 481133484}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Button (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1165,7 +1169,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 573664219}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Fill Area
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1203,7 +1207,7 @@ GameObject:
   - component: {fileID: 657189491}
   - component: {fileID: 657189490}
   - component: {fileID: 657189489}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: pause
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1280,7 +1284,7 @@ GameObject:
   - component: {fileID: 659795280}
   - component: {fileID: 659795282}
   - component: {fileID: 659795281}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1388,7 +1392,7 @@ GameObject:
   - component: {fileID: 673262204}
   - component: {fileID: 673262203}
   - component: {fileID: 673262202}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Button (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1522,7 +1526,7 @@ GameObject:
   - component: {fileID: 718735049}
   - component: {fileID: 718735048}
   - component: {fileID: 718735047}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1634,7 +1638,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 719873507}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Handle Slide Area
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1720,7 +1724,7 @@ GameObject:
   - component: {fileID: 736925722}
   - component: {fileID: 736925724}
   - component: {fileID: 736925723}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1873,7 +1877,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2929252283123773938, guid: aaa2c939c0359ac4dbce3f49e8b90252, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -1
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2929252283123773938, guid: aaa2c939c0359ac4dbce3f49e8b90252, type: 3}
       propertyPath: m_LocalRotation.w
@@ -1915,6 +1919,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Fixed Joystick (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 2929252283123773939, guid: aaa2c939c0359ac4dbce3f49e8b90252, type: 3}
+      propertyPath: m_Layer
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2929252285020697097, guid: aaa2c939c0359ac4dbce3f49e8b90252, type: 3}
+      propertyPath: m_Layer
+      value: 5
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 2929252283123773951, guid: aaa2c939c0359ac4dbce3f49e8b90252, type: 3}
     m_RemovedGameObjects: []
@@ -1931,7 +1943,7 @@ GameObject:
   m_Component:
   - component: {fileID: 848370689}
   - component: {fileID: 848370690}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Upgrade1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1983,7 +1995,7 @@ GameObject:
   - component: {fileID: 906710381}
   - component: {fileID: 906710383}
   - component: {fileID: 906710382}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Text (Legacy)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2063,7 +2075,7 @@ GameObject:
   - component: {fileID: 913603826}
   - component: {fileID: 913603825}
   - component: {fileID: 913603824}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: SettingsButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2193,7 +2205,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1929176863}
   - component: {fileID: 1929176862}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Slider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2250,7 +2262,7 @@ GameObject:
   - component: {fileID: 1264575717}
   - component: {fileID: 1264575720}
   - component: {fileID: 1264575719}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: UpgradesPanel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2327,7 +2339,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1298719933}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Fill Area
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2513,7 +2525,7 @@ GameObject:
   - component: {fileID: 1324933213}
   - component: {fileID: 1324933212}
   - component: {fileID: 1324933211}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Button (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2643,7 +2655,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1454500470}
   - component: {fileID: 1454500471}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Upgrade2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2775,7 +2787,7 @@ GameObject:
   - component: {fileID: 1502791185}
   - component: {fileID: 1502791184}
   - component: {fileID: 1502791183}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: BorderRight
   m_TagString: BorderRight
   m_Icon: {fileID: 0}
@@ -2920,7 +2932,7 @@ GameObject:
   - component: {fileID: 1560067069}
   - component: {fileID: 1560067068}
   - component: {fileID: 1560067070}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Text (Legacy)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3095,8 +3107,16 @@ PrefabInstance:
       value: Floating Joystick
       objectReference: {fileID: 0}
     - target: {fileID: 8170153791668043269, guid: 0d230cc8be529a542a08cb878ab14b18, type: 3}
+      propertyPath: m_Layer
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8170153791668043269, guid: 0d230cc8be529a542a08cb878ab14b18, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8170153791961219457, guid: 0d230cc8be529a542a08cb878ab14b18, type: 3}
+      propertyPath: m_Layer
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 8170153791961219459, guid: 0d230cc8be529a542a08cb878ab14b18, type: 3}
       propertyPath: m_Color.a
@@ -3113,6 +3133,14 @@ PrefabInstance:
     - target: {fileID: 8170153792821263258, guid: 0d230cc8be529a542a08cb878ab14b18, type: 3}
       propertyPath: m_SizeDelta.y
       value: 300
+      objectReference: {fileID: 0}
+    - target: {fileID: 8170153792821263258, guid: 0d230cc8be529a542a08cb878ab14b18, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8170153792821263259, guid: 0d230cc8be529a542a08cb878ab14b18, type: 3}
+      propertyPath: m_Layer
+      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -3155,7 +3183,7 @@ GameObject:
   - component: {fileID: 1627315309}
   - component: {fileID: 1627315310}
   - component: {fileID: 1627315311}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: UpgradePanelSettings
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3263,7 +3291,7 @@ GameObject:
   - component: {fileID: 1748032513}
   - component: {fileID: 1748032515}
   - component: {fileID: 1748032514}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Text (Legacy)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3341,7 +3369,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1763683465}
   - component: {fileID: 1763683466}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: SliderShield
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3433,7 +3461,7 @@ GameObject:
   - component: {fileID: 1865127325}
   - component: {fileID: 1865127324}
   - component: {fileID: 1865127323}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: PanelPause
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3649,7 +3677,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1954792775}
   - component: {fileID: 1954792776}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Upgrade3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3702,7 +3730,7 @@ GameObject:
   - component: {fileID: 2059413708}
   - component: {fileID: 2059413707}
   - component: {fileID: 2059413706}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: BorderLeft
   m_TagString: BorderLeft
   m_Icon: {fileID: 0}
@@ -3846,7 +3874,7 @@ GameObject:
   - component: {fileID: 2093079515}
   - component: {fileID: 2093079517}
   - component: {fileID: 2093079516}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Fill
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4295,6 +4323,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 611955776743472644, guid: 863080e7bb3d4e14e805fa2a94add0a1, type: 3}
+      propertyPath: m_Layer
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1044559209138587541, guid: 863080e7bb3d4e14e805fa2a94add0a1, type: 3}
+      propertyPath: m_Layer
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1118848116139958363, guid: 863080e7bb3d4e14e805fa2a94add0a1, type: 3}
+      propertyPath: m_Layer
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 1614201450329025256, guid: 863080e7bb3d4e14e805fa2a94add0a1, type: 3}
       propertyPath: m_Text
       value: 
@@ -4303,6 +4343,14 @@ PrefabInstance:
       propertyPath: m_FontData.m_Font
       value: 
       objectReference: {fileID: 12800000, guid: 3e2d14f7e29c70a4fa26cb32c486467c, type: 3}
+    - target: {fileID: 1701126431099804716, guid: 863080e7bb3d4e14e805fa2a94add0a1, type: 3}
+      propertyPath: m_Layer
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2085146533507869668, guid: 863080e7bb3d4e14e805fa2a94add0a1, type: 3}
+      propertyPath: m_Layer
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 2540516785702149939, guid: 863080e7bb3d4e14e805fa2a94add0a1, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: -147.1
@@ -4310,6 +4358,14 @@ PrefabInstance:
     - target: {fileID: 2726511548030837747, guid: 863080e7bb3d4e14e805fa2a94add0a1, type: 3}
       propertyPath: m_Name
       value: UpgradePanelSettings
+      objectReference: {fileID: 0}
+    - target: {fileID: 2726511548030837747, guid: 863080e7bb3d4e14e805fa2a94add0a1, type: 3}
+      propertyPath: m_Layer
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2956316138586762996, guid: 863080e7bb3d4e14e805fa2a94add0a1, type: 3}
+      propertyPath: m_Layer
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 3165699775349622193, guid: 863080e7bb3d4e14e805fa2a94add0a1, type: 3}
       propertyPath: m_Text
@@ -4322,6 +4378,14 @@ PrefabInstance:
     - target: {fileID: 3180403139634905184, guid: 863080e7bb3d4e14e805fa2a94add0a1, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 136.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3206333835356087099, guid: 863080e7bb3d4e14e805fa2a94add0a1, type: 3}
+      propertyPath: m_Layer
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3809143343777845271, guid: 863080e7bb3d4e14e805fa2a94add0a1, type: 3}
+      propertyPath: m_Layer
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 3855766666830386745, guid: 863080e7bb3d4e14e805fa2a94add0a1, type: 3}
       propertyPath: m_SizeDelta.x
@@ -4343,6 +4407,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Canvas
       objectReference: {fileID: 0}
+    - target: {fileID: 3872940569376778495, guid: 863080e7bb3d4e14e805fa2a94add0a1, type: 3}
+      propertyPath: m_Layer
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 4139374638779912957, guid: 863080e7bb3d4e14e805fa2a94add0a1, type: 3}
       propertyPath: m_Name
       value: UpgradeButton2
@@ -4363,6 +4431,18 @@ PrefabInstance:
       propertyPath: m_VertexColorAlwaysGammaSpace
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4854082724967922247, guid: 863080e7bb3d4e14e805fa2a94add0a1, type: 3}
+      propertyPath: m_Layer
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5107475296424639251, guid: 863080e7bb3d4e14e805fa2a94add0a1, type: 3}
+      propertyPath: m_Layer
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5642948025459345214, guid: 863080e7bb3d4e14e805fa2a94add0a1, type: 3}
+      propertyPath: m_Layer
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 5642948025459345214, guid: 863080e7bb3d4e14e805fa2a94add0a1, type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -4371,6 +4451,10 @@ PrefabInstance:
       propertyPath: pause
       value: 
       objectReference: {fileID: 657189488}
+    - target: {fileID: 6316876409864915177, guid: 863080e7bb3d4e14e805fa2a94add0a1, type: 3}
+      propertyPath: m_Layer
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 6321185130198433070, guid: 863080e7bb3d4e14e805fa2a94add0a1, type: 3}
       propertyPath: m_Name
       value: UpgradeButton1
@@ -4554,6 +4638,10 @@ PrefabInstance:
     - target: {fileID: 8527202881893759721, guid: 863080e7bb3d4e14e805fa2a94add0a1, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8669505029385891278, guid: 863080e7bb3d4e14e805fa2a94add0a1, type: 3}
+      propertyPath: m_Layer
+      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 7814285852293661541, guid: 863080e7bb3d4e14e805fa2a94add0a1, type: 3}

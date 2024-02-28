@@ -63,7 +63,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.02, y: 2.53, z: 0}
-  m_LocalScale: {x: 0.8, y: 0.99906284, z: 0.76314026}
+  m_LocalScale: {x: 0.7206754, y: 0.9, z: 0.6874705}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 4121582290226380647}
@@ -159,7 +159,6 @@ MonoBehaviour:
   bulletPrefab: {fileID: 1636134359647972, guid: 458a8d4baf53dec42a5e47d44a5c294c, type: 3}
   dulo1: {fileID: 7730293700903165921}
   dulo2: {fileID: 3603617710075705595}
-  fireDelay: 1.4
 --- !u!61 &-19142587441547421
 BoxCollider2D:
   m_ObjectHideFlags: 0
