@@ -12,6 +12,7 @@ public class UpgradeSystem : MonoBehaviour
     private void Start()
     {
         var updateArray = PlayerPrefs.GetString(PlayerStats.upgradeList).Split("|");
+        Debug.Log($"sss={updateArray}");
         for (int i = 0; updateArray.Length - 1 > i; i++)
         {
             if (updateArray[i] != "" && updateArray[i] != null)
@@ -19,7 +20,7 @@ public class UpgradeSystem : MonoBehaviour
                 upgradesList.Add(new Upgrade { Name = updateArray[i] });
             }
         }
-
+        Debug.Log($"DDD={upgradesList}");
         ButtonsSet();
     }
 
@@ -72,8 +73,11 @@ public class UpgradeSystem : MonoBehaviour
 
     public void DeleteSelectedUpgrade(Upgrade upgradeName)
     {
+        Debug.Log($"upgradeName={upgradeName}");
         int indx = upgradesList.FindIndex(item => item.Name == upgradeName.Name);
+        Debug.Log($"indx={indx}");
         upgradesList.RemoveAt(indx);
+        Debug.Log($"upgradesList={upgradesList}");
         SetUpgradeList(upgradesList);
     }
 
@@ -82,6 +86,7 @@ public class UpgradeSystem : MonoBehaviour
         string stingUpgrade = "";
         upgradeList.ForEach(item => stingUpgrade = stingUpgrade + item.Name + "|");
         PlayerPrefs.SetString(PlayerStats.upgradeList, stingUpgrade);
+        Debug.Log($"stingUpgrade={stingUpgrade}");
     }
 
     public class Upgrade

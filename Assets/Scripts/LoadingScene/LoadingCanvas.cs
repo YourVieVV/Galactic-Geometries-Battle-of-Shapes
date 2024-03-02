@@ -26,7 +26,7 @@ public class LoadingCanvas : MonoBehaviour
         {
             if (loadAsync.progress >= 0.9f && !loadAsync.allowSceneActivation)
             {
-                yield return new WaitForSeconds(2.2f);
+                yield return new WaitForSeconds(1f);
                 loadAsync.allowSceneActivation = true;
             }
             yield return null;

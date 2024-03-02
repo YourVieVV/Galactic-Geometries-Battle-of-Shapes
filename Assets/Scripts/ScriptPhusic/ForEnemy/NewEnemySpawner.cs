@@ -9,8 +9,8 @@ public class NewEnemySpawner : MonoBehaviour
     private const float TimeToSpawnIsometric = 1;
     private const float TimeToSpawnSquare = 0;
     private const float TimeToSpawnOval = 2;
-    private const float TimeToSpawnCircle = 4;
-    private const float TimeToSpawnCapsule = 3;
+    private const float TimeToSpawnCircle = 3;
+    private const float TimeToSpawnCapsule = 4;
 
     [SerializeField]
     private TimerText timerTextScript;
@@ -37,14 +37,8 @@ public class NewEnemySpawner : MonoBehaviour
     private bool startCoroutineOval = true;
     private bool startCoroutineCircle = true;
 
-    private float currentTime;
     private List<float> positionsArray = new();
 
-    void Start()
-    {
-
-        currentTime = timerTextScript.timerMin;
-    }
     private void Update()
     {
         switch (timerTextScript.timerMin)
@@ -101,7 +95,7 @@ public class NewEnemySpawner : MonoBehaviour
         {
             Vector3 position = CalcPosInstans();
             Instantiate(EnemyOval, position, Quaternion.identity);
-            yield return new WaitForSeconds(1.8f);
+            yield return new WaitForSeconds(1.4f);
         }
     }
 
@@ -121,18 +115,17 @@ public class NewEnemySpawner : MonoBehaviour
         {
             Vector3 position = CalcPosInstans();
             Instantiate(EnemyCircle, position, Quaternion.identity);
-            yield return new WaitForSeconds(2.2f);
+            yield return new WaitForSeconds(1.8f);
         }
     }
 
     IEnumerator SpawnCapsule()
     {
-        Debug.Log(timerTextScript.timerMin);
         while (timerTextScript.timerMin == TimeToSpawnCapsule)
         {
             Vector3 position = CalcPosInstans();
             Instantiate(EnemyCapsule, position, Quaternion.identity);
-            yield return new WaitForSeconds(2f);
+            yield return new WaitForSeconds(2.2f);
         }
     }
 
@@ -152,7 +145,7 @@ public class NewEnemySpawner : MonoBehaviour
         {
             Vector3 position = CalcPosInstans();
             Instantiate(EnemyHexagon, position, Quaternion.identity);
-            yield return new WaitForSeconds(2f);
+            yield return new WaitForSeconds(1.6f);
         }
     }
 
@@ -175,11 +168,11 @@ public class NewEnemySpawner : MonoBehaviour
             randomPosition -= Random.Range(-1f, 1f);
             if (randomPosition < instansPos)
             {
-                randomPosition += 1.5f;
+                randomPosition += Random.Range(0.5f, 1f);
             }
             if (randomPosition > instansPos)
             {
-                randomPosition -= 1.5f;
+                randomPosition -= Random.Range(0.5f, 1f);
             }
             positionsArray.Add(randomPosition);
             pos = new Vector3(randomPosition, transform.position.y, transform.position.z);

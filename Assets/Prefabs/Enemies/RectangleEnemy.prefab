@@ -200,9 +200,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be31dcafd65cf164d9dd815827db7be3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isCircleEnemy: 0
+  isOvalEnemy: 0
   isRotate: 0
-  movementSpeed: -1.1
+  movementSpeed: -1
   movementSpeedHorizontal: -3
 --- !u!114 &8957062353400875470
 MonoBehaviour:
@@ -225,7 +225,6 @@ MonoBehaviour:
   bulletPrefab: {fileID: 1636134359647972, guid: f4320b53d4137eb49b8845099dde3997, type: 3}
   dulo1: {fileID: 1069095875202307018}
   dulo2: {fileID: 0}
-  fireDelay: 5
 --- !u!50 &5739380036336889233
 Rigidbody2D:
   serializedVersion: 4

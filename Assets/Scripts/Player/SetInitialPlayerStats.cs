@@ -72,10 +72,10 @@ public class SetInitialPlayerStats : MonoBehaviour
                 sliderShieldHP.gameObject.SetActive(true);
                 shieldScript.ReactivateShield();
             }
-            if (PlayerPrefs.GetFloat(PlayerStats.hpPlayer) != PlayerStats.initHpPlayer)
+/*            if (PlayerPrefs.GetFloat(PlayerStats.hpPlayer) != PlayerStats.initHpPlayer)
             {
                 playerHPScript.UpgradeAddHP(PlayerPrefs.GetFloat(PlayerStats.hpPlayer) - PlayerStats.initHpPlayer);
-            }
+            }*/
         }
     }
 

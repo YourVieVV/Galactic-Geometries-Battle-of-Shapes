@@ -96,7 +96,7 @@ public class PlayerController : MonoBehaviour
 
         }
 
-        shootDelayCouter -= Time.deltaTime;
+        shootDelayCouter -= Time.fixedDeltaTime;
     }
 
     private void InstantiateBullet(GameObject pref)

@@ -160,10 +160,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be31dcafd65cf164d9dd815827db7be3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isCircleEnemy: 1
+  isOvalEnemy: 1
   isRotate: 0
-  movementSpeed: -0.5
-  movementSpeedHorizontal: 2.5
+  movementSpeed: -0.4
+  movementSpeedHorizontal: 2.2
 --- !u!114 &8160435305629852233
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -177,7 +177,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isCapsule: 0
-  isCirlce: 0
   isRectangle: 0
   isHexagon: 0
   isOval: 1
@@ -186,7 +185,6 @@ MonoBehaviour:
   bulletPrefab: {fileID: 1636134359647972, guid: 33b4432863df655418906e4220d7e145, type: 3}
   dulo1: {fileID: 440255354053926587}
   dulo2: {fileID: 0}
-  fireDelay: 2
 --- !u!70 &4123091289049377792
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -241,3 +239,6 @@ MonoBehaviour:
   isHexagon: 0
   isOval: 1
   isIsometric: 0
+  isBoss: 0
+  isBossDead: 0
+  enemyHP: 0

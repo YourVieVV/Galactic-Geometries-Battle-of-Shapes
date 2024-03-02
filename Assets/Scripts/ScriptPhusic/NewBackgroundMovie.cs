@@ -19,7 +19,7 @@ public class NewBackgroundMovie : MonoBehaviour
         backgroundSize = GetComponent<SpriteRenderer>().bounds.size.y * 2;
     }
 
-    private void Update()
+    private void FixedUpdate()
     {
 
         switch (backgroundName)
@@ -64,7 +64,7 @@ public class NewBackgroundMovie : MonoBehaviour
 
     public void Move()
     {
-        backgroundPosition += speed * Time.deltaTime;
+        backgroundPosition += speed * Time.fixedDeltaTime;
         backgroundPosition = Mathf.Repeat(backgroundPosition, backgroundSize);
         backgroundTransform.position = new Vector3(1.8f, backgroundPosition, gameObject.transform.position.z);
     }

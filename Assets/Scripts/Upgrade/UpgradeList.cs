@@ -8,8 +8,7 @@ public class UpgradeList : MonoBehaviour
     public List<Upgrade> _Upgrades = new()
     {
         new Upgrade { Name = NamesUpgradePlayer.AddHP },
-        new Upgrade { Name = NamesUpgradePlayer.AddHP },
-        new Upgrade { Name = NamesUpgradePlayer.AddHP },
+/*        new Upgrade { Name = NamesUpgradePlayer.AddHP },
         new Upgrade { Name = NamesUpgradePlayer.AddMoveSpeed },
         new Upgrade { Name = NamesUpgradePlayer.AddMoveSpeed },
         new Upgrade { Name = NamesUpgradePlayer.AddMoveSpeed },
@@ -22,8 +21,8 @@ public class UpgradeList : MonoBehaviour
         new Upgrade { Name = NamesUpgradePlayer.AddGunTree },
         new Upgrade { Name = NamesUpgradePlayer.AddRotation },
         new Upgrade { Name = NamesUpgradePlayer.ActivateShield },
-        new Upgrade { Name = NamesUpgradePlayer.AddRocket },
-        new Upgrade { Name = NamesUpgradePlayer.OpenPortal }
+        new Upgrade { Name = NamesUpgradePlayer.OpenPortal }*/
+        //new Upgrade { Name = NamesUpgradePlayer.AddRocket },
         //new Upgrade { Name = NamesUpgradePlayer.AddDamage },
         //new Upgrade { Name = NamesUpgradePlayer.AddDamage },
         //new Upgrade { Name = NamesUpgradePlayer.AddRocketRateOfFire },
@@ -37,8 +36,7 @@ public class UpgradeList : MonoBehaviour
     public List<Upgrade> _RusUpgrades = new()
     {
         new Upgrade { Name = RusNameUpgrades.AddHP },
-        new Upgrade { Name = RusNameUpgrades.AddHP },
-        new Upgrade { Name = RusNameUpgrades.AddHP },
+        /*new Upgrade { Name = RusNameUpgrades.AddHP },
         new Upgrade { Name = RusNameUpgrades.AddMoveSpeed },
         new Upgrade { Name = RusNameUpgrades.AddMoveSpeed },
         new Upgrade { Name = RusNameUpgrades.AddMoveSpeed },
@@ -51,7 +49,6 @@ public class UpgradeList : MonoBehaviour
         new Upgrade { Name = RusNameUpgrades.AddGunTree },
         new Upgrade { Name = RusNameUpgrades.AddRotation },
         new Upgrade { Name = RusNameUpgrades.ActivateShield },
-        new Upgrade { Name = RusNameUpgrades.AddRocket },
-        new Upgrade { Name = RusNameUpgrades.OpenPortal }
+        new Upgrade { Name = RusNameUpgrades.OpenPortal }*/
     };
 }

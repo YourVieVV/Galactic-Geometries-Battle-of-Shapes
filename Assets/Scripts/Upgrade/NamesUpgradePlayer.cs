@@ -4,7 +4,7 @@ public class NamesUpgradePlayer : MonoBehaviour
 {
     public const string
         AddRateOfFire = "Increase firing speed by 0.2",
-        AddHP = "Increase health by 20",
+        AddHP = "Increase health by 50",
         AddGunTwo = "Add a second gun",
         AddGunTree = "Add a third gun",
         AddMoveSpeed = "Increase movement speed by 0.2",

@@ -2,16 +2,16 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class newEnemyMovie : MonoBehaviour
+public class EnemyMovement : MonoBehaviour
 {
     [SerializeField]
-    private bool isCircleEnemy = false;
+    private bool isOvalEnemy = false;
     [SerializeField]
     private bool isRotate;
     [SerializeField]
-    private float movementSpeed = -0.5f;
+    private float movementSpeed;
     [SerializeField]
-    private float movementSpeedHorizontal = -3f;
+    private float movementSpeedHorizontal;
 
     private bool isLeft = false;
     private Rigidbody2D myBody;
@@ -21,13 +21,13 @@ public class newEnemyMovie : MonoBehaviour
         myBody = GetComponent<Rigidbody2D>();
     }
 
-    void Update()
+    void FixedUpdate()
     {
-        if (isCircleEnemy)
+        if (isOvalEnemy)
         {
-            CircleEnemyMovement(isLeft);
+            OvalEnemyMovement(isLeft);
         } else {
-            EnemyMovement();
+            myBody.velocity = new Vector2(myBody.velocity.x, movementSpeed);
             if (isRotate)
             {
                 transform.Rotate(0, 0, 2.2f);
@@ -47,7 +47,7 @@ public class newEnemyMovie : MonoBehaviour
         }
     }
 
-    private void CircleEnemyMovement(bool isTest)
+    private void OvalEnemyMovement(bool isTest)
     {
         if (isLeft)
         {
@@ -57,11 +57,6 @@ public class newEnemyMovie : MonoBehaviour
         {
             myBody.velocity = new Vector2(+movementSpeedHorizontal, movementSpeed);
         }
-    }
-
-    private void EnemyMovement()
-    {
-        myBody.velocity = new Vector2(myBody.velocity.x, movementSpeed);
     }
 
     private void OnBecameInvisible()

@@ -10,7 +10,7 @@ public class TimerText : MonoBehaviour
 
     private Text theText;
     private PauseGame thePauseMenu;
-    private IsVisibleUpgradePanel setIsVisiblePanelUpgrade;
+    //private IsVisibleUpgradePanel setIsVisiblePanelUpgrade;
     private NewEnemySpawner spawnEnemy;
     private SpawnMeteor spawnMeteorite;
 
@@ -31,7 +31,7 @@ public class TimerText : MonoBehaviour
     {
         theText = GetComponent<Text>();
         thePauseMenu = FindObjectOfType<PauseGame>();
-        setIsVisiblePanelUpgrade = FindObjectOfType<IsVisibleUpgradePanel>();
+        //setIsVisiblePanelUpgrade = FindObjectOfType<IsVisibleUpgradePanel>();
         spawnEnemy = FindObjectOfType<NewEnemySpawner>();
         spawnMeteorite = FindObjectOfType<SpawnMeteor>();
     }
@@ -54,7 +54,7 @@ public class TimerText : MonoBehaviour
         {
             if (isVisiblePanelUpgrade && upgradeSystemScript.upgradesList.Count > 0)
             {
-                setIsVisiblePanelUpgrade.SetIsVisibleUpgradePlayer();
+                //setIsVisiblePanelUpgrade.SetIsVisibleUpgradePlayer();
                 isVisiblePanelUpgrade = false;
                 switch (timerMin)
                 {
@@ -68,10 +68,10 @@ public class TimerText : MonoBehaviour
                         PlayerPrefs.SetFloat(EmenyStats.hpOval, PlayerPrefs.GetFloat(EmenyStats.hpOval) + 100f);
                         break;
                     case 4:
-                        PlayerPrefs.SetFloat(EmenyStats.hpCapsule, PlayerPrefs.GetFloat(EmenyStats.hpCapsule) + 100f);
+                        PlayerPrefs.SetFloat(EmenyStats.hpCircle, PlayerPrefs.GetFloat(EmenyStats.hpCircle) + 100f);
                         break;
                     case 5:
-                        PlayerPrefs.SetFloat(EmenyStats.hpCircle, PlayerPrefs.GetFloat(EmenyStats.hpCircle) + 100f);
+                        PlayerPrefs.SetFloat(EmenyStats.hpCapsule, PlayerPrefs.GetFloat(EmenyStats.hpCapsule) + 100f);
                         break;
                 }
 
@@ -92,7 +92,7 @@ public class TimerText : MonoBehaviour
             boss.SetActive(true);
             bossDodge.SetActive(true);
             bossShield.SetActive(true);
-            PlayerPrefs.SetFloat(EmenyStats.hpHexagon, PlayerPrefs.GetFloat(EmenyStats.hpHexagon) + 100f);
+            PlayerPrefs.SetFloat(EmenyStats.hpHexagon, PlayerPrefs.GetFloat(EmenyStats.hpHexagon) + 50f);
         }
 
         theText.text = $"Time lived - {Mathf.Round(timerMin)} : {Mathf.Round(startingTimer)}";

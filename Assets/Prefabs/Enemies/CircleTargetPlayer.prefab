@@ -282,7 +282,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3fc58f11db407dd4fa6f990aa4114056, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxSpeed: 1.5
+  maxSpeed: 1.2
   Explotion: {fileID: 6192724089161036641, guid: e17d9a3f04750764c8c0a7a0461e4c3b, type: 3}
 --- !u!58 &3578504967478924602
 CircleCollider2D:
@@ -365,3 +365,6 @@ MonoBehaviour:
   isHexagon: 0
   isOval: 0
   isIsometric: 0
+  isBoss: 0
+  isBossDead: 0
+  enemyHP: 0

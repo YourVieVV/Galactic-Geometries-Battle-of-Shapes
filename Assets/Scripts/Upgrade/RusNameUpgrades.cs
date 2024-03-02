@@ -3,7 +3,7 @@ using UnityEngine;
 public class RusNameUpgrades : MonoBehaviour
 {
     public const string AddRateOfFire = "Увеличить скорострельность на 0.2",
-            AddHP = "Увеличить ХП на 20",
+            AddHP = "Увеличить ХП на 50",
             AddGunTwo = "Добавить пушку",
             AddGunTree = "Добавить новую пушку",
             AddMoveSpeed = "Увеличить скорость на 0.2",

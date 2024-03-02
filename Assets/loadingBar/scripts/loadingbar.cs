@@ -7,7 +7,7 @@ public class loadingbar : MonoBehaviour {
 
     private RectTransform rectComponent;
     private Image imageComp;
-    public float speed = 0.0f;
+    public float speed;
    
 
     // Use this for initialization

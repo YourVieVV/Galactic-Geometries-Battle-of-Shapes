@@ -7,8 +7,8 @@ public class Meteorite : MonoBehaviour
     public GameObject ExplotionMeteoriteDestroy;
     public GameObject PlusHP;
     public GameObject shildPlayer;
-    private float _movementSpeed = 1.5f;
-    public float rotateZ = 20f;
+    private float _movementSpeed = 1.4f;
+    public float rotateZ;
     public bool onGround;
     private Rigidbody2D myBody;
     void Start()
@@ -17,7 +17,7 @@ public class Meteorite : MonoBehaviour
         
         onGround = true;
     }
-    private void Update()
+    private void FixedUpdate()
     {
         myBody.velocity = new Vector2(_movementSpeed, myBody.velocity.y);
         transform.Rotate(new Vector3(0, 0, rotateZ));

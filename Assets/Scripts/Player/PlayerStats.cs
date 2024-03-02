@@ -21,9 +21,8 @@ public class PlayerStats : MonoBehaviour
         upgradeList = "upgradeList";
 
     public const float
-        initShootDelayGun = 1f,
-        //1.8
-        initMoveSpeed = 2f,
+        initShootDelayGun = 0.8f,
+        initMoveSpeed = 2.2f,
         initHpPlayer = 100f;
         //initShootDelayLaser = 0.6f,
         //initShootDelayRocket = 2f;
@@ -41,7 +40,7 @@ public class PlayerStats : MonoBehaviour
     public const float
         incShootDelayGun = 0.2f,
         incMoveSpeed = 0.2f,
-        incHpPlayer = 20f;
+        incHpPlayer = 50f;
         //incShootDelayLaser = 0.2f,
         //incShootDelayRocket = 0.2f;   
 }

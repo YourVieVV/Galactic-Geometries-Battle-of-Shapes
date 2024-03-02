@@ -20,11 +20,11 @@ public class HittingAPlayer : MonoBehaviour
                 FindObjectOfType<PlayerHP>().Damage(25);
                 break;
             case "Enemy":
-                FindObjectOfType<PlayerHP>().Damage(30);
+                FindObjectOfType<PlayerHP>().Damage(25);
                 collider.GetComponent<EnemyHP>().HittingEnemyByPlayer();
                 break;
             case "EnemySquare":
-                FindObjectOfType<PlayerHP>().Damage(30);
+                FindObjectOfType<PlayerHP>().Damage(25);
                 collider.GetComponent<EnemyHP>().HittingEnemyByPlayer();
                 break;
             case "DropShild":

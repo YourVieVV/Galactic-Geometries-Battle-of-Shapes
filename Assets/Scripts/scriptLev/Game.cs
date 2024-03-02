@@ -43,7 +43,7 @@ public class Game : MonoBehaviour {
             if (PlayerPrefs.GetInt(StatisticsPlayer.score) < currentScore)
                 PlayerPrefs.SetInt(StatisticsPlayer.score, currentScore);
 
-            SceneManager.LoadScene(0);
+            SceneManager.LoadScene(1);
         }
         #endregion
     }

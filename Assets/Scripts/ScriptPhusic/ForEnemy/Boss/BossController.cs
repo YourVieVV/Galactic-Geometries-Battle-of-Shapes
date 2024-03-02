@@ -3,8 +3,7 @@ using UnityEngine;
 
 public class BossController : MonoBehaviour
 {
-    public float shootDelayCouter;
-    public float shootDelayGun = 1f;
+    public float shootDelayGun;
     public GameObject GunBossOne;
     public GameObject GunBossTwo;
     public GameObject GunBossTree;
@@ -12,6 +11,7 @@ public class BossController : MonoBehaviour
     public GameObject ShieldBoss;
     [SerializeField]
     private GameObject enemyBullet;
+    private float shootDelayCouter;
     private void Shoot()
     {
        
@@ -25,10 +25,10 @@ public class BossController : MonoBehaviour
                 //AudioShut.Play();
         }
 
-        shootDelayCouter -= Time.deltaTime;
+        shootDelayCouter -= Time.fixedDeltaTime;
     }
 
-    private void Update()
+    private void FixedUpdate()
     {
         ControlDodge.transform.position = transform.position;
         ShieldBoss.transform.position = transform.position;

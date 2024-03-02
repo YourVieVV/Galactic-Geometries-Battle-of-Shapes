@@ -46,8 +46,8 @@ public class EnemyShooting : MonoBehaviour {
     }
 
     // Update is called once per frame
-    void Update () {
-        cooldownTimer -= Time.deltaTime;
+    void FixedUpdate () {
+        cooldownTimer -= Time.fixedDeltaTime;
         if (!isCapsule)
         {
             if (cooldownTimer <= 0)

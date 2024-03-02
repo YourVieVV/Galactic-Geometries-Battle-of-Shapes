@@ -44,7 +44,7 @@ public class EnemyHP : MonoBehaviour
         }
         if (isBoss)
         {
-            enemyHP = 700f;
+            enemyHP = 1000f;
         }
     }
 

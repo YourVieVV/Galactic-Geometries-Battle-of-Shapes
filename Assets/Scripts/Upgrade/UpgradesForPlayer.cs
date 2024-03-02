@@ -31,9 +31,9 @@ public class UpgradesForPlayer : MonoBehaviour
 
     public void AddHP()
     {
-        FindObjectOfType<PlayerHP>().UpgradeAddHP(20);
+        FindObjectOfType<PlayerHP>().UpgradeAddHP(PlayerStats.incHpPlayer); 
         currentHpPlayer = PlayerPrefs.GetFloat(PlayerStats.hpPlayer);
-        PlayerPrefs.SetFloat(PlayerStats.hpPlayer, currentHpPlayer + 20f);
+        PlayerPrefs.SetFloat(PlayerStats.hpPlayer, currentHpPlayer + PlayerStats.incHpPlayer);
         getPauseGameScript.PauseAndSetActivePanelFunction(false, upgradePanel);
     }
 
@@ -68,7 +68,6 @@ public class UpgradesForPlayer : MonoBehaviour
 
     public void AddRotation()
     {
-        Debug.Log("asdasda");
         joysticRotate.gameObject.SetActive(true);
         getPlayerControllerScript.isPalyerRotate = true;
         PlayerPrefs.SetInt(PlayerStats.isPalyerRotate, 1);

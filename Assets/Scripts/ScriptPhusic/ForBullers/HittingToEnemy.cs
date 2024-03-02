@@ -8,7 +8,6 @@ public class HittingToEnemy : MonoBehaviour
     // Этот скрипт для пуль игрока
     private void OnTriggerEnter2D(Collider2D collider)
     {
-        Debug.Log(collider.tag);
         if (collider.tag == "Enemy" || collider.tag == "EnemySquare")
         {
             // collision.GetComponent для того, что бы движок понимал у какого enemy отнимать хп при попадании
