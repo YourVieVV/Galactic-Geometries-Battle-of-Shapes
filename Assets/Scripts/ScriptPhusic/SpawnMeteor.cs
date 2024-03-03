@@ -13,12 +13,8 @@ public class SpawnMeteor : MonoBehaviour
     void Start()
     {
         isTimeHasCome3 = true;
-        StartCoroutine(spawn());
-    }
-
-    private void Update()
-    {
         timerText = FindObjectOfType<TimerText>();
+        StartCoroutine(spawn());
     }
 
     IEnumerator spawn()
