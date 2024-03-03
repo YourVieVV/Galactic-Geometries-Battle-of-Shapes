@@ -124,7 +124,7 @@ public class PlayerController : MonoBehaviour
         // Поворот вокруг
         if (isPalyerRotate)
         {
-            if (_joystickRotation.Vertical > 0.3f || _joystickRotation.Vertical < -0.3f && _joystickRotation.Horizontal > 0.3f || _joystickRotation.Horizontal < -0.3f)
+            if (_joystickRotation.Vertical > 0.1f || _joystickRotation.Vertical < -0.1f && _joystickRotation.Horizontal > 0.1f || _joystickRotation.Horizontal < -0.1f)
             {
                 float angle = Mathf.Atan2(_joystickRotation.Vertical, _joystickRotation.Horizontal) * Mathf.Rad2Deg;
                 transform.rotation = Quaternion.Euler(new Vector3(0, 0, angle - 90f));
