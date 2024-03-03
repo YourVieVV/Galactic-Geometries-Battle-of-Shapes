@@ -38,7 +38,8 @@ public class EnemyController : MonoBehaviour
         if (currentHealth <= minHealth)
         {
             Destroy(gameObject);
-            Instantiate(Explotion, transform.position, Quaternion.identity);
+            if (Explotion != null)
+                Instantiate(Explotion, transform.position, Quaternion.identity);
         }
 
     }

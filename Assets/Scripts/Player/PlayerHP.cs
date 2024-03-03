@@ -1,9 +1,8 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.UI;
 
-public class PlayerHP : MonoBehaviour {
+public class PlayerHP : MonoBehaviour
+{
 
     [SerializeField]
     private Slider slider;
@@ -14,7 +13,8 @@ public class PlayerHP : MonoBehaviour {
     public GameObject player;
     public GameObject ExplosionPlayer;
 
-    void Start () {
+    void Start()
+    {
         currentHealth = PlayerPrefs.GetFloat(PlayerStats.hpPlayer);
         maxHealth = PlayerPrefs.GetFloat(PlayerStats.hpPlayer);
         slider.minValue = minHealth;
@@ -38,17 +38,19 @@ public class PlayerHP : MonoBehaviour {
         slider.value = currentHealth;
     }
 
-    public void Damage (float damageValue)
+    public void Damage(float damageValue)
     {
         currentHealth -= damageValue;
-        
+
         slider.value = currentHealth;
 
         FindObjectOfType<CameraSnake>().Shake();
 
-        if (currentHealth <= 0) {
+        if (currentHealth <= 0)
+        {
             currentHealth = minHealth;
-            Instantiate(ExplosionPlayer, transform.position, Quaternion.identity);
+            if (ExplosionPlayer != null)
+                Instantiate(ExplosionPlayer, transform.position, Quaternion.identity);
             Destroy(player);
         }
     }

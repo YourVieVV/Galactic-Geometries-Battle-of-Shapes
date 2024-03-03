@@ -1,17 +1,17 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
-public class MovieForward : MonoBehaviour, ITackeDamage {
+public class MovieForward : MonoBehaviour, ITackeDamage
+{
 
-   public float maxSpeed = 3f;
-   private float damage = 10;
-   private float currentHealth = 20;
-   private float minHealth = 0;
-   public GameObject Explotion;
-   
+    public float maxSpeed = 3f;
+    private float damage = 10;
+    private float currentHealth = 20;
+    private float minHealth = 0;
+    public GameObject Explotion;
+
     // Update is called once per frame
-    void FixedUpdate () {
+    void FixedUpdate()
+    {
 
         Vector3 pos = transform.position;
 
@@ -19,7 +19,7 @@ public class MovieForward : MonoBehaviour, ITackeDamage {
 
         pos += transform.rotation * velocity;
         transform.position = pos;
-	}
+    }
     public void TakeDamage()
     {
         currentHealth -= damage;
@@ -27,7 +27,8 @@ public class MovieForward : MonoBehaviour, ITackeDamage {
         if (currentHealth <= minHealth)
         {
             Destroy(gameObject);
-            Instantiate(Explotion, transform.position, Quaternion.identity);
+            if (Explotion != null)
+                Instantiate(Explotion, transform.position, Quaternion.identity);
         }
 
     }

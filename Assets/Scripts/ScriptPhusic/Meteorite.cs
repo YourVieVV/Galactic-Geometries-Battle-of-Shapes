@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class Meteorite : MonoBehaviour
 {
@@ -14,7 +12,7 @@ public class Meteorite : MonoBehaviour
     void Start()
     {
         myBody = GetComponent<Rigidbody2D>();
-        
+
         onGround = true;
     }
     private void FixedUpdate()
@@ -34,7 +32,8 @@ public class Meteorite : MonoBehaviour
         {
             Instantiate(shildPlayer, transform.position, Quaternion.identity);
         }
-        Instantiate(ExplotionMeteoriteDestroy, transform.position, Quaternion.identity);
+        if (ExplotionMeteoriteDestroy != null)
+            Instantiate(ExplotionMeteoriteDestroy, transform.position, Quaternion.identity);
         Destroy(gameObject);
     }
 

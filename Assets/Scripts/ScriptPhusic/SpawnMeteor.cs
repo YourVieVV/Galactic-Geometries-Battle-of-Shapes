@@ -5,18 +5,21 @@ public class SpawnMeteor : MonoBehaviour
 {
 
     public GameObject Meteorit;
-    private float spawnDelay = 5f;
-    private bool isTimeHasCome3 = true;
-    private bool isTimeHasCome6 = true;
+    private float spawnDelay = 4f;
+    private bool isTimeHasCome3;
     private TimerText timerText;
 
 
     void Start()
     {
-        timerText = FindObjectOfType<TimerText>();
+        isTimeHasCome3 = true;
         StartCoroutine(spawn());
     }
 
+    private void Update()
+    {
+        timerText = FindObjectOfType<TimerText>();
+    }
 
     IEnumerator spawn()
     {
@@ -26,11 +29,6 @@ public class SpawnMeteor : MonoBehaviour
             {
                 spawnDelay -= 1;
                 isTimeHasCome3 = false;
-            }
-            if (timerText.timerMin == 4 && isTimeHasCome6)
-            {
-                spawnDelay -= 1;
-                isTimeHasCome6 = false;
             }
             Vector2 pos = new Vector2(transform.position.x, Random.Range(4.2f, -4.2f));
             Instantiate(Meteorit, pos, Quaternion.identity);
