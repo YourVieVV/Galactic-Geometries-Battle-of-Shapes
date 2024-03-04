@@ -7,7 +7,7 @@ public class PlusHP : MonoBehaviour
 
     private void Start()
     {
-        StartCoroutine(WaitToDestroyPlusHP(7));
+        StartCoroutine(WaitToDestroyPlusHP(6));
     }
 
     void OnTriggerEnter2D(Collider2D collider)
