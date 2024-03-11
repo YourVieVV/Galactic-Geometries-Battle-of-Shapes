@@ -92,7 +92,7 @@ public class TimerText : MonoBehaviour
             boss.SetActive(true);
             bossDodge.SetActive(true);
             bossShield.SetActive(true);
-            PlayerPrefs.SetFloat(EmenyStats.hpHexagon, PlayerPrefs.GetFloat(EmenyStats.hpHexagon) + 50f);
+            PlayerPrefs.SetFloat(EmenyStats.hpHexagon, PlayerPrefs.GetFloat(EmenyStats.hpHexagon) + 100f);
         }
 
         theText.text = $"Time lived - {Mathf.Round(timerMin)} : {Mathf.Round(startingTimer)}";

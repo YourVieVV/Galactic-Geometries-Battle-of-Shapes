@@ -130,6 +130,7 @@ MonoBehaviour:
   moveSpeed: 5
   ExplosionBullet: {fileID: 1887291998100768, guid: c482918740cf04e449b6415f2691e961, type: 3}
   ExplosionHitPlayer: {fileID: 6192724089161036641, guid: e17d9a3f04750764c8c0a7a0461e4c3b, type: 3}
+  ExplosionHitPlayerTablet: {fileID: 1152899567547200, guid: 8c1209a205fee874c8c49a594e2af79f, type: 3}
   ExplosionHitPlayerShield: {fileID: 1152899567547200, guid: 8c1209a205fee874c8c49a594e2af79f, type: 3}
   isBossBullet: 0
 --- !u!58 &58283000524142608

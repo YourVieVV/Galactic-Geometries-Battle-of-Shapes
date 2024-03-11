@@ -4118,6 +4118,10 @@ PrefabInstance:
       propertyPath: slider
       value: 
       objectReference: {fileID: 1929176862}
+    - target: {fileID: 6409304166880336531, guid: cec51fff69c7d2b4387fb34a376acf3b, type: 3}
+      propertyPath: ExplosionPlayerTablet
+      value: 
+      objectReference: {fileID: 1152899567547200, guid: 8c1209a205fee874c8c49a594e2af79f, type: 3}
     - target: {fileID: 6623052764533565371, guid: cec51fff69c7d2b4387fb34a376acf3b, type: 3}
       propertyPath: m_Layer
       value: 7
@@ -4737,6 +4741,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4436938478658039437, guid: a315f1049164ce743835152dcb7e2666, type: 3}
+      propertyPath: ExplotionEnemyDestroyTablet
+      value: 
+      objectReference: {fileID: 1887291998100768, guid: c482918740cf04e449b6415f2691e961, type: 3}
     - target: {fileID: 4861670049652506656, guid: a315f1049164ce743835152dcb7e2666, type: 3}
       propertyPath: playerControllerScript
       value: 

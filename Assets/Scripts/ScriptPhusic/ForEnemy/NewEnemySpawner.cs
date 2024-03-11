@@ -105,7 +105,7 @@ public class NewEnemySpawner : MonoBehaviour
         {
             Vector3 position = CalcPosInstans();
             Instantiate(EnemyIsometric, position, Quaternion.identity);
-            yield return new WaitForSeconds(2f);
+            yield return new WaitForSeconds(1.8f);
         }
     }
 
@@ -115,7 +115,7 @@ public class NewEnemySpawner : MonoBehaviour
         {
             Vector3 position = CalcPosInstans();
             Instantiate(EnemyCircle, position, Quaternion.identity);
-            yield return new WaitForSeconds(1.8f);
+            yield return new WaitForSeconds(1.6f);
         }
     }
 
@@ -125,7 +125,7 @@ public class NewEnemySpawner : MonoBehaviour
         {
             Vector3 position = CalcPosInstans();
             Instantiate(EnemyCapsule, position, Quaternion.identity);
-            yield return new WaitForSeconds(2.2f);
+            yield return new WaitForSeconds(2f);
         }
     }
 
@@ -145,7 +145,7 @@ public class NewEnemySpawner : MonoBehaviour
         {
             Vector3 position = CalcPosInstans();
             Instantiate(EnemyHexagon, position, Quaternion.identity);
-            yield return new WaitForSeconds(1.6f);
+            yield return new WaitForSeconds(1.4f);
         }
     }
 

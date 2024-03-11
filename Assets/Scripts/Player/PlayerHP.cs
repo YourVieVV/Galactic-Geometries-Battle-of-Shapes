@@ -12,6 +12,7 @@ public class PlayerHP : MonoBehaviour
     private float differenceHp;
     public GameObject player;
     public GameObject ExplosionPlayer;
+    public GameObject ExplosionPlayerTablet;
 
     void Start()
     {
@@ -38,19 +39,43 @@ public class PlayerHP : MonoBehaviour
         slider.value = currentHealth;
     }
 
+    public static bool IsTablet()
+    {
+
+        float ssw;
+        if (Screen.width > Screen.height) { ssw = Screen.width; } else { ssw = Screen.height; }
+
+        if (ssw < 800) return false;
+
+        if (Application.platform == RuntimePlatform.Android || Application.platform == RuntimePlatform.IPhonePlayer)
+        {
+            float screenWidth = Screen.width / Screen.dpi;
+            float screenHeight = Screen.height / Screen.dpi;
+            float size = Mathf.Sqrt(Mathf.Pow(screenWidth, 2) + Mathf.Pow(screenHeight, 2));
+            if (size >= 6.5f) return true;
+        }
+
+        return false;
+    }
+
     public void Damage(float damageValue)
     {
         currentHealth -= damageValue;
 
         slider.value = currentHealth;
-
         FindObjectOfType<CameraSnake>().Shake();
-
         if (currentHealth <= 0)
         {
             currentHealth = minHealth;
-            if (ExplosionPlayer != null)
+            
+            if (!IsTablet())
+            {
                 Instantiate(ExplosionPlayer, transform.position, Quaternion.identity);
+            } else
+            {
+                Instantiate(ExplosionPlayerTablet, transform.position, Quaternion.identity);
+            }
+                
             Destroy(player);
         }
     }

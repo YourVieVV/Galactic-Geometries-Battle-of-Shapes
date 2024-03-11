@@ -1,14 +1,14 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class Game : MonoBehaviour {
+public class Game : MonoBehaviour
+{
 
     public GameObject pause;
     public Score scoreScript;
     private TimerText timer;
     private PlayerHP hp;
+    private bool isWin = false;
     private int currentScore;
     [SerializeField]
     private EnemyHP enemyHPScript;
@@ -22,19 +22,21 @@ public class Game : MonoBehaviour {
     }
 
     // Update is called once per frame
-    void Update () {
+    void Update()
+    {
         #region CheckWin
         if (!boss && enemyHPScript.isBossDead)
         {
             PlayerPrefs.SetInt(StatisticsPlayer.wins, PlayerPrefs.GetInt(StatisticsPlayer.wins) + 1);
             if (PlayerPrefs.GetInt(StatisticsPlayer.score) < currentScore)
                 PlayerPrefs.SetInt(StatisticsPlayer.score, currentScore);
+            isWin = true;
             SceneManager.LoadScene(4);
         }
         #endregion
 
         #region CheckLose
-        if (hp.currentHealth <= 0)
+        if (hp.currentHealth <= 0 && !isWin)
         {
             Debug.Log("lose");
             currentScore = scoreScript.score;

@@ -19,7 +19,7 @@ public class UpgradeList : MonoBehaviour
         new Upgrade { Name = NamesUpgradePlayer.AddSecondShipFlot },
         new Upgrade { Name = NamesUpgradePlayer.AddGunTwo },
         new Upgrade { Name = NamesUpgradePlayer.AddGunTree },
-        new Upgrade { Name = NamesUpgradePlayer.AddRotation },
+        //new Upgrade { Name = NamesUpgradePlayer.AddRotation },
         new Upgrade { Name = NamesUpgradePlayer.ActivateShield },
         new Upgrade { Name = NamesUpgradePlayer.OpenPortal }
         //new Upgrade { Name = NamesUpgradePlayer.AddRocket },
@@ -47,7 +47,6 @@ public class UpgradeList : MonoBehaviour
         new Upgrade { Name = RusNameUpgrades.AddSecondShipFlot },
         new Upgrade { Name = RusNameUpgrades.AddGunTwo },
         new Upgrade { Name = RusNameUpgrades.AddGunTree },
-        new Upgrade { Name = RusNameUpgrades.AddRotation },
         new Upgrade { Name = RusNameUpgrades.ActivateShield },
         new Upgrade { Name = RusNameUpgrades.OpenPortal }
     };

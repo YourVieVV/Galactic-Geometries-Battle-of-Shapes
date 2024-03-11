@@ -138,7 +138,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be31dcafd65cf164d9dd815827db7be3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isCircleEnemy: 0
+  isOvalEnemy: 0
   isRotate: 0
   movementSpeed: -0.8
   movementSpeedHorizontal: 0
@@ -190,7 +190,6 @@ MonoBehaviour:
   bulletPrefab: {fileID: 1558079627546308903, guid: 49fac9ee9e7a52241ad9b6b832aeb470, type: 3}
   dulo1: {fileID: 8599706061692883266}
   dulo2: {fileID: 5788309365841723621}
-  fireDelay: 0.8
 --- !u!114 &-7610732369871174768
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -204,6 +203,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ExplotionEnemyDestroy: {fileID: 4794043405585894037, guid: 37138c0c33167b04fa1fb90b7f5a794f, type: 3}
+  ExplotionEnemyDestroyTablet: {fileID: 1887291998100768, guid: c482918740cf04e449b6415f2691e961, type: 3}
   isCapsule: 1
   isCirlce: 0
   isRectangle: 0

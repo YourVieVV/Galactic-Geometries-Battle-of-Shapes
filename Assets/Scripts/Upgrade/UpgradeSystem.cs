@@ -73,11 +73,8 @@ public class UpgradeSystem : MonoBehaviour
 
     public void DeleteSelectedUpgrade(Upgrade upgradeName)
     {
-        Debug.Log($"upgradeName={upgradeName}");
         int indx = upgradesList.FindIndex(item => item.Name == upgradeName.Name);
-        Debug.Log($"indx={indx}");
         upgradesList.RemoveAt(indx);
-        Debug.Log($"upgradesList={upgradesList}");
         SetUpgradeList(upgradesList);
     }
 
@@ -86,7 +83,6 @@ public class UpgradeSystem : MonoBehaviour
         string stingUpgrade = "";
         upgradeList.ForEach(item => stingUpgrade = stingUpgrade + item.Name + "|");
         PlayerPrefs.SetString(PlayerStats.upgradeList, stingUpgrade);
-        Debug.Log($"stingUpgrade={stingUpgrade}");
     }
 
     public class Upgrade

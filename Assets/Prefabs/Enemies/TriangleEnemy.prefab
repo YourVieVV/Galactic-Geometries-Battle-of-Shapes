@@ -398,12 +398,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3be66e77b2d81ae40ae28ce1fed2aa10, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shootDelayCouter: 0
   shootDelayGun: 1
   GunBossOne: {fileID: 5275963970239271430}
   GunBossTwo: {fileID: 4640409503207853468}
   GunBossTree: {fileID: 7502851051031493173}
   ControlDodge: {fileID: 0}
+  ShieldBoss: {fileID: 0}
   enemyBullet: {fileID: 1227504484522588, guid: 6da31cea5123a7b478eb65f62c9e4c37, type: 3}
 --- !u!114 &4545621401446545808
 MonoBehaviour:
@@ -432,6 +432,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ExplotionEnemyDestroy: {fileID: 8038344524183138613, guid: 0277167a12290af47801444830a2be97, type: 3}
+  ExplotionEnemyDestroyTablet: {fileID: 1152899567547200, guid: 8c1209a205fee874c8c49a594e2af79f, type: 3}
   isCapsule: 0
   isCirlce: 0
   isRectangle: 0
@@ -439,6 +440,8 @@ MonoBehaviour:
   isOval: 0
   isIsometric: 0
   isBoss: 1
+  isBossDead: 0
+  enemyHP: 0
 --- !u!114 &4861670049652506656
 MonoBehaviour:
   m_ObjectHideFlags: 0
