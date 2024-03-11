@@ -176,7 +176,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isOvalEnemy: 0
   isRotate: 1
-  movementSpeed: -1
+  movementSpeed: -0.8
   movementSpeedHorizontal: -3
 --- !u!114 &3935317749874409392
 MonoBehaviour:
