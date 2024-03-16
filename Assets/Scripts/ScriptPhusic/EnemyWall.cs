@@ -1,8 +1,7 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
-public class EnemyWall : MonoBehaviour {
+public class EnemyWall : MonoBehaviour
+{
 
     public float delay = 0.3f;
 
@@ -29,7 +28,8 @@ public class EnemyWall : MonoBehaviour {
         AudioShutEn = GetComponent<AudioSource>();
     }
 
-    void Update() {
+    void Update()
+    {
 
         //transform.rotation = Quaternion.Euler(transform.rotation.x, transform.rotation.y, angler.checkAngle());
 
@@ -45,22 +45,22 @@ public class EnemyWall : MonoBehaviour {
             {
                 if (currentAngle - angleToPlayer > 180)
                 {
-                    transform.rotation = Quaternion.Euler(transform.rotation.x, transform.rotation.y, currentAngle +3);
+                    transform.rotation = Quaternion.Euler(transform.rotation.x, transform.rotation.y, currentAngle + 3);
                 }
                 else
                 {
-                    transform.rotation = Quaternion.Euler(transform.rotation.x, transform.rotation.y, currentAngle -3);
+                    transform.rotation = Quaternion.Euler(transform.rotation.x, transform.rotation.y, currentAngle - 3);
                 }
             }
             else if (currentAngle - angleToPlayer < 0)
             {
                 if (currentAngle - angleToPlayer < -180)
                 {
-                    transform.rotation = Quaternion.Euler(transform.rotation.x, transform.rotation.y, currentAngle -3);
+                    transform.rotation = Quaternion.Euler(transform.rotation.x, transform.rotation.y, currentAngle - 3);
                 }
                 else
                 {
-                    transform.rotation = Quaternion.Euler(transform.rotation.x, transform.rotation.y, currentAngle +3);
+                    transform.rotation = Quaternion.Euler(transform.rotation.x, transform.rotation.y, currentAngle + 3);
                 }
             }
 
@@ -68,7 +68,8 @@ public class EnemyWall : MonoBehaviour {
             {
                 Shoot();
             }
-        }else
+        }
+        else
         {
             delayCounter -= Time.deltaTime;
         }
@@ -76,12 +77,16 @@ public class EnemyWall : MonoBehaviour {
     }
     void Shoot()
     {
-       if (shootDelayCounter <= 0)
+        if (shootDelayCounter <= 0)
         {
-            GameObject bulletShoot = Instantiate(projectile, dulo.transform.position, transform.rotation);
-           bulletShoot.GetComponent<Rigidbody2D>().velocity = (player.transform.position - transform.position).normalized * 5;
-           
-            shootDelayCounter = shootDelay;
+            if (player != null)
+            {
+                GameObject bulletShoot = Instantiate(projectile, dulo.transform.position, transform.rotation);
+                bulletShoot.GetComponent<Rigidbody2D>().velocity = (player.transform.position - transform.position).normalized * 5;
+
+                shootDelayCounter = shootDelay;
+            }
+
 
             AudioShutEn.Play();
         }

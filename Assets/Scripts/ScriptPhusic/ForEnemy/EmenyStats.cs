@@ -21,12 +21,12 @@ public class EmenyStats : MonoBehaviour
         initShootDelayRectangle = 1.6f,
         initHpIsometric = 100f,
         initShootDelayIsometric = 1.4f,
-        initHpCircle = 300f,
+        initHpCircle = 200f,
         initShootDelayCircle = 2f,
         initHpCapsule = 200f,
         initShootDelayCapsule = 3f,
         initHpHexagon = 300f,
         initShootDelayHexagon = 0.4f,
-        initHpOval = 300f,
+        initHpOval = 150f,
         initShootDelayOval = 2f;
 }
